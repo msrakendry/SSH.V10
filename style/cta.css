@@ -1,0 +1,149 @@
+
+  .set_bg{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:radial-gradient(120% 120% at 20% 15%, #16233d 0%, var(--bg-top) 45%, var(--bg-bottom) 100%);
+  }
+
+  .particles-js-canvas-el{
+    position:absolute;
+    top:0; left:0;
+    width:100%!important;
+    height:100%!important;
+    display:block;
+  }
+  /* ---------- CTA Section ---------- */
+
+  
+        
+        /* =================START CAT  ===================== */
+        .cta-section {
+            background: rgba(8, 22, 49, 0.92);
+            /* padding: 10rem 4rem !important; */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta_container {
+            padding:140px 0 0 0;
+        }
+
+        .cta-section::before:hover {
+            height: 20vh;
+        }
+
+        .cta-section::before {
+            content: 'SSH';
+            height: 81vh;
+            position: absolute;
+            font-family: sans-serif;
+            font-size: 28vw;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.11);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            letter-spacing: -.02em;
+            pointer-events: none;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .7s, transform .7s;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .section-tag {
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .cta-inner h2 {
+            color: var(--white);
+        }
+
+        .section-tag {
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--ochre);
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .cta-section .section-tag::before {
+            background: var(--accent);
+        }
+
+        .section-tag::before {
+            content: '';
+            display: block;
+            width: 2rem;
+            height: 1px;
+            background: var(--ochre);
+        }
+
+        .cta-section p {
+            font-size: 1.05rem;
+            color: var(--sand);
+            max-width: 52ch;
+            margin: 0 auto 3rem;
+            line-height: 1.75;
+        }
+
+        .cta-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btns .btn-outline:hover {
+            background: var(--education);
+            color: var(--dark)
+        }
+
+        .btn-primary {
+            background: var(--ochre);
+            color: var(--bark);
+            border: none;
+            padding: 1rem 2.4rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .88rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--sand);
+            border: 1px solid rgba(245, 237, 216, .3);
+            padding: 1rem 2.4rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .88rem;
+            font-weight: 500;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .2s;
+        }
+
+        /* =================END CAT  ===================== */

@@ -1,0 +1,273 @@
+.header{display:block;text-align: center;align-items:center;gap:18px;margin-bottom:10px;}
+.header svg{width:50px;height:50px;}
+.title p{font-size:13px;color:#6b7280;margin-top:4px;}
+.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:10px;}
+.metric{background:white;border-radius:4px;padding:4px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.metric h3{font-size:.8rem;font-weight:800;color:#1f4ea3;}
+.metric span{font-size:12px;font-weight:600;color:#6b7280;}
+.network-box{background:white;border-radius:4px;padding:10px;margin-bottom:25px;}
+.network-title{font-size:14px;font-weight:800;letter-spacing:1px;color:#1f4ea3;margin-bottom:18px;text-transform:uppercase;}
+.network{display:flex;align-items:center;}
+/* ======================NODE==================== */
+.wash .node{width:18px;height:18px;border-radius:50%;background:var(--wash);position:relative;z-index:2;}
+.livelihood .node{width:18px;height:18px;border-radius:50%;background:var(--livelihood);position:relative;z-index:2;}
+.energy .node{width:18px;height:18px;border-radius:50%;background:var(--energy);position:relative;z-index:2;}
+.education .node{width:18px;height:18px;border-radius:50%;background:var(--education);position:relative;z-index:2;}
+/* ======================LINE==================== */
+.wash .line{height:5px;flex:1;background:linear-gradient(90deg, var(--wash),#69b7ff);}
+.livelihood .line{height:5px;flex:1;background:linear-gradient(90deg, var(--livelihood),#f3929a);}
+.energy .line{height:5px;flex:1;background:linear-gradient(90deg, var(--energy),#69ff9b);}
+.education .line{height:5px;flex:1;background:linear-gradient(90deg,var(--education),#daff69);}
+.labels{display:flex;justify-content:space-between;margin-top:10px;font-size:11px;font-weight:600;color:#64748b;}
+.coverage-head{display:flex;justify-content:space-between;margin-bottom:10px;font-size:14px;font-weight:700;}
+.progress{height:10px;background:#dbe5f5;border-radius:50px;overflow:hidden;}
+.sdg-text h4{font-size:15px;font-weight:800;}
+.sdg-text p{font-size:12px;color:#6b7280;margin-top:4px;}
+.footer-btn{margin-top:25px;background:#ececec;padding:18px;border-radius:5px;text-align:center;font-weight:800;letter-spacing:2px;cursor:pointer;transition:.3s;}
+.footer-btn:hover{background:#1f4ea3;color:white;}
+/* =================START 4 PILLARS  ===================== */
+.pillars-grid {display: grid;grid-template-columns: repeat(4, 1fr) !important;gap: 30px !important;margin-top: 10px;}
+/* ==============START .pillars-grid .btn=================== */
+.pillars-grid .pillar-card {padding:10px;text-align: center;height:28.52em;box-sizing: border-box;box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);backdrop-filter: blur(6px);border-radius: 6px;cursor: pointer;align-items: center;user-select: none;font-weight: bolder;transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);position: relative;overflow: hidden;animation: slideUp 0.6s ease-out both;}
+/* ====================START .pillar-card .fa-======================== */
+.pillar-card .fa-tint {width: 60px;fill: var(--wash);}
+.pillar-card .fa-briefcase {width:71px;fill: var(--livelihood);}
+.pillar-card .fa-graduation-cap {width: 77px;padding-bottom:0px;fill: var(--education);}
+.pillar-card .fa-solar-panel {width: 77px !important;padding-bottom:8px;fill: var(--energy);}
+/* ====================START TOP BORDER======================== */
+.pillars-grid .pillar-card:nth-child(1)::before {background: var(--wash);}
+.pillars-grid .pillar-card:nth-child(2)::before {background: var(--livelihood);}
+.pillars-grid .pillar-card:nth-child(3)::before {background: var(--energy);}
+.pillars-grid .pillar-card:nth-child(4)::before {background: var(--education);}
+/* ==============START .pillars-grid & .card:hover(FOR .ALL BILLARS)=========== */
+.pillars-grid .pillar-card:nth-child(2) {animation-delay: 0.2s;}
+/* .pillars-grid p {max-height: 8em;height: 8em;} */
+/*
+.pillars-grid .pillar-card:hover::before {height: 100%;opacity: 0.05;}
+.pillars-grid .pillar-card::before {content: '';position: absolute;top: 0;left: 0;width: 100%;height: 5px;transition: height 0.4s ease;} */
+/* .pillars-grid .pillar-card:hover {--tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);} */
+/* .pillars-grid .pillar-card:hover .pillar-icon {transform: scale(1.1) rotate(5deg);} */
+/* .pillars-grid .card:hover {--tw-translate-y: -0.75rem;transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));} */
+/* ====================START .pillar-card..... .pillar-icon======================== */
+.pillar-card.water .pillar-icon {color: var(--wash);}
+.pillar-card.livelihood .pillar-icon {color: var(--livelihood);}
+.pillar-card.energy .pillar-icon {color: var(--energy);margin-bottom: 8px;}
+.pillar-card.education .pillar-icon {color: var(--education);height:77px;}
+/* ====================END .pillar-card.water .pillar-icon======================== */
+/* ====================START .btn-23.btn-education:hover======================== */
+.btn-23.btn-water:hover {background-color:var(--wash);border-color: #275093;}
+.btn-23.btn-livelihood:hover {background-color:var(--livelihood);border-color: #e8542f;}
+.btn-23.btn-energy:hover {background-color:var(--energy);border-color: #66b646;}
+.btn-23.btn-education:hover {background-color:var(--education);border-color: #f3b93a;}
+/* ======================================*/
+.btn-23 .card:hover {--tw-translate-y: -0.75rem;transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));}
+/* ================================== */
+.pillar-card:hover::before {height: 100%;opacity: 0.05;}
+.pillars-grid .pillar-card:hover::before {height: 100%;opacity: 0.05;}
+/* .pillars-grid .pillar-card:nth-child(1)::before {background: var(--wash);} */
+.pillars-grid .pillar-card::before {content: '';position: absolute;top: 0;left: 0;width: 100%;height: 5px;transition: height 0.4s ease;}
+/* ======================================= */
+.pillars-grid .card:hover {--tw-translate-y: -0.75rem;transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));}
+.pillars-grid .pillar-card:hover {--tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);}
+/* ========================================== */
+.cat_set{display:block;margin: 0 0 13px 0;}
+.pillars-grid .pillar-card:hover .pillar-icon {transform: scale(1.1) rotate(5deg);}
+.pillar-card.water .pillar-icon {color: var(--wash);}
+.pillar-card .fa-tint {width:48px;fill: var(--wash);}
+/* ======================================== */
+.set-btn-water{margin-top: 10px;}
+.pillars-grid .wash:hover .btn-wash {background-color:var(--wash);border-color: #838486;color: var(--white);}
+.pillars-grid .livelihood:hover .btn-livelihood {background-color:var(--livelihood);border-color: #838486;color: var(--white);}
+.pillar-card:hover .btn-energy {background-color: var(--energy);border-color: #838486;color: var(--white);}
+.pillars-grid .education:hover .btn-education {background-color:var(--education);border-color: #838486;color: var(--white);}
+.pillars-grid .btn-23 span {font-size: 1rem;}
+.wash .progress-fill-wash{height:100%;background:var(--wash);border-radius:50px;}
+.livelihood .progress-fill-livelihood{height:100%;background:var(--livelihood);border-radius:50px;}
+.energy .progress-fill-energy{height:100%;background:var(--energy);border-radius:50px;}
+.education .progress-fill-education{height:100%;background:var(--education);border-radius:50px;}
+.btn-23 {border-radius:5px;border-width: 2px;overflow: hidden;padding: 0.8rem 3rem;position: relative;margin-top: 2px;width: 100%;-webkit-tap-highlight-color: transparent;background-image: none;color: #fff;cursor: pointer;font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-size: 100%;font-weight: 900;line-height: 1.5;text-transform: uppercase;}
+.btn-23:hover .text {opacity: 0;}
+/* ========================================= */
+.btn-23:hover .text {
+    opacity: 0;
+}
+
+.pillars-grid .btn-23 span {
+    font-size: 1rem;
+}
+.btn-23 span {
+    font-weight: 800;
+    display: grid;
+    inset: 0;
+    place-items: center;
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+
+.text {
+    position: absolute;
+    font-size: 0.7em;
+    transition: 0.4s ease-in-out;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+/* ========================================= */
+.btn-23:hover .marquee {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    opacity: 1;
+}
+.pillars-grid .btn-23 span {
+    font-size: 1rem;
+}
+.btn-23 .marquee {
+    --spacing: 7em;
+    --start: 0em;
+    --end: 7em;
+    -webkit-animation: marquee 1s linear infinite;
+    animation: marquee 1s linear infinite;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+    opacity: 0;
+    position: relative;
+    text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0, #fff calc(var(--spacing) * -2) 0;
+}
+.btn-23 span {
+    font-weight: 800;
+    display: grid;
+    inset: 0;
+    place-items: center;
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+/* ==================================2PILLARS====================================== */
+        /* ==================START .2 PILLAR================ */
+.cards_p2{
+          display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-height: 300px;
+}
+.card_p2{
+    cursor: pointer;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1.2fr .9fr;
+    overflow: hidden;
+    border-radius: 4px;
+    position: absolute;
+
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .05), rgba(0, 0, 0, .75));
+
+
+    /* background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px); */
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .35);
+    position: relative;
+    transition: .5s;
+}
+.card_p2:hover{
+    transform:translateY(-8px);
+}
+.card_p2 a{
+     display: contents;
+}
+.content_p2 {
+    color: white;
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+}
+
+.section-tit,
+.h2_p2{
+    font-size:1.2rem !important;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#061b16;
+}
+
+.infographic-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:8px;
+}
+.image_p2{
+    position:relative;
+    overflow:hidden;
+}
+.image_p2 img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.overlay-stats{
+    padding: 10px;
+    position:absolute;
+    inset:0;
+    /* background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.75)); */
+    display:flex;
+    align-items:flex-end;
+}
+.bottom-panel{
+    width:100%;
+    display:grid;
+    /*grid-template-columns:repeat(3,1fr);*/
+    gap:10px;
+}
+.impact-box{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:2px;
+    padding:16px;
+    color:#fff;
+    text-align:center;
+}
+.impact-box h4{
+    font-size:1rem;
+    font-weight:800;
+}
+.impact-box span{
+    font-size:.95rem;
+    opacity:.9;
+    color: #061b16;
+}
+.glow_P2{
+    position:absolute;
+    width:400px;
+    height:400px;
+    /* background:radial-gradient(circle,#00b67a33,transparent 70%); */
+    right:-100px;
+    top:-100px;
+    pointer-events:none;
+}
+@media(max-width:991px){
+.card_p2 a{
+    grid-template-columns:1fr;
+}
+.section-tit,
+.h2_p2{
+    font-size:2.3rem;
+}
+.infographic-grid{
+    grid-template-columns:1fr;
+}
+.bottom-panel{
+    grid-template-columns:1fr;
+}
+}
+
+/* ============================ MOVE EFFECT============================= */@-webkit-keyframes marquee {
+  0% {transform: translateX(var(--start));}
+  to {transform: translateX(var(--end));}}
+@keyframes marquee {
+  0% {transform: translateX(var(--start));}
+  to {transform: translateX(var(--end));}}

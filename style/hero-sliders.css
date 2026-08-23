@@ -1,0 +1,528 @@
+
+        /* ==================START .HERO SECTION (.SLIDE)=========================== */
+        .container-set {
+            position: relative;
+            width: 100%;
+            height: 89vh;
+            overflow: hidden;
+            margin-top: 0px;
+        }
+
+        /* ===================START .progress-bar==================== */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--wash), var(--education), var(--energy), var(--livelihood));
+            z-index: 25;
+            transform-origin: left;
+            transition: none;
+        }
+
+        /* ==================START ================ */
+        .dots-container {
+            position: absolute;
+            bottom: 1rem;
+            left: 95%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: .5rem;
+            z-index: 20;
+        }
+
+        /* ==================START ================ */
+        .dotgo {
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, .3);
+            cursor: pointer;
+            transition: all .35s ease;
+        }
+
+        .dotgo.activeo {
+            width: 28px;
+            background: #f8f9fa;
+        }
+
+        /* ==================START ================ */
+        .progress-bar.animating {
+            transition: width linear;
+        }
+
+        /* ==================END 4 PILLRA ================ */
+        /* =================START SLIDE O===================== */
+        .gallery-cell.active {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+            pointer-events: auto;
+        }
+
+        .gallery-cell {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transform: scale(1.04) translateX(30px);
+            transition: opacity .9s cubic-bezier(.4, 0, .2, 1), transform .9s cubic-bezier(.4, 0, .2, 1);
+            pointer-events: none;
+            height: 486px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(186, 211, 239, 0.5), rgba(46, 46, 47, 0.9)), url(images/hero2.avif);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin-top: 0.3px !important;
+            padding: 1px 0;
+            text-align: center;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* =================START .hero::before===================== */
+        .hero::before {
+            height: 544px;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(13, 122, 110, .35) 0%, transparent 65%), radial-gradient(ellipse 50% 50% at 15% 80%, rgba(201, 168, 76, .18) 0%, transparent 55%), radial-gradient(ellipse 60% 80% at 90% 90%, rgba(13, 122, 110, .15) 0%, transparent 60%);
+            animation: meshPulse 8s ease-in-out infinite alternate;
+        }
+
+        /* =================START IMAG ===================== */
+        .gallery-cell.active .slide-BTN img,
+        .slide-BTN.active img {
+            transform: scale(1.06);
+        }
+
+        .slide-BTN img {
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            object-fit: cover;
+            filter: brightness(.55) saturate(1.1);
+            transition: filter 1.2s ease, transform 8s ease;
+        }
+
+        /* =================START CONTAINER ===================== */
+        .hero .container {
+          display: block;
+        z-index: 2;
+        padding: 0 1vw;
+        max-width: 1200px;
+        margin: 0 auto;
+        bottom: 8rem;
+        overflow: hidden;
+        position: relative;
+        top:56px;
+        }
+
+        /* =================START .p_set>p ===================== */
+        .p_set h1 span {
+            color: var(--white);
+        }
+
+        .p_set>p {
+            margin: 0 0 0 1.3rem !important;
+            font-family: poppins;
+            font-size: 2em;
+            unicode-bidi: isolate;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            animation: fadeUp .7s .1s forwards;
+        }
+
+        /* =================START  ===================== */
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* =================START  ===================== */
+        .p_set h1 .sep_span {
+            margin-left: 3.2rem;
+            display: flex;
+            text-align: left;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons {
+            display: block;
+            flex-wrap: wrap;
+            gap: .65rem;
+            margin-bottom: 1rem;
+            opacity: 1;
+            animation: fadeUp .7s .45s forwards;    padding: 0 0 0 53px;
+}
+
+        .hero-buttons {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(213px, 1fr));
+            gap: 45px !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
+
+        .hero-buttons .btn {
+            display: inline-flex !important;
+            gap: .5rem;
+            border-radius: 2px;
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all .25s ease;
+            border: 1px solid transparent;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-buttons a svg g,
+        path{
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            /* fill: #000 !important; */
+        }
+
+        .hero-buttons .widthp {
+            height: 38px;
+            max-width: 203px;
+            width: 203px;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 8px 0 !important;
+        }
+
+        .hero-buttons .btn .wash_1 {
+            margin-left: 54px;
+            width: 21px;
+        }
+
+        .hero-buttons .btn .livelihood_2 {
+            width: 24px;
+            margin-left: 32px;
+        }
+
+        .hero-buttons .btn .energy_3 {
+            width: 24px;
+            margin-left: 48px;
+        }
+
+        .hero-buttons .btn .education_4 {
+            width: 26px;
+            margin-left: 32px;
+        }
+
+        .hero-buttons .btn .pigeon_5 {
+            width: 30px;
+        }
+
+        .hero-buttons .btn .ssh-lab_6 {
+            width: 24px;
+            margin-left: 45px;
+        }
+
+        /* .hero-buttons .btn {display: inline-block !important;gap:.5rem;border-radius: 2px;font-size: .78rem;font-weight: 500;letter-spacing: .06em;text-transform: uppercase;text-decoration: none;transition: all .25s ease;border: 1px solid transparent;backdrop-filter: blur(8px);cursor: pointer;font-family: 'Cairo', sans-serif;} */
+        /* =================START  ===================== */
+        .hero-buttons .btn svg {
+            fill: currentColor;
+            flex-shrink: 0;    height: 28px;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons .btn span {
+            display: inline;
+            padding: 0 3px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons .btn .w1 {
+            display: none !important;
+        }
+
+        .hero-buttons .btn span {
+            display: inline;
+            padding: 0 3px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons .btn-water {
+            background: rgba(13, 122, 110, .5);
+            border-color: rgba(13, 122, 110, 1);
+            color: #edfaf9;
+        }
+
+        .hero-buttons .btn-water:hover {
+            background: var(--wash);
+            color: #171717;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons .btn-livelihood {
+            background: rgb(232, 84, 47, .5);
+            border-color: rgb(232, 84, 47, .1);
+            color: #edfaf9;
+        }
+
+        .hero-buttons .btn-livelihood:hover {
+            background: var(--livelihood);
+            color: #171717;
+        }
+
+        /* =================START  ===================== */
+        .hero-buttons .btn-energy {
+            background: rgb(102, 182, 70, .5);
+            border-color: rgb(102, 182, 70, .1);
+            color: #edfaf9;
+        }
+
+        .hero-buttons .btn-energy:hover {
+            background: var(--energy);
+            color: #171717;
+        }
+
+        /* =================.SSTART  ===================== */
+        .hero-buttons .btn-education {
+            background: rgb(243, 185, 58, .5);
+            border-color: rgb(243, 185, 58, .1);
+            color: #edfaf9;
+        }
+
+        .hero-buttons .btn-education:hover {
+            background: var(--education);
+            color: #171717;
+        }
+        /* ==================START CONTROL===================== */
+        .container-set .controls {
+            position: absolute;
+            bottom: 1rem;
+            left: 25px;
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            z-index: 20;
+        }
+
+        .control-btn,
+        .control-btn-play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .2);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease;
+        }
+
+        .control-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: #fff;
+        }
+
+        .control-btn,
+        .control-btn-play {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .2);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease;
+        }
+
+        .control-btn-play svg {
+            width: 12px;
+            height: 12px;
+            fill: #fff;
+        }
+
+        .control-btn:hover,
+        .control-btn-play:hover {
+            background: rgba(255, 255, 255, .25);
+            border-color: #828582;
+            transform: scale(1.08);
+        }
+
+        .control-btn:hover,
+        .control-btn-play:hover {
+            background: rgba(255, 255, 255, .25);
+            border-color: #828582;
+            transform: scale(1.08);
+        }
+
+        .control-btn:hover svg {
+            width: 22px;
+            height: 22px;
+            fill: #2b11ef;
+        }
+
+        .control-btn-play:hover svg {
+            fill: #0f0f0f;
+            width: 13px;
+            height: 13px;
+        }
+.hero-buttons .btn-peacebuilding:hover {
+    background: var(--pillar2);
+}
+.hero-buttons .btn-peacebuilding:hover svg path{
+    fill: #171717;
+}
+
+.hero-buttons .btn-ssh-lab:hover {
+    background: var(--pillar2);
+    color: #171717;
+}
+
+.hero-buttons .btn-peacebuilding {
+    display: flex !important;
+    padding-left: 7px !important;
+    background: rgba(44, 53, 219, 0.5);
+    border-color: rgb(243, 185, 58, .1);
+    color: #edfaf9;
+}
+       
+.hero-buttons .btn-ssh-lab {
+    background: rgba(44, 53, 219, 0.5);
+    border-color: rgb(243, 185, 58, .1);
+    color: #edfaf9;
+}
+/* ============================== END .HERO .SLID ============================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

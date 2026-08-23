@@ -1,0 +1,110 @@
+/*========================
+    SECTION
+=========================*/
+.partners{
+    width:100%;
+    padding:60px 0;
+    margin: 100px 0 100px 0 !important;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+}
+
+/*========================
+      TITLE
+=========================*/
+
+.title::before{
+    content:'';
+    width:8px;
+    height:70px;
+    background:#f2b633;
+    margin-right:15px;
+    border-radius:5px;
+}
+
+
+/*========================
+     SLIDER
+=========================*/
+.slider{
+    overflow:hidden;
+    position:relative;
+}
+
+.track{
+    display:flex;
+    gap:35px;
+    width:max-content;
+    animation:scroll 35s linear infinite;
+}
+
+.slider:hover .track{
+    animation-play-state:paused;
+}
+
+.partner-card{
+    width:280px;
+    height:150px;
+    /* background:#edf5fb; */
+    border-radius:12px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+/* 
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.08); */
+
+    transition:.4s;
+}
+
+.partner-card:hover{
+    transform:translateY(-8px) scale(1.04);
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.18);
+}
+
+.partner-card a svg{
+    max-width:160px;
+    max-height:110px;
+    object-fit:contain;
+    transition:.4s;
+}
+
+.partner-card:hover a svg{
+    transform:scale(1.08);
+}
+.partner-card a img{
+    width:140px;
+}
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+@media(max-width:768px){
+
+.title h2{
+font-size:40px;
+}
+
+.partner-card{
+width:220px;
+height:130px;
+}
+
+.partner-card a svg{
+max-width:130px;
+}
+
+}

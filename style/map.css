@@ -1,0 +1,232 @@
+        /* =========================START MAP================================= */
+        .set-MAP {
+            /*background-color: rgb(239, 245, 247);*/
+            margin-top: 70px !important;
+            display: inline-block;
+            border-radius: 5px;
+            height: 115vh !important;
+        }
+
+        .container_map {
+            height: 90vh;
+        }
+
+        .set-MAP .controls {
+            position: relative;
+            top: 404px;
+            width: 3vw;
+            left: 6px;
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 10;
+        }
+
+        .set-MAP .controls .btn {
+            cursor: pointer;
+            width: 2.5vw;
+            height: 5vh;
+            right: 3px;
+            position: relative;
+            padding: 0;
+            font-size: 1.4rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            background-color: #fff;
+            color: var(--primary);
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .set-MAP .info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 10;
+            max-width: 300px;
+        }
+
+        .set-MAP .info p {
+            font-size: 14px;
+            color: #6b7280;
+            margin: 6px 0;
+        }
+
+        .set-MAP .zoom-display {
+            font-size: 16px;
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        .set-MAP .map-legend {
+            position: relative;
+            top: 362px;
+            width: 45vw;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .map-legend {
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2px 0;
+        }
+
+        .set-MAP .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #1f2937;
+            font-weight: 500;
+        }
+
+        .legend-item .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.water {
+            background: var(--wash);
+        }
+
+        .dot.livelihood {
+            background: var(--livelihood);
+        }
+
+        .dot.energy {
+            background: var(--energy);
+        }
+
+        .dot.education {
+            background: var(--education);
+        }
+
+        .set-MAP .map-container {
+            cursor: grab;
+            user-select: none;
+            position: relative;
+            bottom: 151px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #worldMapImage {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4)
+        }
+
+        .set-MAP .set-work-points {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .set-MAP .work-point {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 3px solid;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .set-MAP .work-point:hover {
+            transform: translate(-50%, -50%) scale(1.4);
+            box-shadow: 0 0 20px currentColor;
+            z-index: 100;
+        }
+
+        .set-MAP .work-point:hover .point-label {
+            opacity: 1;
+        }
+
+        strong {
+            color: var(--black) !important;
+        }
+
+        .set-MAP .point-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .point-label strong {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .point-label::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px 6px 0;
+            border-style: solid;
+            border-color: #fff transparent transparent;
+        }
+
+        .set-MAP .work-point::after {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .set-MAP .controls .btn:hover {
+            background-color: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+

@@ -1,0 +1,150 @@
+     /* ===========================START .WHO WE ARE ===================== */
+        .who-card {
+            max-width: 1280px;
+            width: 100%;
+            /*background: #ffffff;*/
+            border-radius: 2px;
+            margin-bottom: 5px;
+        }
+
+        .card-grid {
+            margin-top: 76px;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .rounded-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            box-shadow: 0 12px 22px -10px rgba(0, 0, 0, 0.12);
+            transition: 2s
+        }
+
+        .content-section {
+            padding: 2.5rem 2.5rem 2.5rem 1.8rem;
+            /*background: #ffffff;*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .heading-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .small-icon {
+            background: #f5e7d3;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+     .description-container {
+            position: relative;
+        }
+
+        .description-content.expanded {
+            max-height: 1372px;
+        }
+
+        .description-content {
+            max-height: 220px;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .read-more-btn:hover {
+            background: var(--energy);
+        }
+
+        .sec-lead {
+            font-size: 16px;
+            font-size: 14px;
+            line-height: 26px;
+            font-weight: var(--font-weight);
+            font-style: normal;
+            font-family: var(--sans-serif);
+        }
+
+        .description-content:not(.expanded)::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            /*background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));*/
+            pointer-events: none;
+        }
+
+        .read-more-btn {
+            background-color: var(--education);
+            color: var(--white, #ffffff);
+            border: none;
+            border-radius: var(--r, 1px);
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .highlight-bar {
+            margin-top: 0.8rem;
+            padding-top: 1.2rem;
+            border-top: 2px solid #f0e5cf;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tagline {
+            background: #fef6e0;
+            color: #b17f2e;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tagline svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: #b17f2e;
+            stroke-width: 2;
+        }
+
+        .micro-text {
+            font-size: 0.75rem;
+            color: #5f6c84;
+            font-weight: 450;
+        }
+
+        /* =========================EEND .WHAT WE DO=========================== */
+
+
+
+

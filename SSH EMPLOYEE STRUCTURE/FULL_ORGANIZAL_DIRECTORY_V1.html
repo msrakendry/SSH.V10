@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSH — Full Organizational Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:        #f2f0eb;
+      --surface:   #ffffff;
+      --border:    #dedad2;
+      --row-hover: #faf9f6;
+      --text-1:    #16120e;
+      --text-2:    #5c5650;
+      --text-3:    #9e9890;
+      --blue:   #1e3a8a; --blue-bg:   #dbeafe;
+      --red:    #991b1b; --red-bg:    #fee2e2;
+      --green:  #065f46; --green-bg:  #d1fae5;
+      --amber:  #92400e; --amber-bg:  #fef3c7;
+      --teal:   #0e7490; --teal-bg:   #cffafe;
+      --violet: #5b21b6; --violet-bg: #ede9fe;
+      --rose:   #9f1239; --rose-bg:   #ffe4e6;
+      --slate:  #334155; --slate-bg:  #f1f5f9;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+      --shadow:    0 2px 8px rgba(0,0,0,.08), 0 0 0 1px rgba(0,0,0,.04);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Sora',sans-serif; background:var(--bg); color:var(--text-1); font-size:14px; line-height:1.5; }
+
+    /* LOGO */
+    .logo { display:flex; align-items:center; gap:14px; margin-bottom:26px; }
+    .logo-icon {
+      width:52px; height:52px;
+      background:rgba(255,255,255,.15);
+      border:2px solid rgba(255,255,255,.3);
+      border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+    }
+    .logo-icon svg { width:28px; height:28px; }
+    .logo-abbr { font-family:'IBM Plex Mono',monospace; font-size:1.2rem; font-weight:600; letter-spacing:.1em; color:#fff; line-height:1; }
+    .logo-full { font-size:.7rem; color:rgba(255,255,255,.5); letter-spacing:.03em; margin-top:2px; }
+
+    /* HEADER */
+    .top-bar {
+      background:var(--blue); color:#fff;
+      padding:36px 48px 36px; position:relative; overflow:hidden;
+    }
+    .top-bar::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse 60% 120% at 90% -10%, rgba(255,255,255,.09) 0%, transparent 60%);
+    }
+    .hinner { position:relative; z-index:1; }
+    .org-label { font-size:.67rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.44); margin-bottom:8px; }
+    .page-title { font-size:clamp(1.7rem,3.5vw,2.5rem); font-weight:700; line-height:1.1; margin-bottom:5px; }
+    .page-sub { font-weight:300; font-size:.88rem; color:rgba(255,255,255,.6); }
+    .kpi-row { display:flex; gap:36px; flex-wrap:wrap; margin-top:28px; padding-top:22px; border-top:1px solid rgba(255,255,255,.15); }
+    .kpi { display:flex; flex-direction:column; gap:2px; }
+    .kpi-n { font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:600; line-height:1; }
+    .kpi-l { font-size:.67rem; color:rgba(255,255,255,.5); font-weight:400; }
+
+    /* TOOLBAR */
+    .toolbar {
+      background:var(--surface); border-bottom:1px solid var(--border);
+      padding:13px 48px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+      position:sticky; top:0; z-index:20; box-shadow:var(--shadow-sm);
+    }
+    .search-box { position:relative; flex:1; min-width:200px; max-width:320px; }
+    .search-box svg { position:absolute; left:11px; top:50%; transform:translateY(-50%); color:var(--text-3); pointer-events:none; }
+    .search-box input {
+      width:100%; padding:8px 12px 8px 34px;
+      border:1.5px solid var(--border); border-radius:7px;
+      font-family:'Sora',sans-serif; font-size:.82rem;
+      background:var(--bg); color:var(--text-1); outline:none;
+      transition:border-color .18s, background .18s;
+    }
+    .search-box input:focus { border-color:var(--blue); background:#fff; }
+    .chips { display:flex; gap:6px; flex-wrap:wrap; }
+    .chip {
+      padding:5px 13px; border-radius:100px;
+      border:1.5px solid var(--border); background:#fff;
+      font-family:'Sora',sans-serif; font-size:.73rem; font-weight:500;
+      color:var(--text-2); cursor:pointer; transition:all .14s; white-space:nowrap;
+    }
+    .chip:hover { border-color:var(--blue); color:var(--blue); }
+    .chip.on { background:var(--blue); border-color:var(--blue); color:#fff; }
+    .count-badge { margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--text-3); white-space:nowrap; }
+
+    /* MAIN */
+    .main { padding:30px 48px 60px; max-width:1280px; margin:0 auto; }
+
+    /* SECTION */
+    .sec { margin-bottom:38px; }
+    .sec-head { display:flex; align-items:center; gap:10px; margin-bottom:13px; }
+    .sec-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+    .sec-label { font-size:.67rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; color:var(--text-2); }
+    .sec-count { margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--text-3); }
+
+    /* TABLE */
+    .tbl-wrap { background:var(--surface); border-radius:12px; border:1px solid var(--border); overflow:hidden; box-shadow:var(--shadow); }
+    table { width:100%; border-collapse:collapse; }
+    thead tr { background:#f9f8f5; border-bottom:2px solid var(--border); }
+    th { padding:10px 18px; text-align:left; font-size:.63rem; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); }
+    th.col-id { width:148px; }
+    th.col-title { width:38%; }
+    th.col-team { width:26%; }
+    tbody tr { border-bottom:1px solid var(--border); transition:background .1s; }
+    tbody tr:last-child { border-bottom:none; }
+    tbody tr:hover { background:var(--row-hover); }
+    tbody tr.hidden { display:none; }
+    td { padding:12px 18px; vertical-align:middle; }
+
+    /* ID pill */
+    .id {
+      display:inline-flex; align-items:center; justify-content:center;
+      font-family:'IBM Plex Mono',monospace; font-size:.67rem; font-weight:600;
+      padding:3px 9px; border-radius:6px; min-width:120px; text-align:center;
+      letter-spacing:.02em; white-space:nowrap;
+    }
+    .id-board  { background:var(--violet-bg); color:var(--violet); }
+    .id-exec   { background:var(--red-bg);    color:var(--red); }
+    .id-mel    { background:var(--teal-bg);   color:var(--teal); }
+    .id-cop    { background:var(--rose-bg);   color:var(--rose); }
+    .id-eru    { background:var(--rose-bg);   color:var(--rose); }
+    .id-prog   { background:var(--blue-bg);   color:var(--blue); }
+    .id-ops    { background:var(--slate-bg);  color:var(--slate); }
+    .id-ext    { background:var(--green-bg);  color:var(--green); }
+
+    .t-main { font-weight:500; color:var(--text-1); }
+    .t-count { font-family:'IBM Plex Mono',monospace; font-size:.68rem; color:var(--text-3); margin-left:4px; }
+    .tag { display:inline-block; font-size:.58rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; padding:2px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+    .tag-new { background:var(--green-bg); color:var(--green); }
+    .tag-imp { background:var(--amber-bg); color:var(--amber); }
+    .tag-up  { background:#ecfdf5; color:#166534; }
+    .tag-el  { background:var(--teal-bg);  color:var(--teal); }
+    .tag-as  { background:#f3f4f6; color:#6b7280; }
+    .t2 { font-size:.78rem; color:var(--text-3); }
+
+    /* FOOTER */
+    .foot {
+      background:var(--blue); color:rgba(255,255,255,.55);
+      padding:26px 48px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:20px; flex-wrap:wrap;
+    }
+    .foot-logo { display:flex; align-items:center; gap:11px; }
+    .foot-logo-icon {
+      width:38px; height:38px;
+      background:rgba(255,255,255,.12);
+      border:1.5px solid rgba(255,255,255,.22);
+      border-radius:9px;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .foot-logo-icon svg { width:20px; height:20px; }
+    .foot-abbr { font-family:'IBM Plex Mono',monospace; font-size:.95rem; font-weight:600; color:#fff; letter-spacing:.08em; }
+    .foot-full { font-size:.64rem; color:rgba(255,255,255,.42); margin-top:1px; }
+    .foot-meta { font-family:'IBM Plex Mono',monospace; font-size:.69rem; text-align:right; }
+    .foot-meta-dim { color:rgba(255,255,255,.28); margin-top:3px; }
+    .empty { display:none; text-align:center; padding:52px 20px; color:var(--text-3); font-size:.88rem; }
+    .urag{
+      display: block;background-color: #9e9890;padding: 25px;
+    }
+    .urag >ul li{ list-style:none;;
+    }
+    .urag .tit{font-size: 1rem; }
+  
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top-bar">
+  <div class="hinner">
+    <div class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/>
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-abbr">SSH</div>
+        <div class="logo-full">Sudan Sustainability Hub</div>
+      </div>
+    </div>
+    <div class="org-label">Optimized Organizational Structure — 2026</div>
+    <h1 class="page-title">Full Organizational Directory</h1>
+    <p class="page-sub">Every position from Board level down to sub-unit staff</p>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kpi-n">7</span><span class="kpi-l">Board Members</span></div>
+      <div class="kpi"><span class="kpi-n">4</span><span class="kpi-l">Board Committees</span></div>
+      <div class="kpi"><span class="kpi-n">6</span><span class="kpi-l">Exec. Leadership</span></div>
+      <div class="kpi"><span class="kpi-n">12</span><span class="kpi-l">Departments</span></div>
+      <div class="kpi"><span class="kpi-n">135–152</span><span class="kpi-l">Total Staff</span></div>
+      <div class="kpi"><span class="kpi-n">+42</span><span class="kpi-l">New Positions</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="search-box">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input id="searchInput" type="text" placeholder="Search ID, title, unit…"/>
+  </div>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="board">Board</button>
+    <button class="chip" data-f="executive">Executive</button>
+    <button class="chip" data-f="mel">M&amp;E</button>
+    <button class="chip" data-f="programs">Programs</button>
+    <button class="chip" data-f="operations">Operations</button>
+    <button class="chip" data-f="external">External Relations</button>
+  </div>
+  <span class="count-badge" id="countBadge"></span>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- 1. BOARD -->
+<div class="sec" data-sec="board">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--violet)"></span>
+    <span class="sec-label">Governance — Board of Directors</span>
+    <span class="sec-count" id="cnt-board"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-01</span></td><td class="t-main">Board Chairperson</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-02</span></td><td class="t-main">Vice Chairperson</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-03</span></td><td class="t-main">Board Secretary</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-04</span></td><td class="t-main">Treasurer</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-05</span></td><td class="t-main">Board Member</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-06</span></td><td class="t-main">Board Member</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-BOD-07</span></td><td class="t-main">Board Member</td><td class="t2">Board of Directors</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-COM-01</span></td><td class="t-main">Finance &amp; Audit Committee</td><td class="t2">Board Committees</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-COM-02</span></td><td class="t-main">Programs &amp; Impact Committee</td><td class="t2">Board Committees</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-COM-03</span></td><td class="t-main">Governance &amp; HR Committee</td><td class="t2">Board Committees</td><td class="t2">Governance</td></tr>
+      <tr data-g="board"><td><span class="id id-board">SSH-COM-04</span></td><td class="t-main">Fundraising Committee</td><td class="t2">Board Committees</td><td class="t2">Governance</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 2. EXECUTIVE -->
+<div class="sec" data-sec="executive">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--red)"></span>
+    <span class="sec-label">Executive Leadership</span>
+    <span class="sec-count" id="cnt-executive"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-01</span></td><td class="t-main">Executive Director <span class="t2">— Chief Executive Officer</span></td><td class="t2">Executive Office</td><td class="t2">Executive Leadership</td></tr>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-02</span></td><td class="t-main">Internal Auditor</td><td class="t2">Executive Office — Direct Support</td><td class="t2">Executive Leadership</td></tr>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-03</span></td><td class="t-main">Executive Assistant</td><td class="t2">Executive Office — Direct Support</td><td class="t2">Executive Leadership</td></tr>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-04</span></td><td class="t-main">Legal Advisor <span class="tag tag-as">As Needed</span></td><td class="t2">Executive Office — Direct Support</td><td class="t2">Executive Leadership</td></tr>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-05</span></td><td class="t-main">Director — Programs</td><td class="t2">Executive Office</td><td class="t2">Executive Leadership</td></tr>
+      <tr data-g="executive"><td><span class="id id-exec">SSH-EX-06</span></td><td class="t-main">Director — Operations</td><td class="t2">Executive Office</td><td class="t2">Executive Leadership</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 3. M&E -->
+<div class="sec" data-sec="mel">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--teal)"></span>
+    <span class="sec-label">Strategic Function — M&amp;E &amp; Learning <span class="tag tag-el">ELEVATED</span></span>
+    <span class="sec-count" id="cnt-mel"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-00</span></td><td class="t-main">M&amp;E Director</td><td class="t2">M&amp;E &amp; Learning</td><td class="t2">Strategic Functions</td></tr>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-01</span></td><td class="t-main">Senior M&amp;E Officer <span class="t-count">×2</span></td><td class="t2">M&amp;E &amp; Learning</td><td class="t2">Strategic Functions</td></tr>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-02</span></td><td class="t-main">Data Analyst <span class="t-count">×2</span></td><td class="t2">M&amp;E &amp; Learning</td><td class="t2">Strategic Functions</td></tr>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-03</span></td><td class="t-main">Research Officer <span class="t-count">×1</span></td><td class="t2">M&amp;E &amp; Learning</td><td class="t2">Strategic Functions</td></tr>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-04</span></td><td class="t-main">M&amp;E Focal Point <span class="t-count">×4</span><span class="tag tag-new">NEW</span></td><td class="t2">M&amp;E — Embedded in Program Depts</td><td class="t2">Strategic Functions</td></tr>
+      <tr data-g="mel"><td><span class="id id-mel">SSH-MEL-05</span></td><td class="t-main">Knowledge Management Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">M&amp;E &amp; Learning</td><td class="t2">Strategic Functions</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 4. PROGRAMS -->
+<div class="sec" data-sec="programs">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--blue)"></span>
+    <span class="sec-label">Programs Division — Under Director, Programs</span>
+    <span class="sec-count" id="cnt-programs"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="programs"><td><span class="id id-cop">SSH-COP-00</span></td><td class="t-main">Chief of Programs <span class="tag tag-new">NEW</span></td><td class="t2">Cross-Cutting Coordination</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-cop">SSH-COP-01</span></td><td class="t-main">Program Coordination Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Cross-Cutting Coordination</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-cop">SSH-COP-02</span></td><td class="t-main">Gender &amp; Social Inclusion Advisor <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Cross-Cutting Coordination</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-eru">SSH-ERU-00</span></td><td class="t-main">Emergency Response Coordinator <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Emergency Response Unit</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-eru">SSH-ERU-01</span></td><td class="t-main">Rapid Assessment Officer <span class="t-count">×2</span><span class="tag tag-new">NEW</span></td><td class="t2">Emergency Response Unit</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-eru">SSH-ERU-02</span></td><td class="t-main">Multi-Sector Response Team <span class="t-count">×4–5</span><span class="tag tag-new">NEW</span></td><td class="t2">Emergency Response Unit</td><td class="t2">Programs Division</td></tr>
+      <!-- Dept 01 WASH -->
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-00</span></td><td class="t-main">WASH Director <span class="tag tag-imp">IMPROVED</span></td><td class="t2">Dept. 01 — WASH</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-01</span></td><td class="t-main">Project Engineer <span class="t-count">×2</span></td><td class="t2">Dept. 01 — Water Infrastructure Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-02</span></td><td class="t-main">Drilling Specialist <span class="t-count">×2–3</span></td><td class="t2">Dept. 01 — Water Infrastructure Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-03</span></td><td class="t-main">Water Quality Technician <span class="t-count">×2–3</span></td><td class="t2">Dept. 01 — Water Infrastructure Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-04</span></td><td class="t-main">Climate Adaptation Specialist <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 01 — Water Infrastructure Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-05</span></td><td class="t-main">WASH Coordinator <span class="t-count">×2</span></td><td class="t2">Dept. 01 — WASH Programs Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-06</span></td><td class="t-main">Community Mobilizer <span class="t-count">×4–5</span></td><td class="t2">Dept. 01 — WASH Programs Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-07</span></td><td class="t-main">Hygiene Educator <span class="t-count">×2–3</span></td><td class="t2">Dept. 01 — WASH Programs Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-08</span></td><td class="t-main">Water Policy Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 01 — Water Governance Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D01-09</span></td><td class="t-main">Community Water Management Trainer <span class="t-count">×2</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 01 — Water Governance Team</td><td class="t2">Programs Division</td></tr>
+      <!-- Dept 02 Livelihood -->
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-00</span></td><td class="t-main">Livelihood &amp; Food Security Director <span class="tag tag-imp">IMPROVED</span></td><td class="t2">Dept. 02 — Livelihood &amp; Food Security</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-01</span></td><td class="t-main">Agronomist <span class="t-count">×2–3</span></td><td class="t2">Dept. 02 — Agriculture &amp; Farming Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-02</span></td><td class="t-main">Extension Worker <span class="t-count">×4–5</span></td><td class="t2">Dept. 02 — Agriculture &amp; Farming Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-03</span></td><td class="t-main">Seeds / Tools Distribution Officer <span class="t-count">×2</span></td><td class="t2">Dept. 02 — Agriculture &amp; Farming Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-04</span></td><td class="t-main">Climate-Smart Agriculture Specialist <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 02 — Agriculture &amp; Farming Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-05</span></td><td class="t-main">Market Linkages Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 02 — Agriculture &amp; Farming Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-06</span></td><td class="t-main">Business Development Officer <span class="t-count">×2</span></td><td class="t2">Dept. 02 — Income Generation Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-07</span></td><td class="t-main">Vocational Trainer <span class="t-count">×3–4</span></td><td class="t2">Dept. 02 — Income Generation Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-08</span></td><td class="t-main">Microfinance Coordinator <span class="t-count">×1–2</span></td><td class="t2">Dept. 02 — Income Generation Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-09</span></td><td class="t-main">Veterinary Officer <span class="t-count">×2</span></td><td class="t2">Dept. 02 — Livestock &amp; Fisheries Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D02-10</span></td><td class="t-main">Livestock Specialist <span class="t-count">×2–3</span></td><td class="t2">Dept. 02 — Livestock &amp; Fisheries Team</td><td class="t2">Programs Division</td></tr>
+      <!-- Dept 03 Energy -->
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-00</span></td><td class="t-main">Energy &amp; Environment Director <span class="tag tag-imp">IMPROVED</span></td><td class="t2">Dept. 03 — Energy &amp; Environment</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-01</span></td><td class="t-main">Solar Technician <span class="t-count">×3–4</span></td><td class="t2">Dept. 03 — Renewable Energy Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-02</span></td><td class="t-main">Energy Engineer <span class="t-count">×2</span></td><td class="t2">Dept. 03 — Renewable Energy Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-03</span></td><td class="t-main">Installation Team Member <span class="t-count">×1–2</span></td><td class="t2">Dept. 03 — Renewable Energy Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-04</span></td><td class="t-main">Energy Policy Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 03 — Renewable Energy Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-05</span></td><td class="t-main">Environmental Officer <span class="t-count">×2–3</span></td><td class="t2">Dept. 03 — Environmental Conservation Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-06</span></td><td class="t-main">Reforestation Coordinator <span class="t-count">×3</span></td><td class="t2">Dept. 03 — Environmental Conservation Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-07</span></td><td class="t-main">Community Energy Officer <span class="t-count">×2–3</span></td><td class="t2">Dept. 03 — Energy Access Programs Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-08</span></td><td class="t-main">Training Specialist <span class="t-count">×2</span></td><td class="t2">Dept. 03 — Energy Access Programs Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D03-09</span></td><td class="t-main">Clean Cooking Solutions Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 03 — Energy Access Programs Team</td><td class="t2">Programs Division</td></tr>
+      <!-- Dept 04 Education -->
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-00</span></td><td class="t-main">Education &amp; Capacity Building Director <span class="tag tag-imp">IMPROVED</span></td><td class="t2">Dept. 04 — Education &amp; Capacity</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-01</span></td><td class="t-main">Education Coordinator <span class="t-count">×2</span></td><td class="t2">Dept. 04 — Formal Education Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-02</span></td><td class="t-main">Teacher <span class="t-count">×4–6</span></td><td class="t2">Dept. 04 — Formal Education Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-03</span></td><td class="t-main">School Support Staff <span class="t-count">×2–4</span></td><td class="t2">Dept. 04 — Formal Education Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-04</span></td><td class="t-main">Digital Learning Coordinator <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 04 — Formal Education Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-05</span></td><td class="t-main">Technical Trainer <span class="t-count">×3–4</span></td><td class="t2">Dept. 04 — Skills Training Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-06</span></td><td class="t-main">Curriculum Developer <span class="t-count">×2</span></td><td class="t2">Dept. 04 — Skills Training Team</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-07</span></td><td class="t-main">Community Educator <span class="t-count">×2–3</span></td><td class="t2">Dept. 04 — Youth &amp; Community Empowerment</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-08</span></td><td class="t-main">Campaign Coordinator <span class="t-count">×2</span></td><td class="t2">Dept. 04 — Youth &amp; Community Empowerment</td><td class="t2">Programs Division</td></tr>
+      <tr data-g="programs"><td><span class="id id-prog">SSH-D04-09</span></td><td class="t-main">Youth Empowerment Officer <span class="t-count">×2</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 04 — Youth &amp; Community Empowerment</td><td class="t2">Programs Division</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 5. OPERATIONS -->
+<div class="sec" data-sec="operations">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--slate)"></span>
+    <span class="sec-label">Operations Division — Under Director, Operations</span>
+    <span class="sec-count" id="cnt-operations"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D05-00</span></td><td class="t-main">Finance Manager</td><td class="t2">Dept. 05 — Finance &amp; Administration</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D05-01</span></td><td class="t-main">Accountant <span class="t-count">×2</span></td><td class="t2">Dept. 05 — Finance &amp; Administration</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D05-02</span></td><td class="t-main">Procurement Officer <span class="t-count">×1</span></td><td class="t2">Dept. 05 — Finance &amp; Administration</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D05-03</span></td><td class="t-main">Finance Officer <span class="t-count">×2</span></td><td class="t2">Dept. 05 — Finance &amp; Administration</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D05-04</span></td><td class="t-main">Admin Officer <span class="t-count">×2</span></td><td class="t2">Dept. 05 — Finance &amp; Administration</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D06-00</span></td><td class="t-main">Grants Manager <span class="tag tag-new">NEW</span></td><td class="t2">Dept. 06 — Grant Management &amp; Compliance</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D06-01</span></td><td class="t-main">Grant Compliance Officer <span class="t-count">×2</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 06 — Grant Management &amp; Compliance</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D06-02</span></td><td class="t-main">Donor Reporting Specialist <span class="t-count">×2</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 06 — Grant Management &amp; Compliance</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D06-03</span></td><td class="t-main">Budget Tracking Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 06 — Grant Management &amp; Compliance</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D07-00</span></td><td class="t-main">HR Manager <span class="tag tag-imp">IMPROVED</span></td><td class="t2">Dept. 07 — Human Resources</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D07-01</span></td><td class="t-main">Recruitment Officer <span class="t-count">×1</span></td><td class="t2">Dept. 07 — Human Resources</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D07-02</span></td><td class="t-main">Training &amp; Development Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 07 — Human Resources</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D07-03</span></td><td class="t-main">Staff Wellness Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 07 — Human Resources</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D07-04</span></td><td class="t-main">HR Assistant <span class="t-count">×1</span></td><td class="t2">Dept. 07 — Human Resources</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D08-00</span></td><td class="t-main">IT Manager <span class="tag tag-up">UPGRADED</span></td><td class="t2">Dept. 08 — IT &amp; Digital Systems</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D08-01</span></td><td class="t-main">System Administrator <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 08 — IT &amp; Digital Systems</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D08-02</span></td><td class="t-main">Database Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 08 — IT &amp; Digital Systems</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D08-03</span></td><td class="t-main">IT Support Specialist <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 08 — IT &amp; Digital Systems</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-00</span></td><td class="t-main">Operations Manager</td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-01</span></td><td class="t-main">Logistics Officer <span class="t-count">×2</span></td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-02</span></td><td class="t-main">Fleet Manager <span class="t-count">×1</span></td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-03</span></td><td class="t-main">Driver <span class="t-count">×3–4</span></td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-04</span></td><td class="t-main">Security Officer <span class="t-count">×1</span></td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+      <tr data-g="operations"><td><span class="id id-ops">SSH-D09-05</span></td><td class="t-main">Office Manager <span class="t-count">×1</span></td><td class="t2">Dept. 09 — Operations &amp; Logistics</td><td class="t2">Operations Division</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<!-- 6. EXTERNAL RELATIONS -->
+<div class="sec" data-sec="external">
+  <div class="sec-head">
+    <span class="sec-dot" style="background:var(--green)"></span>
+    <span class="sec-label">External Relations &amp; Resource Mobilization</span>
+    <span class="sec-count" id="cnt-external"></span>
+  </div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th class="col-id">ID</th><th class="col-title">Title</th><th class="col-team">Unit / Team</th><th class="col-dept">Department / Division</th></tr></thead>
+    <tbody>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D10-00</span></td><td class="t-main">Partnerships Manager</td><td class="t2">Dept. 10 — Partnerships &amp; Fundraising</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D10-01</span></td><td class="t-main">Partnership Officer <span class="t-count">×2</span></td><td class="t2">Dept. 10 — Partnerships &amp; Fundraising</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D10-02</span></td><td class="t-main">Resource Mobilization Officer <span class="t-count">×1</span></td><td class="t2">Dept. 10 — Partnerships &amp; Fundraising</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D10-03</span></td><td class="t-main">Grant Writing Specialist <span class="t-count">×1</span></td><td class="t2">Dept. 10 — Partnerships &amp; Fundraising</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D10-04</span></td><td class="t-main">Donor Relations Officer <span class="t-count">×1</span></td><td class="t2">Dept. 10 — Partnerships &amp; Fundraising</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-00</span></td><td class="t-main">Communications Manager <span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-01</span></td><td class="t-main">Media Relations Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-02</span></td><td class="t-main">Social Media Coordinator <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-03</span></td><td class="t-main">Content Writer / Documentation Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-04</span></td><td class="t-main">Advocacy Officer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D11-05</span></td><td class="t-main">Graphic Designer / Photographer <span class="t-count">×1</span><span class="tag tag-new">NEW</span></td><td class="t2">Dept. 11 — Communications &amp; Advocacy</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D12-00</span></td><td class="t-main">Community Manager</td><td class="t2">Dept. 12 — Community Engagement</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D12-01</span></td><td class="t-main">Community Liaison Officer <span class="t-count">×3–4</span></td><td class="t2">Dept. 12 — Community Engagement</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D12-02</span></td><td class="t-main">Social Worker <span class="t-count">×2</span></td><td class="t2">Dept. 12 — Community Engagement</td><td class="t2">External Relations</td></tr>
+      <tr data-g="external"><td><span class="id id-ext">SSH-D12-03</span></td><td class="t-main">Volunteer Coordinator <span class="t-count">×1</span></td><td class="t2">Dept. 12 — Community Engagement</td><td class="t2">External Relations</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<p class="empty" id="emptyMsg">No entries match your search or filter.</p>
+</main>
+<div class="urag">
+  <spsn class="tit">SSH position </spsn>
+<ul>
+  <li>1.	Emergency Response Coordinator</li>
+  <li>2.	Livelihood & Food Security Director</li>
+  <li>3.	WAS Director</li>
+  <li>4.	Education Director</li>
+  <li>5.	Energy Director</li>
+  <li>6.	Peacebuilding Director</li>
+  <li>7.	SSH-LAB Assistance </li>
+  <li>8.	Graphic Designer / Photographer</li>
+  <li>9.	Community Manager </li>
+  <li>10.	Policies Developer </li>
+  <li>11.	Social Media and website publisher </li>
+  <li>12.	General Secretary </li>
+  <li>13.	Training And Curriculum Developer </li>
+  <li>14.	System Administrator </li>
+  <li>15.	Youth representative </li>
+  <li>16.	Refugee representative </li>
+  <li>17.	Coordinator for All 6 Program Departments</li>
+  <li> </li>
+  <li> </li>
+
+</ul>
+</div>
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot-logo">
+    <div class="foot-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"/>
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+      </svg>
+    </div>
+    <div>
+      <div class="foot-abbr">SSH</div>
+      <div class="foot-full">Sudan Sustainability Hub</div>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <div>Optimized Organizational Structure — 2026</div>
+    <div class="foot-meta-dim">Full Organizational Directory · Confidential</div>
+  </div>
+</footer>
+
+<script>
+  const searchEl = document.getElementById('searchInput');
+  const chipsEl  = document.getElementById('chips');
+  const countEl  = document.getElementById('countBadge');
+  const emptyEl  = document.getElementById('emptyMsg');
+  const GROUPS   = ['board','executive','mel','programs','operations','external'];
+
+  function run() {
+    const q    = searchEl.value.toLowerCase().trim();
+    const filt = chipsEl.querySelector('.chip.on')?.dataset.f || 'all';
+    let total = 0, shown = 0;
+    const secCounts = {};
+
+    document.querySelectorAll('tbody tr[data-g]').forEach(row => {
+      const g   = row.dataset.g;
+      const txt = row.textContent.toLowerCase();
+      const gOk = filt === 'all' || filt === g;
+      const qOk = !q || txt.includes(q);
+      const vis = gOk && qOk;
+      row.classList.toggle('hidden', !vis);
+      total++;
+      if (vis) { shown++; secCounts[g] = (secCounts[g] || 0) + 1; }
+    });
+
+    document.querySelectorAll('.sec[data-sec]').forEach(sec => {
+      const g   = sec.dataset.sec;
+      const gOk = filt === 'all' || filt === g;
+      const has = (secCounts[g] || 0) > 0;
+      sec.style.display = (gOk && has) ? '' : 'none';
+    });
+
+    GROUPS.forEach(g => {
+      const el = document.getElementById('cnt-' + g);
+      if (el) el.textContent = (secCounts[g] || 0) + ' entries';
+    });
+
+    countEl.textContent = shown + ' / ' + total + ' entries';
+    emptyEl.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  searchEl.addEventListener('input', run);
+  chipsEl.addEventListener('click', e => {
+    const c = e.target.closest('.chip');
+    if (!c) return;
+    chipsEl.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+    c.classList.add('on');
+    run();
+  });
+
+  run();
+</script>
+</body>
+</html>

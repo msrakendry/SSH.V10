@@ -1,0 +1,784 @@
+/*
+  font-family: "TiemposText"; download this font
+  References & Resources:
+  https://web.facebook.com/MERKRING
+  https://cssgradient.io/
+  https://uiverse.io/cards
+  https://nucleoapp.com/credit-card-icons
+  https://indepthresearch.org/blog/donor-compliance-made-simple-7-must-know-rules/
+  https://popp.undp.org/policy-page/accountability-system-policy
+  change javascript to jQuery: https://www.javainuse.com/js2jq
+*/
+/*******************************************************************************************************************************/
+
+html {scroll-behavior: smooth;}
+body {
+    font-family: var(--font-body);
+/* background: linear-gradient(135deg, #08142d, #0e2b58); */
+/* background: linear-gradient(141deg, rgb(239, 238, 239) 0%, rgb(216, 216, 217) 50%, rgb(251, 252, 252) 100%); */
+/* background:#e5f6edac ;     */
+overflow-x: hidden;
+} 
+.last_news{
+    overflow: hidden;
+    border-radius: 2px;
+    /* background: rgba(237, 237, 237, 0.06); */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .12);
+    /* box-shadow: 0 15px 40px rgba(0, 0, 0, .35); */
+    position: relative;
+    transition: .5s;
+}
+:root {
+    --rt-color-white: #fff;
+    --dark: #222;
+    --rt-color-success: #8dc572;
+    --rt-color-error: #be6464;
+    --rt-color-warning: #f0ad4e;
+    --rt-color-info: #337ab7;
+    --rt-opacity: .9;
+    --rt-transition-show-delay: .15s;
+    --rt-transition-closing-delay: .15s;
+    /* ── Base font used across body and nav-link ── */
+    --font-body: 'Poppins', 'Cairo', sans-serif;
+}
+:root{
+    --navigation-breakpoint: 900px;
+    --blue: #0070E2;
+    --blue-hover: #016dd9;
+    --red: #e74d4d;
+    --yellow: #d5d83b;
+    --pink: #e459d8;
+    --green: #06ad0c;
+    --darkred: #ff0707;
+    --orange: rgb(224, 137, 24);
+    --gold: #e7d000;
+    --lightgray: #e8e8e8;
+    --offwhite: #f2f2f2;
+    --grey: #9c9c9c;
+    --blue-grey-1: #9fa3af;
+    --blue-grey-2: #bbbec9be;
+    --secondary-grey-dark: #292929;
+    --secondary-grey-light: #dcdcdc;
+    --maindark: #171717;
+    --dark: #212121;
+    --darker: #000000;
+    --white:#fff;
+    --whiter:#f2fbe1;
+    --semidark: #2c2c2c;
+    --toastify-toast-width: 320px;
+    --border-radius: 8px;
+    --border-radius-large: 20px;
+    --button-border-radius: 200px;
+    --toastify-text-color-light: var(--maindark);
+    --gradient: linear-gradient(141deg, rgba(191, 102, 255, 1) 0%, rgba(98, 72, 255, 1) 50%, rgba(0, 221, 235, 1) 100%);
+    --gradient-blue: linear-gradient(141deg, #188bfd, #0268ce);
+    --gradient-blue-hover: linear-gradient(141deg, #0f7ce9, #0360bd);
+    --gradient-green: linear-gradient(141deg, #06ad0c, #009105);
+    --gradient-green-hover: linear-gradient(141deg, #019c07, #017e05);
+    --toastify-color-progress-light: var(--gradient);
+    --toastify-color-dark: var(--dark);
+    --gradient-lighter: linear-gradient(141deg, rgb(200, 124, 255) 0%, rgb(116, 92, 252) 50%, rgb(63, 241, 253) 100%);
+    --toastify-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+:root{
+    --rt-color-white: #fff;
+    --rt-color-dark: #222;
+    --rt-color-success: #8dc572;
+    --rt-color-error: #be6464;
+    --rt-color-warning: #f0ad4e;
+    --rt-color-info: #337ab7;
+    --rt-opacity: .9;
+    --rt-transition-show-delay: .15s;
+    --rt-transition-closing-delay: .15s;
+}
+:root {
+    --toastify-color-light: #fff;
+    --toastify-color-dark: #121212;
+    --toastify-color-info: #3498db;
+    --toastify-color-success: #07bc0c;
+    --toastify-color-warning: #f1c40f;
+    --toastify-color-error: #e74c3c;
+    --toastify-color-transparent: rgba(255, 255, 255, .7);
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+    --toastify-toast-width: 320px;
+    --toastify-toast-offset: 16px;
+    --toastify-toast-top: max(var(--toastify-toast-offset), env(safe-area-inset-top));
+    --toastify-toast-right: max(var(--toastify-toast-offset), env(safe-area-inset-right));
+    --toastify-toast-left: max(var(--toastify-toast-offset), env(safe-area-inset-left));
+    --toastify-toast-bottom: max(var(--toastify-toast-offset), env(safe-area-inset-bottom));
+    --toastify-toast-background: #fff;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-toast-bd-radius: 6px;
+    --toastify-font-family: sans-serif;
+    --toastify-z-index: 9999;
+    --toastify-text-color-light: #757575;
+    --toastify-text-color-dark: #fff;
+    --toastify-text-color-info: #fff;
+    --toastify-text-color-success: #fff;
+    --toastify-text-color-warning: #fff;
+    --toastify-text-color-error: #fff;
+    --toastify-spinner-color: #616161;
+    --toastify-spinner-color-empty-area: #e0e0e0;
+    --toastify-color-progress-light: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+    --toastify-color-progress-header: linear-gradient(135deg, #0a4d0a 0%, #1e7e1e 100%);
+    --toastify-color-progress-dark: #bb86fc;
+    --toastify-color-progress-info: var(--toastify-color-info);
+    --toastify-color-progress-success: var(--toastify-color-success);
+    --toastify-color-progress-warning: var(--toastify-color-warning);
+    --toastify-color-progress-error: var(--toastify-color-error);
+    --toastify-color-progress-bgo: .2;
+}
+:root{
+    --background: 0 0% 3%;
+    --foreground: 243 0% 90%;
+    --card: 243 0% 6%;
+    --card-foreground: 243 0% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 243 0% 90%;
+    --primary: 243 75.4% 58.6%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 243 10% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 205 10% 15%;
+    --muted-foreground: 243 0% 60%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 243 0% 90%;
+    --destructive: 357 96% 58%;
+    --destructive-foreground: 359 100% 70%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --radius: .5rem;
+    --ring: var(--primary);
+    --transparent: 0 0% 0% / 0;
+    --chart-1: var(--primary);
+    --chart-2: var(--muted);
+    --chart-3: 216 92% 60%;
+    --chart-4: 210 98% 78%;
+    --chart-5: 212 97% 87%;
+}
+
+:root {
+    font-feature-settings: 'zero' on, 'ss01' on;
+    font-style: normal;
+    --color-overlay-dark-000: rgba(13, 53, 120, 0.06);
+    --color-overlay-dark-100: rgba(5, 24, 61, 0.1);
+    --color-overlay-dark-200: rgba(5, 24, 61, 0.2);
+    --color-overlay-dark-400: rgba(7, 8, 13, 0.4);
+    --color-overlay-dark-600: rgba(3, 17, 47, 0.6);
+    --color-overlay-dark-800: rgba(18, 29, 51, 0.8);
+    --color-overlay-light-060: var(--color-white-060);
+    --color-overlay-light-100: var(--color-white-100);
+    --color-overlay-light-200: var(--color-white-200);
+    --color-overlay-light-400: var(--color-white-400);
+    --color-overlay-light-600: var(--color-white-600);
+    --color-overlay-light-800: var(--color-white-800);
+    --color-overlay-light-900: var(--color-white);
+    --color-blue-000: #ECF5FE;
+    --color-blue-100: #D8EBFD;
+    --color-blue-200: #BBDBFC;
+    --color-blue-300: #85B5F8;
+    --color-blue-400: #619FF7;
+    --color-blue-500: #3D89F5;
+    --color-blue-600: #0C6CF2;
+    --color-blue-700: #1656B9;
+    --color-blue-800: #144699;
+    --color-blue-900: #0D3578;
+    --color-green-000: #E6FAEC;
+    --color-green-100: #D1F0DB;
+    --color-green-200: #AEE6CA;
+    --color-green-300: #8BDCB3;
+    --color-green-400: #17CE73;
+    --color-green-500: #00B26B;
+    --color-green-600: #00994C;
+    --color-green-700: #006633;
+    --color-green-800: #004C26;
+    --color-green-900: #003319;
+    --color-red-000: #FFD9D6;
+    --color-red-100: #FFECEB;
+    --color-red-200: #FFC3BF;
+    --color-red-300: #F6A7A1;
+    --color-red-400: #FF3344;
+    --color-red-500: #EA1F30;
+    --color-red-600: #CF1726;
+    --color-red-700: #A50D0D;
+    --color-red-800: #8D0B0B;
+    --color-red-900: #790606;
+    --color-orange-000: #FFF6EB;
+    --color-orange-100: #FFECD6;
+    --color-orange-200: #FFE1BF;
+    --color-orange-300: #F6CEA1;
+    --color-orange-400: #FFA133;
+    --color-orange-500: #EA8D1F;
+    --color-orange-600: #D46A00;
+    --color-orange-700: #AF5200;
+    --color-orange-800: #8C4100;
+    --color-orange-900: #6A2E00;
+    --color-purple-000: #EFECFE;
+    --color-purple-100: #DED8FD;
+    --color-purple-200: #C6BBFC;
+    --color-purple-300: #ADA6FF;
+    --color-purple-400: #9080FF;
+    --color-purple-500: #7349F2;
+    --color-purple-600: #5322E5;
+    --color-purple-700: #451DBF;
+    --color-purple-800: #371799;
+    --color-purple-900: #250B73;
+    --color-teal-000: #E6F8FA;
+    --color-teal-100: #D1EDF0;
+    --color-teal-200: #AEE1E6;
+    --color-teal-300: #6CD0D9;
+    --color-teal-400: #00B6C7;
+    --color-teal-500: #12A5B2;
+    --color-teal-600: #0E828C;
+    --color-teal-700: #055E66;
+    --color-teal-800: #08474C;
+    --color-teal-900: #052F33;
+    --color-grey-000: #F0F2F7;
+    --color-grey-100: #DFE3EB;
+    --color-grey-200: #CCD2DE;
+    --color-grey-300: #B1B8C7;
+    --color-grey-400: #98A1B2;
+    --color-grey-500: #828B9E;
+    --color-grey-600: #677184;
+    --color-grey-700: #50596B;
+    --color-grey-800: #353F52;
+    --color-grey-900: #121D33;
+    --color-dark-000: #D2D4D6;
+    --color-dark-100: #B8B9BD;
+    --color-dark-200: #989BA1;
+    --color-dark-300: #797D84;
+    --color-dark-400: #63676F;
+    --color-dark-500: #4D515B;
+    --color-dark-600: #3B3E46;
+    --color-dark-700: #2C3038;
+    --color-dark-800: #20242C;
+    --color-dark-900: #0E121B;
+    --color-white-000: #FFFFFF;
+    --color-white-060: rgba(255, 255, 255, 0.06);
+    --color-white-100: rgba(255, 255, 255, 0.1);
+    --color-white-200: rgba(255, 255, 255, 0.2);
+    --color-white-400: rgba(255, 255, 255, 0.4);
+    --color-white-600: rgba(255, 255, 255, 0.6);
+    --color-white-800: rgba(255, 255, 255, 0.8);
+    --color-tier-silver: #C2C9D6;
+    --color-tier-gold: #F5B73D;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-transparent: transparent;
+    --color-pink-300: #FF51BE;
+    --color-pink-400: #F00699;
+    --color-pink-500: #DE0082;
+    --color-new-green-300: #2AEFBC;
+    --color-new-green-400: #06D6A0;
+    --color-new-green-500: #00B083;
+}
+:root {
+    --siteMaxWidth: 75rem;
+    --contentMaxWidth: 62rem;
+    --copyMaxWidth: 42rem;
+    --smScreen: 48rem;
+    --mdScreen: 62rem;
+    --lgScreen: 75rem;
+    --smBorderRadius: 2px;
+    --lgBorderRadius: 4px;
+}
+    /* CSS Reset and Base Styles */
+    :root {
+        --rt-color-white: #fff;
+        --rt-color-dark: #222;
+        --rt-color-success: #8dc572;
+        --rt-color-error: #be6464;
+        --rt-color-warning: #f0ad4e;
+        --rt-color-info: #337ab7;
+        --rt-opacity: 0.9;
+        --rt-transition-show-delay: 0.15s;
+        --rt-transition-closing-delay: 0.15s;
+        --siteMaxWidth: 75rem;
+        --contentMaxWidth: 62rem;
+        --copyMaxWidth: 42rem;
+        --smScreen: 48rem;
+        --mdScreen: 62rem;
+        --lgScreen: 75rem;
+        --smBorderRadius: 2px;
+        --lgBorderRadius: 4px;
+        --primary: #0077B6;
+        --secondary: #2A9D8F;
+        --accent: #E9C46A;
+        --light: #F8F9FA;
+        --vollunteer-bg: rgb(210 225 232 / 20%);
+        --dark: #264653;
+        --success: #2A9D8F;
+        --warning: #E9C46A;
+        /* ===========PILLAR(4+)=============== */
+        --energy: #66b646;
+        /* --water: #275093; */
+        --wash: #1f4ea3;
+        --education: #f3b93a;
+        --livelihood: #e8542f;
+        --pillar2:#4ba4ee;
+        --YOU-SSH_LAB:#6f0404;
+        --who:#4cda3d;
+        --whiten:#d8fcfc;
+        --border-fram: 4px;
+        --radius-button:2px;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --transition: all 0.3s ease;
+        --donate: var(--accent);
+        /* ✅ Water Gradient */
+        --water-g: rgb(219 221 250 / 27%);
+        --fa-style-family-classic: "Font Awesome 6 Free";
+        --fa-font-solid: normal 900 1em / 1 "Font Awesome 6 Free";
+        --fa-font-regular: normal 400 1em / 1 "Font Awesome 6 Free";
+        --fa-style-family-brands: "Font Awesome 6 Brands";
+        --fa-font-brands: normal 400 1em / 1 "Font Awesome 6 Brands";
+        --font-size-p: 1rem; /* Define the variable */
+        --font-family-p-sans: "sans-serif";
+        --font-family-p-math: "math";
+        --font-weight-p: 700;
+        --font-color-p:rgb(11, 11, 11);
+    }
+/* =========================================== */
+    :root {
+        --backg: linear-gradient(135deg, #1f367d 0%, #2F4DA0 35%, #3E63D3 60%);
+        --teal: #0d7a6e;
+        --teal-light: #14b8a6;
+        --gold: #c9a84c;
+        --sand: #f5f0e8;
+        --ink: #0f1c1a;
+        --mist: rgba(255, 255, 255, 0.08);
+        --glass: rgba(255, 255, 255, 0.12);
+        --hero-h: 100vh;
+    }
+/* =========================================== */
+    /* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins_laREno';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* assets/fonts/poppins-v24-latin-regular.woff2 */
+/* poppins-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../assets/fonts/poppins-v24-latin-900.woff2');
+  src: url('../assets/fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/poppins-v24-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/poppins-v24-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* abeezee-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'ABeeZee';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/abeezee-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* abeezee-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'ABeeZee';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../assets/fonts/abeezee-v23-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* cairo-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/cairo-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* cairo-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/cairo-v31-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* cossette-texte-regular - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cossette Texte';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/cossette-texte-v3-latin_latin-ext-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* cossette-texte-700 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cossette Texte';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/cossette-texte-v3-latin_latin-ext-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =========================================== */
+/* =====================CARD_HOVER====================== */
+.card_hover:hover{transform: translateY(-4px);cursor: pointer;}
+.blog-card:hover img{transform: scale(1.1);}
+/* ====================BACHGROUN======================= */
+.background{
+    overflow: hidden;
+    background: rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .35);
+    position: relative;
+    transition: .5s;
+}
+.move:hover img{transform:scale(1.1);}
+.sition{transition: 2s;}
+/* =========================================== */
+html {
+    line-height: 1.15;
+    text-size-adjust: 100%;
+}
+ul, li, p, section, div, h1, h2, h3, h4, h5, h6, dd, dt, header, footer, nav, main {
+    padding: 0px;
+    margin: 0px;
+    }
+p, h1, h2, h3, h4, h5{color:var(--color-black);}
+ul, ol {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+strong{margin:0; padding:0;}
+html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+}
+/* --------------start logo -----------------------*/
+.display-none{display:none !important;}
+.nav-logo{
+    display: flex;
+    align-items: center;
+
+}
+
+.svglogo {
+    height: 55px;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+  .alogo{
+        text-align: center;
+        align-items: center;
+        height:51px;
+        position: relative;
+        display: inline-block;
+    }
+    /* --------------------end logo------------------ */
+    
+ /*---------start-section-------------*/
+    .section,
+    .financial-reports,
+    section{
+        width:100% !important;
+        max-width:100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+      .container {
+        height: auto !important;
+        width:100% !important;
+        max-width:98.4% !important;
+        margin: 20px 10px !important;
+    }
+    article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+    display: block;
+}
+
+    .section-title {
+    font-size:2rem;
+    font-weight: 800;
+    border-left: 5px solid var(--education);
+    padding-left: 8px;
+    position: relative;
+    color:#444;
+    }
+
+/* .main-heading {
+    font-family: sans-serif;font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    /*color: #1f2a44;
+    margin: 0;line-height: 1.2;
+} */
+/* ========================NAV-LINK===================== */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap:1px;
+    padding: 16px 10px;
+    border-radius: .5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    white-space: nowrap;
+    user-select: none;
+    border: none;
+    background: transparent;
+    font-family:sans-serif ;
+    font-weight:900;
+    letter-spacing: .01em;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+:root {
+    --navigation-breakpoint: 900px;
+    --blue: #0070E2;
+    --blue-hover: #016dd9;
+    --red: #e74d4d;
+    --yellow: #d5d83b;
+    --pink: #e459d8;
+    --green: #06ad0c;
+    --darkred: #ff0707;
+    --orange: rgb(224, 137, 24);
+    --gold: #e7d000;
+    --lightgray: #e8e8e8;
+    --offwhite: #f2f2f2;
+    --grey: #9c9c9c;
+    --blue-grey-1: #9fa3af;
+    --blue-grey-2: #bbbec9be;
+    --secondary-grey-dark: #292929;
+    --secondary-grey-light: #dcdcdc;
+    --maindark: #171717;
+    --dark: #212121;
+    --darker: #111111;
+    --semidark: #2c2c2c;
+    --toastify-toast-width: 320px;
+    --border-radius: 8px;
+    --border-radius-large: 20px;
+    --button-border-radius: 200px;
+    --toastify-text-color-light: var(--maindark);
+    --gradient: linear-gradient( 141deg, rgba(191, 102, 255, 1) 0%, rgba(98, 72, 255, 1) 50%, rgba(0, 221, 235, 1) 100% );
+    --gradient-blue: linear-gradient(141deg, #188bfd, #0268ce);
+    --gradient-blue-hover: linear-gradient(141deg, #0f7ce9, #0360bd);
+    --gradient-green: linear-gradient(141deg, #06ad0c, #009105);
+    --gradient-green-hover: linear-gradient(141deg, #019c07, #017e05);
+    --toastify-color-progress-light: var(--gradient);
+    --toastify-color-dark: var(--dark);
+    --gradient-lighter: linear-gradient( 141deg, rgb(200, 124, 255) 0%, rgb(116, 92, 252) 50%, rgb(63, 241, 253) 100% );
+    --toastify-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+}
+
+.button {
+    all: unset;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: 0 20px;
+    height: 42px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border: none;
+    border-radius: var(--button-border-radius);
+    transition: all .3s
+}
+
+
+
+
+
+/*------------------------------------https://roznama.io-------------------------------------------*/
+
+
+
+html {
+    height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/*-------------------------------------------------end-az-------------------------------------*/
+
+
+a{
+    color: white;
+    font-size: 1rem;
+    font-family: sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*-------------------------------------------------end-az-------------------------------------*/
+/*-------------------------------------------------start--buttonz-------------------------------------*/
+
+button, [type="button"], [type="reset"], [type="submit"] {
+    appearance: button;
+  }
+  
+  
+  button, select {
+    text-transform: none;
+  }
+  
+  button, input {
+    overflow: visible;
+  }
+  
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0px;
+  }
+  /*-------------------------------------------------end--buttonz-------------------------------------*/
+
+
+/* ==============================START FLIP============================ */
+
+
+ /**********************************************/
+
+
+
+/**************************button********************************/
+
+
+/***************************end button***************************/
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+     overflow-clip-margin: content-box;
+    overflow: clip;
+    border: 0;
+}
+p {
+    margin: 0 0 15px;
+    font-style: normal;
+    line-height: 1.6em;
+    display: block;
+}
+
+h2, .h2, h2.title {
+    font-family:sans-serif;
+    font-weight:bold;
+    font-style: normal;
+    text-transform: none;
+    line-height: 1.5;
+    display: block;
+    letter-spacing: 1px;
+    text-rendering: optimizeLegibility;
+    font-size: 30px;
+    /* margin-bottom: 0.75em; */
+}
+        /* ===== DESIGN TOKENS ===== */
+        :root {
+            --clr-brand: #1a5276;
+            /* deep navy */
+            --clr-brand-mid: #1f618d;
+            --clr-accent: #d4ac0d;
+            /* warm gold */
+            --clr-accent-light: #f9e79f;
+            --clr-surface: #f4f6f8;
+            --clr-white: #ffffff;
+            --clr-text: #f6fafd;
+            --clr-text-muted: #0879f2;
+            --clr-border: #dde1e7;
+            --clr-overlay: rgba(26, 82, 118, 0.96);
+            --nav-h: 66px;
+            --radius: 2px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, .08);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, .14);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, .18);
+            /* --transition: 0.28s cubic-bezier(.4, 0, .2, 1); */
+            --transition: .5s;
+            --font-display: 'Playfair Display', serif;
+            --font-body: sans-serif;
+        }
+
+/* ===============================END FLIP=============================== */
+/* responsive */
+@media (max-width: 1024px) {
+    .gEHDuZ {
+        display: none;
+    }
+}
+@media (max-width: 1024px) {
+    .eVrdu {
+        display: flex;
+    }
+}

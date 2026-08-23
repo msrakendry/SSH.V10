@@ -1,0 +1,461 @@
+        /* ========================START .FOOTER ========================== */
+        footer {
+            background-image: url('../images//head_footer/footer_bg.png');
+            /*background: linear-gradient(135deg, #0d1f3c 0%, #1a3a6b 50%, #0d1f3c 100%);color: rgba(255, 255, 255, .75);*/
+            padding: 30px 10px 30px 10px;
+            max-height:755px;
+            height:755px;
+        }
+
+        .footer-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            width: 34vw;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 18px;
+        }
+
+        /* ===========================START 4+2 PILLAR==================== */
+        .footer-links {
+            width: 209px;
+        }
+
+        .footer-links li .set-FOCUS {
+            font-weight: bold;
+        }
+
+        .footer-links li .menuAhoF {
+            display: inline-flex;
+            align-items: center;
+            color: var(--whiten) !important;
+        }
+
+        .footer-links li .menuAhoF svg {
+            background-repeat: no-repeat;
+            border-radius: 0.25rem;
+            padding: 0 4px 0 0;
+            fill: #fff;
+        }
+
+        a .fwash {
+            width: 21px;
+        }
+
+        a .flivelihood {
+            width: 23px;
+        }
+
+        a .feducation {
+            width: 26px;
+        }
+
+        a .fenergy {
+            width: 25px;
+        }
+        /* .fpigeon g,
+        path{fill:var(--white);} */
+        a .tow_pillars {
+            width: 25px;
+            height: 25px ;
+        }
+.dropdown-link .tow_pillars:hover path{
+    fill: black;
+
+}
+.dropdown-link .tow_pillars path{
+    fill: black;
+
+}
+        a .fssh-lab {
+            width: 25px;
+        }
+
+        .footer-links li a {
+            font-weight: bold;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links li .livelihood svg {
+            width: 20px;
+        }
+
+        .footer-links li .water svg {
+            width: 20px;
+        }
+
+        .footer-links li .seteducation svg {
+            width: 25px;
+        }
+
+        .footer-links li .energy svg {
+            width: 25px;
+        }
+
+        .footer-links li .peacebuilding{
+            width: 27px;
+        }
+
+        .footer-links li .ssh-lab svg {
+            width: 24px;
+        }
+
+        .footer-links li .set-livelihood:hover svg {
+            fill: var(--livelihood);
+        }
+
+        .footer-links li .set-water:hover svg {
+            fill: var(--wash);
+        }
+
+        .footer-links li .set-education:hover svg {
+            fill: var(--education);
+        }
+
+        .footer-links li .set-energy:hover svg {
+            fill: var(--energy);
+        }
+
+        .footer-links li .set-peacebuilding:hover svg {
+            fill: var(--pillar2);
+        }
+
+        .footer-links li .set-ssh-lab:hover svg {
+            fill: var(--pillar2);
+        }
+
+        .footer-links li a:hover {
+            color: var(--education);
+        }
+
+        .footer-links li:hover {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%234be70c00" viewBox="0 0 16 16" width="18" height="18"><path d="m6 12 4-4-4-4" stroke="%2304db33ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 16px 16px;
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.12);
+            transition: background 200ms;
+            text-shadow: rgb(53, 63, 82) 0px 0px 0.0406rem, rgb(53, 63, 82) 0px 0px 0.0406rem;
+        }
+
+        /* ===========================END 4+2 PILLAR======================= */
+        .footer-links li {
+            margin-bottom: 1px;
+            height: 30px;
+            padding: 0 0 0 8px;
+        }
+
+        .footer-bottom {
+            color: var(--white);
+    border-top: 1px solid rgb(195 249 237 / 91%);            padding-top:12px;
+            display: flex;
+            margin-left: 70px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: .8rem;
+        }
+
+        .footer-bottom .footerpp {
+            padding-right: 79px;
+        }
+
+        .footer-bottom .SSH_PP:hover {
+            text-decoration: underline;
+            text-decoration-color: #f1f5f5;
+        }
+
+        .footerpp .SSH_dc:hover {
+            text-decoration: underline;
+            text-decoration-color: #f1f5f5;
+        }
+
+        .SSH_right {
+            font-size: 1rem;
+        }
+        /* ===================(FOOTER)START CONTACT================== */
+        .icontact {
+            margin: 117px 20px 20px 0;
+            width: 100%;
+            height: 31.7vh;
+        }
+
+        .footer-contact {
+            width:30vw;
+            position: relative;
+            top: 0px;
+            right: -131px;
+        }
+
+        .footer-contact h3,
+        .newsletter h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .footer-contact ul li {
+            margin-bottom: 6px;
+            display: block;
+            float: none;
+            align-items: flex-start;
+        }
+
+        .set-CONTACT svg {
+            width: 1em;
+            margin-right: 6px;
+        }
+
+        .footer-contact ul li span {
+            color: var(--whiten);
+            font-weight: bold;
+        }
+        /* .footer-contact ul li .sub-address {margin-left:26px;} */
+        /* =====================END CONTACT=================== */
+        /* ======================END AWARD============================= */
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            opacity: 0;
+            position: fixed;
+            bottom: 9px;
+            /* right:0px; */
+            width: 30px;
+            margin-left: 20px;
+            height: 30px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            transition: .5s;
+        }
+
+        /* Triangle Background */
+        .scroll-top::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 27px solid transparent;
+            border-right: 27px solid transparent;
+            border-bottom: 40px solid var(--education);
+            filter: drop-shadow(0 8px 20px rgba(11, 107, 255, .45));
+            transition: .5s;
+        }
+
+        /* Glass layer */
+        .scroll-top::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 30px;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, .5), rgba(255, 255, 255, .08));
+            backdrop-filter: blur(8px);
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            opacity: .8;
+        }
+
+        /* Arrow */
+        .scroll-top svg {
+            bottom: 2px;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            color: white;
+            z-index: 2;
+            transform: translateY(8px);
+            transition: .4s;
+        }
+
+        /* Hover animation */
+        .scroll-top:hover {
+            transform: translateY(-8px)scale(1.08);
+        }
+
+        .scroll-top:hover::before {
+            border-bottom-color: var(--energy);
+            filter: drop-shadow(0 12px 30px rgba(36, 132, 255, .8));
+        }
+
+        /* Arrow move animation */
+        .scroll-top:hover svg {
+            transform: translateY(4px);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Floating effect */
+        @keyframes floatArrow {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-top {
+            animation: floatArrow 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .scroll-top {
+                width: 58px;
+                height: 58px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .scroll-top::before {
+                border-left: 28px solid transparent;
+                border-right: 28px solid transparent;
+                border-bottom: 52px solid #0b6bff;
+            }
+        }
+
+        /* ======================START AWARD============================= */
+        .certifications {
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 0 0 27.8px 0;
+            flex-wrap: wrap;
+        }
+
+        .certification-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 23.43px;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            text-align: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .certification-badge .set-f-shield {
+            width: 18px;
+        }
+
+        .certification-badge span {
+            margin: 0 0 0 5px;
+        }
+
+        .displ {
+            color: var(--education);
+        }
+        /* ====================================================== */
+                .badge {
+            width:204px;
+            height:50px;
+            background:#00000091;
+            color: #fff;
+            border: 2px solid #777;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            text-decoration: none;
+            transition: .3s;
+            overflow: hidden;
+            margin-top: 57px;
+        }
+
+        .badgeApple {
+            margin-top: 86px !important;
+
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+            background: var(--education);
+            color: var(--dark);
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contentAPP {
+            margin-left: 10px;
+            line-height: 1.1;
+        }
+
+        .large {
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .large.apple {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .play-logo {
+            width: 34px;
+            height: 34px;
+        }
+
+        .apple-logo {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        @media(max-width:500px) {
+            .badge {
+                width: 95%;
+                max-width: 220px;
+            }
+        }
+
+
+        /* ========================END FOOTER ========================== */
+/* =================== ROTATE LOGO========================== */
+.nav-logo_F{display: block;    margin-left: 111px;}
+.alogo_F{display: block;width: 248px;}
+.logo-container{position:relative;width:250px;height:250px;}
+.rotating-ring{position:absolute;inset:0;animation:rotateClockwise 20s linear infinite;}
+.segment{position:absolute;width:135px;height:65px;}
+.rotatCIRCLE img{ width:120px !important;height:120px !important; text-align: center;}
+/* Blue */
+.seg1{transform: rotate(12deg);top: -6px;left: 24px;}
+.center-text{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;font-size:50px;font-weight:900;letter-spacing:2px;z-index:10;}
+.center-text img{width:165px;height:60px;}
+@keyframes rotateClockwise{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}}
+@media(max-width:600px){
+    .logo-container{width:300px;height:300px;}
+    .center-text{font-size:65px}
+    .segment{width:100px;height:50px;}}
+
