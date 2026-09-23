@@ -1,0 +1,101 @@
+.carousel {
+    overflow: hidden;
+}
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+element.style {
+    background-color: #333333;
+}
+.carousel-fade .carousel-item.active, .carousel-fade .carousel-item-next.carousel-item-left, .carousel-fade .carousel-item-prev.carousel-item-right {
+    z-index: 1;
+    opacity: 1;
+}
+
+.carousel-small .carousel-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* @media (min-width: 768px) {
+    .carousel-small .item {
+        height: 350px;
+    }
+} */
+@media (min-width: 768px) {
+    .carousel .item {
+        height: 70vh;
+    }
+}
+/* .carousel .item {
+    height: 225px;
+} */
+.carousel-fade .carousel-item {
+    perspective: initial !important;
+    transform: initial !important;
+}
+.carousel-small .carousel-content {
+    overflow: hidden;
+    position: relative;
+}
+.carousel .carousel-content {
+    position: relative;
+    height: 100%;
+}
+.carousel-small .carousel-content .text-container {
+    position: absolute;
+    top: 20px;
+    z-index: 9999;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-small .carousel-content .text-container h1 {
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: fantasy;
+}
+#header-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+.scrolldown {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 2;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url(../../../../typo3conf/ext/bootstrap_package/Resources/Public/Scss/Theme/../../Icons/Icon-Kreis-Pfeil-nach-unten.png);
+    background-size: cover;
+    background-position: center;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.carousel-inner::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
