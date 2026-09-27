@@ -375,14 +375,14 @@ box-sizing: border-box;background: rgb(174 176 180);border: 1px solid white;box-
         .nav-item .WH_5 {
             width:22.5vw;
             max-width:22.5vw;
-            height: 38.2vh;
-            max-height:38vh;
+            height:32.8vh;
+            max-height:32.8vh;
         }
 
         .nav-item .WH_6 {
             width:94%;
-            height: 34.6vh;
-            max-height: 34.6vh;
+            height:29.6vh;
+            max-height:29.6vh;
         }
 
         .nav-item .WH_7 {
