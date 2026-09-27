@@ -546,8 +546,8 @@ html, :host {
       .container {
         height: auto !important;
         width:100% !important;
-        max-width:98.4% !important;
-        margin: 20px 10px !important;
+        max-width:100% !important;
+        margin: 20px 0px !important;
     }
     article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
     display: block;
