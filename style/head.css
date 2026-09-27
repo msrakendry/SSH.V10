@@ -361,8 +361,8 @@ box-sizing: border-box;background: rgb(174 176 180);border: 1px solid white;box-
 
         .nav-item .WH_3 {
             left: 50%;
-            width:46.2vw;
-            max-width: 48vw;
+            width:43.2vw;
+            max-width:43.2vw;
             height:46.6vh;
             max-height:46.5vh;
         }
@@ -373,20 +373,21 @@ box-sizing: border-box;background: rgb(174 176 180);border: 1px solid white;box-
         }
 
         .nav-item .WH_5 {
-            width:100%;
-            max-width:100%;
+            width:22.5vw;
+            max-width:22.5vw;
             height: 38.2vh;
             max-height:38vh;
         }
 
         .nav-item .WH_6 {
+            width:94%;
             height: 34.6vh;
             max-height: 34.6vh;
         }
 
         .nav-item .WH_7 {
-            width:55.5vh;
-            max-width:55.5vw;
+            width:22.5vw;
+            max-width:22.5vw;
             height:33vh;
             max-height:33vh;
         }
