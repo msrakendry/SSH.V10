@@ -1,0 +1,165 @@
+
+        .newsletter {
+            background: #ebf0f5;
+            border-radius: 2px;
+            max-width: 1100px !important;
+            width: 100% !important;
+            padding: 100px 56px !important;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            margin: 100px 83px !important;
+        }
+
+        .newsletter__heading {
+            flex: 0 0 38%;
+            color: #00335b;
+            font-size: clamp(1.5rem, 2.4vw, 2rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .newsletter__heading strong {
+            font-weight: 800;
+        }
+
+        .newsletter__form {
+            flex: 1;
+            max-width: 560px;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: stretch;
+            background: #fff;
+            border: 1px solid #d8e0e8;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            position: relative;
+            min-width: 0;
+        }
+
+        .input-group+.input-group {
+            border-left: 1px solid #d8e0e8;
+        }
+
+        .input-group input {
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            color: #00335b;
+        }
+
+        .input-group input::placeholder {
+            color: #8fa3b8;
+        }
+
+        .input-group--email input {
+            padding-right: 44px;
+        }
+
+        .email-icon {
+            position: absolute;
+            right: 16px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #e8edf2;
+            color: #5a7a96;
+            font-size: 0.7rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .disclaimer {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 14px;
+            font-size: 0.72rem;
+            line-height: 1.45;
+            color: #4a5f73;
+        }
+
+        .disclaimer input[type="checkbox"] {
+            margin-top: 2px;
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            accent-color: #00335b;
+        }
+
+        .disclaimer a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .signup-btn {
+            margin-top: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--education);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .signup-btn:hover {
+            background: var(--energy);
+        }
+
+        .signup-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 900px) {
+            .newsletter {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 32px 28px;
+                gap: 28px;
+            }
+
+            .newsletter__heading {
+                flex: none;
+            }
+
+            .newsletter__form {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .input-row {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+
+            .input-group+.input-group {
+                border-left: none;
+                border-top: 1px solid #d8e0e8;
+            }
+        }
+
