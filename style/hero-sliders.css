@@ -66,7 +66,7 @@
             transform: scale(1.04) translateX(30px);
             transition: opacity .9s cubic-bezier(.4, 0, .2, 1), transform .9s cubic-bezier(.4, 0, .2, 1);
             pointer-events: none;
-            height: 486px;
+            /*height: 486px;*/
         }
 
         .hero {
