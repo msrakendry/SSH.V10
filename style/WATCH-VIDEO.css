@@ -1,0 +1,107 @@
+
+        /* Button Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        /* Professional SSH Video Button */
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            padding: 15px 32px;
+            min-width: 210px;
+
+            background: linear-gradient(
+                135deg,
+                #071b3a,
+                #164779
+            );
+
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+
+            box-shadow: 0 6px 18px rgba(7, 27, 58, 0.18);
+
+            transition: all 0.3s ease;
+        }
+
+        /* Play Icon */
+        .play-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 30px;
+            height: 30px;
+
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+
+            color: #f2d675;
+            font-size: 13px;
+
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Animation */
+        .video-btn:hover {
+            background: linear-gradient(
+                135deg,
+                #164779,
+                #071b3a
+            );
+
+            border-color: #f2d675;
+            box-shadow: 0 10px 25px rgba(7, 27, 58, 0.28);
+            transform: translateY(-3px);
+        }
+
+        .video-btn:hover .play-icon {
+            background: #d4af37;
+            color: #071b3a;
+            transform: scale(1.1);
+        }
+
+        /* Click Effect */
+        .video-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Keyboard Accessibility */
+        .video-btn:focus-visible {
+            outline: 3px solid #d4af37;
+            outline-offset: 5px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .video-btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 13px 20px;
+                font-size: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .video-btn,
+            .play-icon {
+                transition: none;
+            }
+        }
