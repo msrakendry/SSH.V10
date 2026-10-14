@@ -1,0 +1,366 @@
+/* ==========================================================================
+   SSH WEBSITE — WHO WE ARE SECTION (BASE COMPONENT STYLES)
+   Target: .who-card, .card-grid, .image-wrapper, .content-section, #whoWeAreContent
+   Responsive Styles: See style/who-we-are-responsive.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ROOT VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    --who-accent: var(--education, #f3b93a);
+    --who-accent-glow: rgba(243, 185, 58, 0.25);
+    --who-card-bg: rgba(255, 255, 255, 0.06);
+    --who-card-border: rgba(255, 255, 255, 0.12);
+    --who-radius:4px;
+    --who-text-primary: #1e293b;
+    --who-text-secondary: #475569;
+    --who-btn-bg: #0c4a60;
+    --who-btn-hover: #093748;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN CONTAINER (.who-card)
+   -------------------------------------------------------------------------- */
+.who-card {
+    position: relative;
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto clamp(20px, 4vh, 40px) auto;
+    border-radius: var(--who-radius);
+    background: var(--who-card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--who-card-border);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.who-card:hover {
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.who-card .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: clamp(28px, 4.5vw, 52px) clamp(20px, 3.8vw, 48px);
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   3. CARD GRID (.card-grid)
+   -------------------------------------------------------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(28px, 4vw, 52px);
+    align-items: center;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   4. LEFT COLUMN: IMAGE SHOWCASE (.image-wrapper & .image_p2)
+   -------------------------------------------------------------------------- */
+.image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.image-wrapper .image_p2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    max-height: 580px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--who-radius);
+    overflow: hidden;
+    background: #0c1c2e;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.image-wrapper .image_p2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 52px rgba(0, 0, 0, 0.22);
+}
+
+.image-wrapper .image_p2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: calc(var(--who-radius) - 1px);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-wrapper .image_p2:hover img {
+    transform: scale(1.04);
+}
+
+/* Vignette overlay */
+.image-wrapper .image_p2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65%, rgba(7, 24, 46, 0.55) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Floating overlay badge */
+.image-badge-who {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    background: rgba(11, 25, 44, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   5. RIGHT COLUMN: CONTENT AREA (.content-section)
+   -------------------------------------------------------------------------- */
+.content-section {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.heading-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: clamp(16px, 2.5vh, 24px);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.small-icon {
+    background: rgba(243, 185, 58, 0.16);
+    border: 1px solid rgba(243, 185, 58, 0.35);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.heading-group:hover .small-icon {
+    transform: rotate(15deg) scale(1.05);
+}
+
+/* Section Title (.section-le) */
+.section-le,
+.who-card .section-le {
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    border-left: 5px solid var(--who-accent);
+    /* padding-left: clamp(12px, 1.8vw, 18px); */
+    margin: 0;
+    position: relative;
+    text-transform: capitalize;
+}
+
+/* --------------------------------------------------------------------------
+   6. EXPANDABLE NARRATIVE (.description-container)
+   -------------------------------------------------------------------------- */
+.description-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.description-content {
+    max-height: 230px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.description-content.expanded {
+    max-height: 3000px;
+}
+
+/* Soft gradient fade mask when collapsed */
+.description-content:not(.expanded)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(245, 247, 250, 0.95) 100%);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Body Paragraphs (.sec-lead) */
+.sec-lead {
+    font-size: clamp(0.95rem, 1.08vw, 1.05rem);
+    line-height: 1.8;
+    color: var(--who-text-secondary);
+    margin: 0 0 16px 0;
+    text-wrap: pretty;
+    letter-spacing: -0.005em;
+}
+
+/* Lead Paragraph Accent */
+.description-content p.sec-lead:first-child {
+    font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+    font-weight: 500;
+    color: var(--who-text-primary);
+    line-height: 1.75;
+}
+
+/* --------------------------------------------------------------------------
+   7. READ MORE BUTTON (.read-more-btn)
+   -------------------------------------------------------------------------- */
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 26px;
+    background: var(--who-btn-bg);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 18px;
+    box-shadow: 0 4px 14px rgba(12, 74, 96, 0.25);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    width: fit-content;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.read-more-btn:hover {
+    background: var(--who-btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(12, 74, 96, 0.35);
+}
+
+.read-more-btn:active {
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   8. OPTIONAL HIGHLIGHT BAR (.highlight-bar)
+   -------------------------------------------------------------------------- */
+.highlight-bar {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(243, 185, 58, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tagline {
+    background: rgba(243, 185, 58, 0.14);
+    color: #b45309;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 40px;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tagline svg {
+    width: 16px;
+    height: 16px;
+    stroke: #b45309;
+}
+
+.micro-text {
+    font-size: 0.82rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   9. BASE DARK MODE
+   -------------------------------------------------------------------------- */
+body.dark-mode .who-card {
+    background: rgba(18, 28, 48, 0.55);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .section-le {
+    color: #f1faee;
+}
+
+body.dark-mode .description-content p.sec-lead:first-child {
+    color: #e2e8f0;
+}
+
+body.dark-mode .sec-lead {
+    color: #94a3b8;
+}
+
+body.dark-mode .description-content:not(.expanded)::after {
+    background: linear-gradient(180deg, rgba(18, 28, 48, 0) 0%, rgba(18, 28, 48, 0.95) 100%);
+}
+
+body.dark-mode .read-more-btn {
+    background: var(--who-accent);
+    color: #0b1a2d;
+    box-shadow: 0 4px 14px rgba(243, 185, 58, 0.25);
+}
+
+body.dark-mode .read-more-btn:hover {
+    background: #e6a722;
+    color: #000000;
+}
+
+body.dark-mode .tagline {
+    background: rgba(243, 185, 58, 0.18);
+    color: #f3b93a;
+}
+
+body.dark-mode .micro-text {
+    color: #94a3b8;
+}

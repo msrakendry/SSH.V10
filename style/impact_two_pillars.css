@@ -1,0 +1,549 @@
+/* ==========================================================================
+   SSH WEBSITE — ANNUAL IMPACT IN OUR CORE PILLARS (4+2)
+   Base Component Styles: 4 Core Pillars + 2 Extended Pillars
+   Target: #pillars, .pillars-grid, .pillar-card, .metrics, .network-box,
+           .coverage, .btn-23, .cards_p2, .card_p2
+   Responsive Styles: See style/impact_two_pillars-responsive.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PILLARS GRID LAYOUT (.pillars-grid)
+   -------------------------------------------------------------------------- */
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. PILLAR CARD (.pillar-card)
+   -------------------------------------------------------------------------- */
+.pillars-grid .pillar-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: 100%;
+    padding: 26px 18px 20px;
+    text-align: center;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 51, 91, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 51, 91, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.pillars-grid .pillar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(0, 51, 91, 0.12);
+}
+
+/* Top Accent Highlight Bar for each Pillar */
+.pillars-grid .pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 5px;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    z-index: 3;
+}
+
+.pillars-grid .pillar-card.wash::before { background: var(--wash, #0077b6); }
+.pillars-grid .pillar-card.livelihood::before { background: var(--livelihood, #e8542f); }
+.pillars-grid .pillar-card.energy::before { background: var(--energy, #10b981); }
+.pillars-grid .pillar-card.education::before { background: var(--education, #f3b93a); }
+
+.pillars-grid .pillar-card:hover::before {
+    height: 7px;
+}
+
+/* --------------------------------------------------------------------------
+   3. PILLAR ICON (.pillar-icon)
+   -------------------------------------------------------------------------- */
+.pillar-card .pillar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 68px;
+    margin-bottom: 14px;
+    transition: transform 0.35s ease;
+}
+
+.pillars-grid .pillar-card:hover .pillar-icon {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.pillar-card .pillar-icon svg {
+    max-height: 54px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.pillar-card .fa-tint { width: 44px; fill: var(--wash, #0077b6); }
+.pillar-card .fa-briefcase { width: 56px; fill: var(--livelihood, #e8542f); }
+.pillar-card .fa-solar-panel { width: 62px; fill: var(--energy, #10b981); }
+.pillar-card .fa-graduation-cap { width: 62px; fill: var(--education, #f3b93a); }
+
+/* --------------------------------------------------------------------------
+   4. CARD BODY WRAPPER (.cat_set, .our_card)
+   -------------------------------------------------------------------------- */
+.cat_set,
+.our_card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. METRICS GRID (.metrics, .metric)
+   -------------------------------------------------------------------------- */
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.metric {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 10px 6px;
+    text-align: center;
+    border: 1px solid rgba(0, 51, 91, 0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.metric:hover {
+    background: #e9eff5;
+    transform: translateY(-2px);
+}
+
+.metric h3,
+.metric .counter {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 2px;
+    letter-spacing: -0.01em;
+}
+
+.wash .metric h3 { color: var(--wash, #0077b6); }
+.livelihood .metric h3 { color: var(--livelihood, #e8542f); }
+.energy .metric h3 { color: var(--energy, #10b981); }
+.education .metric h3 { color: #d97706; }
+
+.metric span {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #64748b;
+    line-height: 1.3;
+}
+
+/* --------------------------------------------------------------------------
+   6. SUPPLY NETWORK DIAGRAM BOX (.network-box)
+   -------------------------------------------------------------------------- */
+.network-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px 10px 10px;
+    margin-bottom: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.network-title {
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: #1e293b;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.wash .network-title { color: var(--wash, #0077b6); }
+.livelihood .network-title { color: var(--livelihood, #e8542f); }
+.energy .network-title { color: var(--energy, #10b981); }
+.education .network-title { color: #d97706; }
+
+.network {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 4px;
+}
+
+.node {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+.line {
+    height: 3px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+/* Wash Network */
+.wash .node { background: var(--wash, #0077b6); }
+.wash .line { background: linear-gradient(90deg, #0077b6, #60a5fa); }
+
+/* Livelihood Network */
+.livelihood .node { background: var(--livelihood, #e8542f); }
+.livelihood .line { background: linear-gradient(90deg, #e8542f, #fb7185); }
+
+/* Energy Network */
+.energy .node { background: var(--energy, #10b981); }
+.energy .line { background: linear-gradient(90deg, #10b981, #34d399); }
+
+/* Education Network */
+.education .node { background: var(--education, #f3b93a); }
+.education .line { background: linear-gradient(90deg, #f3b93a, #fde047); }
+
+.labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #64748b;
+    gap: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   7. COVERAGE PROGRESS BAR (.coverage)
+   -------------------------------------------------------------------------- */
+.coverage {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.coverage-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #334155;
+}
+
+.progress {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill-wash,
+.progress-fill-livelihood,
+.progress-fill-energy,
+.progress-fill-education {
+    height: 100%;
+    border-radius: 50px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-fill-wash { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+.progress-fill-livelihood { background: linear-gradient(90deg, #e8542f, #fb923c); }
+.progress-fill-energy { background: linear-gradient(90deg, #059669, #34d399); }
+.progress-fill-education { background: linear-gradient(90deg, #d97706, #fbbf24); }
+
+/* --------------------------------------------------------------------------
+   8. PILLAR BUTTON (.btn-23)
+   -------------------------------------------------------------------------- */
+.pillar-card a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.btn-23 {
+    position: relative;
+    width: 100%;
+    border-radius: 50px;
+    border: 1.5px solid transparent;
+    padding: 10px 18px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-wash {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+.btn-wash:hover,
+.wash:hover .btn-wash {
+    background: #0284c7;
+    color: #ffffff;
+    border-color: #0284c7;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+.btn-livelihood {
+    background: #ffedd5;
+    color: #c2410c;
+    border-color: #fed7aa;
+}
+.btn-livelihood:hover,
+.livelihood:hover .btn-livelihood {
+    background: #ea580c;
+    color: #ffffff;
+    border-color: #ea580c;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+}
+
+.btn-energy {
+    background: #d1fae5;
+    color: #047857;
+    border-color: #a7f3d0;
+}
+.btn-energy:hover,
+.energy:hover .btn-energy {
+    background: #059669;
+    color: #ffffff;
+    border-color: #059669;
+    box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.btn-education {
+    background: #fef3c7;
+    color: #b45309;
+    border-color: #fde68a;
+}
+.btn-education:hover,
+.education:hover .btn-education {
+    background: #d97706;
+    color: #ffffff;
+    border-color: #d97706;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+.btn-23 span.text {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.25s ease;
+}
+
+.btn-23 .marquee {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   9. +2 EXTENDED PILLARS SECTION (.cards_p2, .card_p2)
+   -------------------------------------------------------------------------- */
+.cards_p2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 28px;
+    width: 100%;
+}
+
+.card_p2 {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(0, 51, 91, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 51, 91, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card_p2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 42px rgba(0, 51, 91, 0.12);
+}
+
+.card_p2 a {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.content_p2 {
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-tit,
+.h2_p2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #00335b;
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.infographic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.infographic-grid .metric {
+    padding: 10px 8px;
+}
+
+.infographic-grid .metric p {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    margin: 4px 0 0;
+    line-height: 1.3;
+}
+
+.image_p2 {
+    position: relative;
+    background: linear-gradient(135deg, #05192d 0%, #0c365b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 16px;
+    overflow: hidden;
+}
+
+.overlay-stats {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 100%;
+}
+
+.impact-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.impact-box h4,
+.impact-box .valution {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--education, #f3b93a);
+    margin: 0 0 2px;
+}
+
+.impact-box span {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   10. DARK MODE SUPPORT (body.dark-mode)
+   -------------------------------------------------------------------------- */
+body.dark-mode .pillars-grid .pillar-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .metric {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .metric:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .metric span {
+    color: #94a3b8;
+}
+
+body.dark-mode .network-box {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .network-title {
+    color: #f1f5f9;
+}
+
+body.dark-mode .labels span {
+    color: #94a3b8;
+}
+
+body.dark-mode .coverage-head {
+    color: #f1f5f9;
+}
+
+body.dark-mode .progress {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .card_p2 {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .section-tit,
+body.dark-mode .h2_p2 {
+    color: #ffffff;
+}
+
+body.dark-mode .infographic-grid .metric p {
+    color: #94a3b8;
+}

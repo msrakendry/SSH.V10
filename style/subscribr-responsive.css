@@ -1,0 +1,440 @@
+/* ==========================================================================
+   SSH WEBSITE — NEWSLETTER / SUBSCRIBE COMPONENT (DEDICATED RESPONSIVE STYLES)
+   Target: .newsletter, .subscribe, .newsletter__heading, .newsletter__form,
+           .input-row, .input-group, .disclaimer, .signup-btn
+   File: style/subscribr-responsive.css
+   Breakpoints:
+     - Ultra-wide & 4K Desktops (min-width: 1400px)
+     - Standard Laptops & Desktops (1024px – 1399px)
+     - Tablets Portrait & Landscape (768px – 1023px)
+     - Large Phones & Phablets (481px – 767px)
+     - Standard Mobile Phones (361px – 480px)
+     - Mini Mobile Phones (320px – 360px)
+     - Accessibility & Motion Preferences
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K DESKTOPS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .newsletter {
+        padding: 80px 32px;
+    }
+
+    .subscribe {
+        max-width: 1280px;
+        padding: 64px 60px;
+        gap: 64px;
+        border-radius: 24px;
+    }
+
+    .newsletter__heading {
+        flex: 0 0 40%;
+        font-size: 2.35rem;
+        line-height: 1.25;
+    }
+
+    .newsletter__form {
+        max-width: 640px;
+    }
+
+    .input-group input {
+        padding: 18px 24px;
+        font-size: 1.05rem;
+        min-height: 56px;
+    }
+
+    .input-group--email input {
+        padding-right: 54px;
+    }
+
+    .email-icon {
+        right: 18px;
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .disclaimer {
+        font-size: 0.85rem;
+        margin-top: 16px;
+    }
+
+    .signup-btn {
+        padding: 15px 38px;
+        min-height: 52px;
+        font-size: 1.05rem;
+    }
+
+    .signup-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1024px – 1399px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .newsletter {
+        padding: 56px 24px;
+    }
+
+    .subscribe {
+        max-width: 1080px;
+        padding: 48px 44px;
+        gap: 40px;
+    }
+
+    .newsletter__heading {
+        flex: 0 0 38%;
+        font-size: 2rem;
+    }
+
+    .newsletter__form {
+        max-width: 560px;
+    }
+
+    .input-group input {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS PORTRAIT & LANDSCAPE (768px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .newsletter {
+        padding: 48px 20px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 720px;
+        padding: 44px 36px;
+        gap: 32px;
+        border-radius: 18px;
+    }
+
+    .newsletter__heading {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.8rem;
+        line-height: 1.25;
+        text-align: left;
+    }
+
+    .newsletter__form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .input-row {
+        border-radius: 50px;
+    }
+
+    .input-group input {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+        min-height: 50px;
+    }
+
+    .signup-btn {
+        align-self: flex-start;
+        padding: 14px 36px;
+        min-height: 48px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. LARGE PHONES & MOBILE LANDSCAPE (481px – 767px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+    .newsletter {
+        padding: 36px 16px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 36px 24px;
+        gap: 26px;
+        border-radius: 16px;
+    }
+
+    .newsletter__heading {
+        flex: none;
+        width: 100%;
+        font-size: 1.55rem;
+        line-height: 1.25;
+        text-align: left;
+    }
+
+    .newsletter__form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Stack inputs vertically for finger-friendly typing */
+    .input-row {
+        flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid #d4e0eb;
+    }
+
+    body.dark-mode .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .input-group input {
+        padding: 14px 18px;
+        /* 16px font-size prevents iOS Safari automatic viewport zooming */
+        font-size: 16px;
+        min-height: 50px;
+    }
+
+    .input-group--email input {
+        padding-right: 48px;
+    }
+
+    .email-icon {
+        right: 14px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .disclaimer {
+        font-size: 0.76rem;
+        gap: 10px;
+        margin-top: 14px;
+        line-height: 1.45;
+    }
+
+    .signup-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 1rem;
+        min-height: 50px;
+        margin-top: 18px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. STANDARD MOBILE PHONES (361px – 480px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480px) {
+    .newsletter {
+        padding: 28px 12px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 28px 18px;
+        gap: 22px;
+        border-radius: 14px;
+    }
+
+    .newsletter__heading {
+        flex: none;
+        width: 100%;
+        font-size: 1.35rem;
+        line-height: 1.25;
+        letter-spacing: 0.01em;
+    }
+
+    .newsletter__form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .input-row {
+        flex-direction: column;
+        border-radius: 14px;
+    }
+
+    .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid #d4e0eb;
+    }
+
+    body.dark-mode .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .input-group input {
+        padding: 13px 16px;
+        font-size: 16px;
+        min-height: 48px;
+    }
+
+    .input-group--email input {
+        padding-right: 44px;
+    }
+
+    .email-icon {
+        right: 12px;
+        width: 22px;
+        height: 22px;
+        font-size: 0.72rem;
+    }
+
+    .disclaimer {
+        font-size: 0.74rem;
+        gap: 10px;
+        margin-top: 12px;
+        line-height: 1.4;
+    }
+
+    .disclaimer input[type="checkbox"] {
+        margin-top: 2px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .signup-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+        font-size: 0.95rem;
+        min-height: 48px;
+        margin-top: 16px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. MINI MOBILE PHONES (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .newsletter {
+        padding: 20px 8px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 22px 14px;
+        gap: 18px;
+        border-radius: 12px;
+    }
+
+    .newsletter__heading {
+        flex: none;
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .newsletter__form {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .input-row {
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+    .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid #d4e0eb;
+    }
+
+    body.dark-mode .input-group+.input-group {
+        border-left: none;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 15px;
+        min-height: 44px;
+    }
+
+    .input-group--email input {
+        padding-right: 38px;
+    }
+
+    .email-icon {
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+    }
+
+    .disclaimer {
+        font-size: 0.68rem;
+        gap: 8px;
+        margin-top: 10px;
+        line-height: 1.35;
+    }
+
+    .disclaimer input[type="checkbox"] {
+        margin-top: 2px;
+        width: 14px;
+        height: 14px;
+    }
+
+    .signup-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        min-height: 44px;
+        margin-top: 14px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. ACCESSIBILITY & MOTION PREFERENCES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .subscribe,
+    .input-row,
+    .signup-btn,
+    .signup-btn svg,
+    .email-icon {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .signup-btn:hover svg {
+        transform: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. PRINT MEDIA STYLES
+   -------------------------------------------------------------------------- */
+@media print {
+    .newsletter {
+        padding: 20px 0;
+        background: transparent;
+    }
+
+    .subscribe {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background: #fff;
+    }
+
+    .subscribe::before,
+    .subscribe::after {
+        display: none;
+    }
+
+    .signup-btn {
+        display: none;
+    }
+}

@@ -1,0 +1,988 @@
+/* ==========================================================================
+   SUDAN SUSTAINABILITY HUB (SSH) — INTERACTIVE PROJECT MAP
+   Dedicated Responsive & Cross-Device Stylesheet
+   File: style/map-responsive.css
+   Covers: 1440px+, 1024px–1439px, 768px–1023px, 481px–767px, 361px–480px, 320px–360px, ≤310px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Section & Main Container Normalization (Kills fixed vh/inline-block bugs)
+   -------------------------------------------------------------------------- */
+section.section.set-MAP {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin-top: clamp(24px, 4vw, 50px) !important;
+    padding: clamp(20px, 4vw, 45px) 0 clamp(30px, 5vw, 60px) 0 !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+.set-MAP .container_map {
+    width: 100% !important;
+    max-width: 1280px !important;
+    height: auto !important;
+    min-height: unset !important;
+    margin: 0 auto !important;
+    padding: 0 clamp(16px, 3vw, 32px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(14px, 2vw, 22px) !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Section Header & Typography
+   -------------------------------------------------------------------------- */
+.set-MAP .section-le.map_h {
+    width: 100% !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+}
+
+.set-MAP .section-title {
+    font-size: clamp(1.4rem, 2.8vw, 2.2rem) !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 0 6px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+}
+
+.set-MAP .section-le.map_h p {
+    font-size: clamp(0.85rem, 1.4vw, 0.98rem) !important;
+    color: #64748b !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Map Filter & Search Bar (#mapFilterWidget)
+   Kills legacy fixed coordinates (top: 363px, left: 48px)
+   -------------------------------------------------------------------------- */
+.set-MAP #mapFilterWidget.map-filter-widget,
+.map-filter-widget {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 18px !important;
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    border-radius:4px !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px 16px !important;
+    box-sizing: border-box !important;
+    z-index: 15 !important;
+}
+
+/* Search Box */
+.map-search-wrapper {
+    position: relative !important;
+    flex: 1 1 260px !important;
+    min-width: 220px !important;
+    max-width: 440px !important;
+    margin: 0 !important;
+}
+
+.map-search-input {
+    width: 100% !important;
+    height: 42px !important;
+    padding: 0 16px 0 42px !important;
+    background: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 99px !important;
+    color: #0f172a !important;
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    font-family: inherit !important;
+    outline: none !important;
+    transition: all 0.25s ease !important;
+    box-sizing: border-box !important;
+}
+
+.map-search-input::placeholder {
+    color: #94a3b8 !important;
+    font-weight: 400 !important;
+}
+
+.map-search-input:focus {
+    background: #ffffff !important;
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+.map-search-icon {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 16px !important;
+    height: 16px !important;
+    color: #64748b !important;
+    pointer-events: none !important;
+    opacity: 0.8 !important;
+}
+
+/* Pill Category Filters */
+.map-pill-filters {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+}
+
+.map-filter-btn {
+    padding: 8px 16px !important;
+    border-radius: 99px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    background: #f1f5f9 !important;
+    border: 1.5px solid #e2e8f0 !important;
+    color: #475569 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    min-height: 38px !important;
+    white-space: nowrap !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    user-select: none !important;
+    box-sizing: border-box !important;
+}
+
+.map-filter-btn:hover {
+    background: #e2e8f0 !important;
+    color: #0f172a !important;
+    transform: translateY(-1px) !important;
+}
+
+.map-filter-btn.active[data-filter="all"] {
+    background: #0f172a !important;
+    border-color: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25) !important;
+}
+
+.map-filter-btn.active[data-filter="water"] {
+    background: #2563eb !important;
+    border-color: #1d4ed8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+}
+
+.map-filter-btn.active[data-filter="livelihood"] {
+    background: #dc2626 !important;
+    border-color: #b91c1c !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.35) !important;
+}
+
+.map-filter-btn.active[data-filter="energy"] {
+    background: #0d9488 !important;
+    border-color: #0f766e !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35) !important;
+}
+
+.map-filter-btn.active[data-filter="education"] {
+    background: #d97706 !important;
+    border-color: #b45309 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Map Viewport & Container (#mapContainer)
+   Kills legacy bottom: 151px offset and sets responsive aspect height
+   -------------------------------------------------------------------------- */
+.set-MAP #mapContainer.map-container,
+.set-MAP .map-container {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 560px !important;
+    margin: 0 !important;
+    background: #0b1329 !important;
+    border-radius:4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    overflow: hidden !important;
+    cursor: grab !important;
+    user-select: none !important;
+    box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.22) !important;
+    touch-action: pan-x pan-y pinch-zoom !important;
+    box-sizing: border-box !important;
+}
+
+.set-MAP .map-container.grabbing {
+    cursor: grabbing !important;
+}
+
+.set-MAP .map-wrapper {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform-origin: 0 0 !important;
+    will-change: transform !important;
+}
+
+#worldMapImage {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.set-MAP .set-work-points {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Project Map Pins (.work-point)
+   -------------------------------------------------------------------------- */
+.set-MAP .work-point {
+    position: absolute !important;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 50% !important;
+    border: 2.5px solid #ffffff !important;
+    transform: translate(-50%, -50%) !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.set-MAP .work-point::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: -7px !important;
+    border-radius: 50% !important;
+    background: inherit !important;
+    opacity: 0.45 !important;
+    animation: pointPulse 2s infinite ease-out !important;
+    pointer-events: none !important;
+}
+
+.set-MAP .work-point::after {
+    content: '' !important;
+    width: 4px !important;
+    height: 4px !important;
+    background: #ffffff !important;
+    border-radius: 50% !important;
+    pointer-events: none !important;
+}
+
+.set-MAP .work-point:hover {
+    transform: translate(-50%, -50%) scale(1.45) !important;
+    z-index: 50 !important;
+    box-shadow: 0 0 16px currentColor !important;
+}
+
+/* Tooltip Hover Label */
+.set-MAP .point-label {
+    position: absolute !important;
+    bottom: -32px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    padding: 6px 12px !important;
+    border-radius: 8px !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+    transition: opacity 0.2s ease, transform 0.2s ease !important;
+    z-index: 60 !important;
+}
+
+.set-MAP .work-point:hover .point-label {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(4px) !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. Touch-Friendly Zoom Controls (.controls)
+   Kills legacy fixed 3vw width and 404px top position
+   -------------------------------------------------------------------------- */
+.set-MAP .controls {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 25 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 6px !important;
+    border-radius: 12px !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+    box-sizing: border-box !important;
+}
+
+.set-MAP .controls .btn {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 8px !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    user-select: none !important;
+}
+
+.set-MAP .controls .btn:hover {
+    background: #2563eb !important;
+    color: #ffffff !important;
+    border-color: #2563eb !important;
+    transform: scale(1.06) !important;
+}
+
+.set-MAP .controls .btn:active {
+    transform: scale(0.95) !important;
+}
+
+/* Also support alternative mapZoomWidget if present */
+.map-zoom-widget {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    z-index: 25 !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. Glassmorphic Project Detail Modal (#mapPopupOverlay)
+   Desktop: Floating glassmorphic card
+   Mobile: Bottom-sheet docked card with smooth touch scrolling
+   -------------------------------------------------------------------------- */
+#mapPopupOverlay.map-popup-overlay,
+.map-popup-overlay {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scale(0.92) !important;
+    width: 360px !important;
+    max-width: calc(100% - 32px) !important;
+    background: rgba(15, 23, 42, 0.92) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6) !important;
+    z-index: 60 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.35s ease !important;
+    box-sizing: border-box !important;
+}
+
+#mapPopupOverlay.map-popup-overlay.active,
+.map-popup-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+}
+
+.map-popup-img {
+    height: 120px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    font-size: 2.2rem !important;
+    position: relative !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.map-popup-close {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    transition: all 0.2s ease !important;
+    z-index: 10 !important;
+    user-select: none !important;
+}
+
+.map-popup-close:hover {
+    background: rgba(220, 38, 38, 0.85) !important;
+    transform: scale(1.1) !important;
+}
+
+.map-popup-body {
+    padding: 18px 20px !important;
+    color: #ffffff !important;
+    box-sizing: border-box !important;
+}
+
+.map-popup-meta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+}
+
+.map-popup-title {
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.35 !important;
+    color: #ffffff !important;
+}
+
+.map-popup-desc {
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.45 !important;
+    margin: 0 0 14px 0 !important;
+}
+
+.map-popup-progress-container {
+    margin-top: 8px !important;
+}
+
+.map-progress-label {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    margin-bottom: 6px !important;
+}
+
+.map-progress-bar-bg {
+    width: 100% !important;
+    height: 6px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 99px !important;
+    overflow: hidden !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. Map Legend Bar (.map-legend)
+   Kills legacy fixed 362px top position and sets responsive flex pill bar
+   -------------------------------------------------------------------------- */
+.set-MAP .map-legend,
+.map-legend {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 12px 20px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(226, 232, 240, 0.9) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px 24px !important;
+    box-sizing: border-box !important;
+}
+
+.set-MAP .legend-item {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 0.84rem !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    white-space: nowrap !important;
+}
+
+.dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+}
+
+.dot.water { background: #3B5998 !important; }
+.dot.livelihood { background: #E63946 !important; }
+.dot.energy { background: #2A9D8F !important; }
+.dot.education { background: #F59E0B !important; }
+
+/* ==========================================================================
+   DEVICE BREAKPOINT OPTIMIZATIONS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. Ultra-Wide Desktops & High-Res Monitors (≥ 1440px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+    .set-MAP .container_map {
+        max-width: 1360px !important;
+    }
+
+    .set-MAP #mapContainer.map-container {
+        height: 600px !important;
+    }
+
+    .map-filter-widget {
+        padding: 14px 22px !important;
+    }
+
+    .map-search-wrapper {
+        max-width: 480px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   B. Standard Desktops & Laptops (1024px – 1439px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1439px) and (min-width: 1024px) {
+    .set-MAP #mapContainer.map-container {
+        height: 510px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   C. Tablets & Medium Screens (769px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .set-MAP #mapContainer.map-container {
+        height: 440px !important;
+    }
+
+    .map-search-wrapper {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .map-pill-filters {
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
+    .set-MAP .controls {
+        bottom: 16px !important;
+        left: 16px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   D. Small Tablets & Phablets (481px – 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .set-MAP .container_map {
+        padding: 0 16px !important;
+        gap: 14px !important;
+    }
+
+    .set-MAP #mapFilterWidget.map-filter-widget {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 12px 14px !important;
+    }
+
+    .map-search-wrapper {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .map-pill-filters {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+    }
+
+    .map-filter-btn {
+        padding: 7px 13px !important;
+        font-size: 0.78rem !important;
+        min-height: 35px !important;
+    }
+
+    .set-MAP #mapContainer.map-container {
+        height: 390px !important;
+        border-radius: 14px !important;
+    }
+
+    /* Controls: Compact Touch Pinned */
+    .set-MAP .controls {
+        bottom: 14px !important;
+        left: 14px !important;
+        padding: 5px !important;
+        gap: 5px !important;
+        border-radius: 10px !important;
+    }
+
+    .set-MAP .controls .btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+        font-size: 1.15rem !important;
+    }
+
+    /* Modal Popup: Sleek Docked Card */
+    #mapPopupOverlay.map-popup-overlay,
+    .map-popup-overlay {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 12px !important;
+        top: auto !important;
+        width: auto !important;
+        max-width: 440px !important;
+        margin: 0 auto !important;
+        max-height: 82% !important;
+        overflow-y: auto !important;
+        border-radius: 16px !important;
+        transform: translateY(24px) scale(0.96) !important;
+    }
+
+    #mapPopupOverlay.map-popup-overlay.active,
+    .map-popup-overlay.active {
+        transform: translateY(0) scale(1) !important;
+    }
+
+    .map-popup-img {
+        height: 95px !important;
+        font-size: 1.8rem !important;
+    }
+
+    .map-popup-body {
+        padding: 14px 16px !important;
+    }
+
+    .map-popup-title {
+        font-size: 0.96rem !important;
+    }
+
+    .map-popup-desc {
+        font-size: 0.78rem !important;
+        margin-bottom: 10px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    /* Tooltips: Wrapped for mobile screens */
+    .set-MAP .point-label {
+        white-space: normal !important;
+        width: max-content !important;
+        max-width: 170px !important;
+        font-size: 10.5px !important;
+        padding: 4px 8px !important;
+        text-align: center !important;
+    }
+
+    /* Legend */
+    .set-MAP .map-legend {
+        padding: 10px 14px !important;
+        gap: 10px 16px !important;
+    }
+
+    .set-MAP .legend-item {
+        font-size: 0.78rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   E. Standard Smartphones (361px – 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    section.section.set-MAP {
+        margin-top: 18px !important;
+        padding: 15px 0 35px 0 !important;
+    }
+
+    .set-MAP .container_map {
+        padding: 0 12px !important;
+        gap: 12px !important;
+    }
+
+    .set-MAP .section-title {
+        font-size: 1.35rem !important;
+    }
+
+    .set-MAP #mapFilterWidget.map-filter-widget {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .map-search-input {
+        height: 38px !important;
+        font-size: 0.82rem !important;
+        padding-left: 38px !important;
+    }
+
+    .map-search-icon {
+        left: 12px !important;
+        width: 14px !important;
+        height: 14px !important;
+    }
+
+    .map-pill-filters {
+        gap: 5px !important;
+    }
+
+    .map-filter-btn {
+        padding: 6px 11px !important;
+        font-size: 0.74rem !important;
+        min-height: 32px !important;
+    }
+
+    .set-MAP #mapContainer.map-container {
+        height: 340px !important;
+        border-radius: 12px !important;
+    }
+
+    .set-MAP .controls {
+        bottom: 10px !important;
+        left: 10px !important;
+        padding: 4px !important;
+        gap: 4px !important;
+    }
+
+    .set-MAP .controls .btn {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        min-height: 34px !important;
+        font-size: 1.1rem !important;
+    }
+
+    #mapPopupOverlay.map-popup-overlay,
+    .map-popup-overlay {
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+        max-width: calc(100% - 16px) !important;
+        border-radius: 14px !important;
+    }
+
+    .map-popup-img {
+        height: 80px !important;
+        font-size: 1.6rem !important;
+    }
+
+    .map-popup-close {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        top: 8px !important;
+        right: 8px !important;
+        font-size: 1rem !important;
+    }
+
+    .map-popup-body {
+        padding: 12px 14px !important;
+    }
+
+    .map-popup-title {
+        font-size: 0.9rem !important;
+    }
+
+    .set-MAP .map-legend {
+        padding: 8px 12px !important;
+        gap: 8px 12px !important;
+    }
+
+    .set-MAP .legend-item {
+        font-size: 0.72rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   F. Small Smartphones (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .set-MAP .container_map {
+        padding: 0 10px !important;
+    }
+
+    .set-MAP .section-title {
+        font-size: 1.25rem !important;
+    }
+
+    .set-MAP #mapFilterWidget.map-filter-widget {
+        padding: 8px 10px !important;
+    }
+
+    .map-pill-filters {
+        gap: 4px !important;
+    }
+
+    .map-filter-btn {
+        padding: 5px 9px !important;
+        font-size: 0.7rem !important;
+        min-height: 30px !important;
+    }
+
+    .set-MAP #mapContainer.map-container {
+        height: 300px !important;
+    }
+
+    .set-MAP .controls .btn {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        font-size: 1rem !important;
+    }
+
+    .set-MAP .point-label {
+        max-width: 140px !important;
+        font-size: 10px !important;
+        padding: 3px 6px !important;
+    }
+
+    .set-MAP .map-legend {
+        gap: 6px 10px !important;
+    }
+
+    .set-MAP .legend-item {
+        font-size: 0.68rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   G. Foldable Covers & Ultra-Narrow Screens (≤ 310px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 310px) {
+    .set-MAP .container_map {
+        padding: 0 6px !important;
+    }
+
+    .set-MAP .section-title {
+        font-size: 1.15rem !important;
+    }
+
+    .map-search-input {
+        height: 34px !important;
+        font-size: 0.78rem !important;
+    }
+
+    .map-filter-btn {
+        padding: 4px 8px !important;
+        font-size: 0.68rem !important;
+    }
+
+    .set-MAP #mapContainer.map-container {
+        height: 260px !important;
+    }
+
+    .set-MAP .controls {
+        bottom: 6px !important;
+        left: 6px !important;
+        padding: 3px !important;
+    }
+
+    .set-MAP .controls .btn {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .set-MAP .map-legend {
+        padding: 6px 8px !important;
+        gap: 4px 8px !important;
+    }
+}

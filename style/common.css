@@ -1,0 +1,26 @@
+
+        .dropsvg {
+            fill: #070707;
+        }
+
+        /* .mega-col .livelihood, .energy {width: 21px;height: 21px;} */
+        .dropdown-link:hover .livelihood {
+            fill: var(--livelihood);
+        }
+
+        .dropdown-link:hover .water {
+            fill: var(--wash);
+        }
+
+        .dropdown-link:hover .energy {
+            fill: var(--energy);
+        }
+
+        .dropdown-link:hover .education {
+            fill: var(--education);
+        }
+
+        a .fpigeon {
+    width: 25px;
+    height: 25px;
+}

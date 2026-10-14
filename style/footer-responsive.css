@@ -1,0 +1,1232 @@
+/* ==========================================================================
+   SSH WEBSITE — FOOTER COMPONENT
+   Dedicated Comprehensive Responsive Stylesheet
+   Target Components:
+     - Root Footer: footer, footer.l
+     - Footer Inner & Wrapper: .footer-inner, .footer-top
+     - Brand Column: .footer-brand, .nav-logo_F, .logo-container, .rotating-ring, .center-text, .SSH-text
+     - Grid Navigation Columns: .conte-3, .footer-links, .programs, .governnce, .contact
+     - App Badges: .badge, .badgeApple, .contentAPP, .play-logo, .apple-logo
+     - Contact Block: .footer-contact, .set-CONTACT
+     - Social Media Cluster: .icontact, .icont.act, .main, .cardF, .main_back, .text_media
+     - Certifications & Badges: .certifications, .certification-badge, .set-f-shield, .displ
+     - Footer Bottom: .footer-bottom, .SSH_right, .footerpp
+     - Scroll to Top Floating Button: .scroll-top
+   Breakpoints:
+     0. Base Component & Fluid Foundation
+     1. Ultra-Wide & 4K Desktops (min-width: 1400px)
+     2. Standard Laptops & Desktops (1100px – 1399.98px)
+     3. Small Laptops & Large Tablets (860px – 1099.98px)
+     4. Portrait Tablets & Phablets (640px – 859.98px)
+     5. Large Phones & Mobile Landscape (481px – 639.98px)
+     6. Standard Mobile Phones (361px – 480.98px)
+     7. Compact Mobile Phones (321px – 360.98px)
+     8. Ultra-Narrow & Foldable Devices (max-width: 320px)
+     9. Mobile Landscape Orientation (@media (max-height: 520px) and (orientation: landscape))
+    10. Touch Devices Optimization (@media (hover: none))
+    11. Dark Mode Adaptations (body.dark-mode)
+    12. Reduced Motion & Print Accessibility
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. BASE COMPONENT & FLUID FOUNDATION
+   -------------------------------------------------------------------------- */
+
+/* Main Footer Container */
+footer,
+footer.l {
+    position: relative !important;
+    width: 100% !important;
+    max-height: none !important;
+    height: auto !important;
+    padding: clamp(48px, 6vw, 76px) clamp(16px, 3.5vw, 42px) 24px !important;
+    background-image: url('../images/head_footer/footer_bg.png'),
+                      radial-gradient(120% 120% at 50% 10%, #0d2244 0%, #06152b 55%, #030c18 100%) !important;
+    background-size: cover, auto !important;
+    background-position: center bottom !important;
+    backdrop-filter: blur(16px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Footer Inner Wrap */
+.footer-inner {
+    width: 100% !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: clamp(24px, 4vw, 56px) !important;
+    float: none !important;
+}
+
+.footer-inner::after,
+.footer-inner::before {
+    content: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   BRAND & ROTATING LOGO COLUMN (.footer-brand)
+   -------------------------------------------------------------------------- */
+.footer-brand {
+    float: none !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.nav-logo_F {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+}
+
+.alogo_F {
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+/* Rotating SVG Logo Container */
+.logo-container {
+    position: relative !important;
+    width: clamp(170px, 20vw, 220px) !important;
+    height: clamp(170px, 20vw, 220px) !important;
+    margin: 0 auto !important;
+}
+
+.rotating-ring {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.rotating-ring img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.center-text {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+}
+
+.center-text img,
+.center-text img.ssh_latters {
+    width: clamp(105px, 13vw, 145px) !important;
+    max-width: 65% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+/* Brand Text & Organization Subtitle */
+.SSH-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-top: clamp(8px, 1.8vh, 16px) !important;
+}
+
+.SSH-text > br {
+    display: none !important;
+}
+
+.SSH-text > .footer-SSH-text {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* .SSH-text > .footer-SSH-text img.SSH-TEXT {
+    width: 100% !important;
+    max-width: clamp(190px, 24vw, 240px) !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+} */
+
+.SSH-text > h2 {
+    color: var(--accent, #19f719) !important;
+    font-size: clamp(1.5rem, 0.9vw, 0.94rem) !important;
+    line-height: 1.45 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    font-weight: 700 !important;
+    max-width: 28ch !important;
+    margin: 37px auto 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER TOP MAIN CONTENT WRAPPER (.footer-top)
+   -------------------------------------------------------------------------- */
+.footer-top {
+    float: none !important;
+    width: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+}
+
+/* 3-Column Columns Grid (.conte-3) */
+.conte-3 {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr 1.35fr !important;
+    gap: clamp(20px, 3vw, 40px) !important;
+    box-sizing: border-box !important;
+}
+
+/* Column Headings */
+.footer-col-title {
+    font-size: clamp(1.05rem, 1.25vw, 1.28rem) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.04em !important;
+    color: var(--education, #f3b93a) !important;
+    text-transform: uppercase !important;
+    margin-bottom: clamp(12px, 2vh, 18px) !important;
+    position: relative !important;
+    display: inline-block !important;
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAMS & GOVERNANCE LINKS LIST
+   -------------------------------------------------------------------------- */
+.footer-links {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+}
+
+.footer-links ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-links li {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 34px !important;
+    margin-bottom: 5px !important;
+    padding: 6px 10px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    border-radius: 6px !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.footer-links li a,
+.footer-links li .menuAhoF {
+    width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 9px !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    font-size: clamp(0.84rem, 0.95vw, 0.92rem) !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    letter-spacing: 0.02em !important;
+    transition: all 0.2s ease !important;
+}
+
+.footer-links li .menuAhoF svg {
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-links li:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(4px) !important;
+}
+
+.footer-links li a:hover {
+    color: var(--education, #f3b93a) !important;
+    opacity: 1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   APP STORE BADGES (.badge, .badgeApple)
+   -------------------------------------------------------------------------- */
+.badge {
+    width: 100% !important;
+    max-width: 200px !important;
+    min-height: 48px !important;
+    height: auto !important;
+    background: rgba(10, 25, 48, 0.85) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius:4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding:1px 12px !important;
+    text-decoration: none !important;
+    margin-top: 16px !important;
+    box-sizing: border-box !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.badgeApple {
+    margin-top:112px !important;
+}
+
+.badge:hover {
+    background: var(--education, #f3b93a) !important;
+    color: #06152b !important;
+    border-color: var(--education, #f3b93a) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 22px rgba(243, 185, 58, 0.35) !important;
+}
+
+.badge:hover .apple-logo path,
+.badge:hover .play-logo {
+    fill: #06152b !important;
+}
+
+.badge .icon {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.badge .contentAPP {
+    margin-left: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.badge .large {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT INFO BLOCK (.contact, .footer-contact)
+   -------------------------------------------------------------------------- */
+.contact {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.footer-contact {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    box-sizing: border-box !important;
+}
+
+.footer-contact ul,
+.set-CONTACT {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.footer-contact ul li,
+.set-CONTACT li {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+    float: none !important;
+    font-size: clamp(0.82rem, 0.92vw, 0.9rem) !important;
+    line-height: 1.5 !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    word-break: break-word !important;
+}
+
+.set-CONTACT svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    margin-top: 3px !important;
+    margin-right: 0 !important;
+    fill: var(--education, #f3b93a) !important;
+    flex-shrink: 0 !important;
+}
+
+.footer-contact ul li span {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500 !important;
+}
+
+/* --------------------------------------------------------------------------
+   SOCIAL MEDIA ROW (.icontact, .icont.act, .main, .cardF)
+   -------------------------------------------------------------------------- */
+.icontact,
+.icont.act {
+    width: 100% !important;
+    height: auto !important;
+    margin: clamp(24px, 3.5vh, 36px) 0 0 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.main,
+#contactUS\  {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(10px, 1.5vw, 14px) !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+.main_back {
+    display: none !important;
+}
+
+.text_media {
+    display: none !important;
+}
+
+/* Social Media Circular Buttons */
+.cardF {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    transform: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-sizing: border-box !important;
+}
+
+.cardF a {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+    text-decoration: none !important;
+}
+
+.cardF svg {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px !important;
+    max-height: 22px !important;
+    display: block !important;
+    transition: transform 0.25s ease !important;
+}
+
+/* Hover States for Social Buttons */
+.cardF:hover {
+    transform: translateY(-4px) scale(1.08) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.cardF:hover svg {
+    transform: scale(1.1) !important;
+}
+
+/* WhatsApp Hover */
+.cardF:nth-child(1):hover {
+    background: #25d366 !important;
+    border-color: #25d366 !important;
+}
+
+/* X / Twitter Hover */
+.cardF:nth-child(2):hover {
+    background: #000000 !important;
+    border-color: #ffffff !important;
+}
+
+/* Facebook Hover */
+.cardF:nth-child(3):hover {
+    background: #1877f2 !important;
+    border-color: #1877f2 !important;
+}
+
+/* LinkedIn Hover */
+.cardF:nth-child(4):hover {
+    background: #0077b5 !important;
+    border-color: #0077b5 !important;
+}
+
+/* YouTube Hover */
+.cardF:nth-child(5):hover {
+    background: #ff0000 !important;
+    border-color: #ff0000 !important;
+}
+
+/* --------------------------------------------------------------------------
+   CERTIFICATIONS & MOTTO BADGES (.certifications)
+   -------------------------------------------------------------------------- */
+.certifications {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(8px, 1.2vw, 14px) !important;
+    margin: clamp(28px, 4vh, 42px) 0 clamp(20px, 3vh, 30px) 0 !important;
+    box-sizing: border-box !important;
+}
+
+.certification-badge {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 6px !important;
+    padding: 7px 32px !important;
+    font-size: clamp(0.72rem, 0.82vw, 0.82rem) !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    transition: all 0.25s ease !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+    text-align: center !important;
+}
+
+.certification-badge .set-f-shield {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    flex-shrink: 0 !important;
+}
+
+.certification-badge span {
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.certification-badge:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: var(--education, #f3b93a) !important;
+    transform: translateY(-2px) !important;
+}
+
+.displ {
+    color: var(--education, #f3b93a) !important;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER BOTTOM & COPYRIGHT (.footer-bottom)
+   -------------------------------------------------------------------------- */
+.footer-bottom {
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+    padding-top: clamp(14px, 2vh, 22px) !important;
+    margin-top: 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+}
+
+.SSH_right {
+    width: 100% !important;
+    font-size: clamp(0.74rem, 0.85vw, 0.84rem) !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* --------------------------------------------------------------------------
+   SCROLL TO TOP BUTTON (.scroll-top)
+   -------------------------------------------------------------------------- */
+.scroll-top {
+    position: fixed !important;
+    bottom: clamp(20px, 3.5vw, 36px) !important;
+    right: clamp(16px, 3vw, 36px) !important;
+    left: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    background: var(--education, #f3b93a) !important;
+    color: #06152b !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    margin: 0 !important;
+}
+
+.scroll-top::before,
+.scroll-top::after {
+    display: none !important;
+}
+
+.scroll-top svg {
+    width: 20px !important;
+    height: 20px !important;
+    stroke: #06152b !important;
+    transform: none !important;
+    position: static !important;
+}
+
+.scroll-top:hover {
+    background: #ffffff !important;
+    transform: translateY(-4px) scale(1.08) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K DESKTOPS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .footer-inner {
+        max-width: 1400px !important;
+        gap: 60px !important;
+    }
+
+    .footer-brand {
+        max-width: 360px !important;
+    }
+
+    .logo-container {
+        width: 230px !important;
+        height: 230px !important;
+    }
+
+    .center-text img.ssh_latters {
+        width: 155px !important;
+    }
+
+    .conte-3 {
+        gap: 50px !important;
+    }
+
+    .footer-links li a {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1100px – 1399.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+    .footer-inner {
+        max-width: 1180px !important;
+        gap: 40px !important;
+    }
+
+    .footer-brand {
+        max-width: 300px !important;
+    }
+
+    .logo-container {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .conte-3 {
+        gap: 30px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL LAPTOPS & LARGE TABLETS (860px – 1099.98px)
+   Brand centers at top, navigation flows in balanced 3-column grid
+   -------------------------------------------------------------------------- */
+@media (min-width: 860px) and (max-width: 1099.98px) {
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 36px !important;
+    }
+
+    .footer-brand {
+        max-width: 480px !important;
+        margin: 0 auto !important;
+    }
+
+    .logo-container {
+        width: 190px !important;
+        height: 190px !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 28px !important;
+    }
+
+    .badge {
+        max-width: 100% !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. PORTRAIT TABLETS & PHABLETS (640px – 859.98px)
+   2-column responsive layout for links + full-width contact
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) and (max-width: 859.98px) {
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 32px !important;
+    }
+
+    .footer-brand {
+        max-width: 440px !important;
+        margin: 0 auto !important;
+    }
+
+    .logo-container {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 28px !important;
+    }
+
+    .contact {
+        grid-column: span 2 !important;
+    }
+
+    .contact .footer-contact {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px 24px !important;
+    }
+
+    .badge {
+        max-width: 220px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. LARGE PHONES & MOBILE LANDSCAPE (481px – 639.98px)
+   Single stacked column with centered elements
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 639.98px) {
+    footer,
+    footer.l {
+        padding: 40px 18px 20px !important;
+    }
+
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 28px !important;
+    }
+
+    .footer-brand {
+        max-width: 100% !important;
+    }
+
+    .logo-container {
+        width: 170px !important;
+        height: 170px !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: 1fr !important;
+        gap: 26px !important;
+        text-align: center !important;
+    }
+
+    .footer-col-title {
+        display: inline-block !important;
+        margin-bottom: 14px !important;
+    }
+
+    .footer-links li {
+        justify-content: center !important;
+    }
+
+    .footer-links li a {
+        justify-content: center !important;
+    }
+
+    .badge {
+        margin: 14px auto 0 !important;
+        max-width: 220px !important;
+    }
+
+    .set-CONTACT li {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .certifications {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .certification-badge {
+        width: 100% !important;
+        max-width: 320px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. STANDARD MOBILE PHONES (361px – 480.98px)
+   Clean touch-friendly cards and full-width centered rows
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480.98px) {
+    footer,
+    footer.l {
+        padding: 36px 14px 18px !important;
+    }
+
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 24px !important;
+    }
+
+    .footer-brand {
+        max-width: 100% !important;
+    }
+
+    .logo-container {
+        width: 160px !important;
+        height: 160px !important;
+    }
+
+    .center-text img.ssh_latters {
+        width: 100px !important;
+    }
+
+    .SSH-text > h2 {
+        font-size: 0.82rem !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        text-align: center !important;
+    }
+
+    .footer-links li {
+        justify-content: center !important;
+        padding: 8px 10px !important;
+    }
+
+    .footer-links li a {
+        justify-content: center !important;
+    }
+
+    .badge {
+        margin: 12px auto 0 !important;
+        max-width: 210px !important;
+    }
+
+    .set-CONTACT li {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .cardF {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+    }
+
+    .certifications {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .certification-badge {
+        width: 100% !important;
+        max-width: 290px !important;
+        padding: 8px 12px !important;
+    }
+
+    .scroll-top {
+        width: 40px !important;
+        height: 40px !important;
+        bottom: 18px !important;
+        right: 14px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. COMPACT MOBILE PHONES (321px – 360.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 321px) and (max-width: 360.98px) {
+    footer,
+    footer.l {
+        padding: 32px 12px 16px !important;
+    }
+
+    .logo-container {
+        width: 145px !important;
+        height: 145px !important;
+    }
+
+    .center-text img.ssh_latters {
+        width: 90px !important;
+    }
+
+    .SSH-text > .footer-SSH-text img.SSH-TEXT {
+        max-width: 175px !important;
+    }
+
+    .SSH-text > h2 {
+        font-size: 0.76rem !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: 1fr !important;
+        gap: 22px !important;
+        text-align: center !important;
+    }
+
+    .footer-links li {
+        justify-content: center !important;
+    }
+
+    .footer-links li a {
+        justify-content: center !important;
+        font-size: 0.84rem !important;
+    }
+
+    .badge {
+        max-width: 195px !important;
+        min-height: 44px !important;
+        margin: 10px auto 0 !important;
+    }
+
+    .set-CONTACT li {
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 0.8rem !important;
+    }
+
+    .cardF {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+    }
+
+    .cardF svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .certification-badge {
+        width: 100% !important;
+        max-width: 270px !important;
+        font-size: 0.72rem !important;
+        padding: 7px 10px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ULTRA-NARROW & FOLDABLE DEVICES (max-width: 320px)
+   e.g. Galaxy Z Fold cover screen (280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 320px) {
+    footer,
+    footer.l {
+        padding: 28px 8px 14px !important;
+    }
+
+    .logo-container {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    .center-text img.ssh_latters {
+        width: 80px !important;
+    }
+
+    .SSH-text > .footer-SSH-text img.SSH-TEXT {
+        max-width: 155px !important;
+    }
+
+    .SSH-text > h2 {
+        font-size: 0.72rem !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        text-align: center !important;
+    }
+
+    .footer-col-title {
+        font-size: 0.98rem !important;
+    }
+
+    .footer-links li {
+        justify-content: center !important;
+    }
+
+    .footer-links li a {
+        justify-content: center !important;
+        font-size: 0.8rem !important;
+        gap: 6px !important;
+    }
+
+    .badge {
+        max-width: 100% !important;
+        min-height: 42px !important;
+        margin: 10px auto 0 !important;
+        padding: 5px 8px !important;
+    }
+
+    .set-CONTACT li {
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 0.76rem !important;
+    }
+
+    .cardF {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+    }
+
+    .cardF svg {
+        width: 17px !important;
+        height: 17px !important;
+    }
+
+    .certification-badge {
+        width: 100% !important;
+        font-size: 0.68rem !important;
+        padding: 6px 8px !important;
+    }
+
+    .SSH_right {
+        font-size: 0.7rem !important;
+    }
+
+    .scroll-top {
+        width: 36px !important;
+        height: 36px !important;
+        bottom: 14px !important;
+        right: 10px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. MOBILE LANDSCAPE ORIENTATION
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    footer,
+    footer.l {
+        padding: 30px 16px 16px !important;
+    }
+
+    .footer-inner {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 24px !important;
+    }
+
+    .footer-brand {
+        max-width: 220px !important;
+    }
+
+    .logo-container {
+        width: 130px !important;
+        height: 130px !important;
+    }
+
+    .center-text img.ssh_latters {
+        width: 80px !important;
+    }
+
+    .conte-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 16px !important;
+        text-align: left !important;
+    }
+
+    .footer-links li,
+    .footer-links li a {
+        justify-content: flex-start !important;
+    }
+
+    .set-CONTACT li {
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .certifications {
+        margin: 20px 0 14px !important;
+        flex-direction: row !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. TOUCH DEVICES OPTIMIZATION (@media (hover: none))
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    .footer-links li:hover,
+    .badge:hover,
+    .cardF:hover,
+    .certification-badge:hover,
+    .scroll-top:hover {
+        transform: none !important;
+    }
+
+    .badge:active,
+    .cardF:active {
+        transform: scale(0.96) !important;
+    }
+
+    .footer-links li:active {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. DARK MODE ADAPTATIONS (body.dark-mode)
+   -------------------------------------------------------------------------- */
+body.dark-mode footer,
+body.dark-mode footer.l {
+    background-image: url('../images/head_footer/footer_bg.png'),
+                      radial-gradient(120% 120% at 50% 10%, #061224 0%, #030a14 55%, #010408 100%) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+body.dark-mode .badge {
+    background: rgba(4, 12, 24, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .cardF {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+body.dark-mode .certification-badge {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* --------------------------------------------------------------------------
+   12. REDUCED MOTION & PRINT ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .rotating-ring {
+        animation: none !important;
+    }
+
+    .scroll-top {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .cardF,
+    .badge,
+    .footer-links li {
+        transition: none !important;
+    }
+}
+
+@media print {
+    footer,
+    footer.l {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 24px !important;
+        border-top: 1px solid #cccccc !important;
+    }
+
+    .rotating-ring,
+    .badge,
+    .icontact,
+    .icont.act,
+    .scroll-top {
+        display: none !important;
+    }
+
+    .footer-col-title {
+        color: #000000 !important;
+    }
+
+    .footer-links li a,
+    .footer-contact ul li span,
+    .SSH_right {
+        color: #333333 !important;
+    }
+}

@@ -1,0 +1,696 @@
+/* ==========================================================================
+   SSH WEBSITE — CTA SECTION: JOIN OUR MISSION / INVEST IN A SUSTAINABLE SUDAN
+   Dedicated Comprehensive Responsive Stylesheet
+   Target Components:
+     - Section: .cta-section, #cta
+     - Background & Canvas: .set_bg, #set_bg, .particles-js-canvas-el, #particle-canvas, .vignette
+     - Watermark: .cta-section::before
+     - Container: .cta_container, .cta-inner
+     - Tags & Headings: .section-tag, .section-title-f, .cta-inner h2
+     - Description: .cta-section p, .disp
+     - Buttons Group: .cta-btns
+     - Action Buttons: .btn-primary, .btn-outline, .btA, .BT
+   Breakpoints:
+     0. Base Component & Fluid Foundation
+     1. Ultra-Wide & 4K Desktops (min-width: 1400px)
+     2. Standard Laptops & Desktops (1100px – 1399.98px)
+     3. Small Laptops & Large Tablets (860px – 1099.98px)
+     4. Portrait Tablets & Phablets (640px – 859.98px)
+     5. Large Phones & Mobile Landscape (481px – 639.98px)
+     6. Standard Mobile Phones (361px – 480.98px)
+     7. Compact Mobile Phones (321px – 360.98px)
+     8. Ultra-Narrow & Foldable Devices (max-width: 320px)
+     9. Mobile Landscape Orientation (@media (max-height: 520px) and (orientation: landscape))
+    10. Touch Devices Optimization (@media (hover: none))
+    11. Dark Mode Adaptations (body.dark-mode)
+    12. Reduced Motion & Print Accessibility
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. BASE COMPONENT & FLUID FOUNDATION
+   -------------------------------------------------------------------------- */
+.cta-section {
+    position: relative;
+    width: 100%;
+    background: #06152b;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Background Wrap */
+.set_bg {
+    position: relative;
+    width: 100%;
+    min-height: clamp(420px, 62vh, 600px);
+    height: auto !important;
+    background: radial-gradient(120% 120% at 20% 15%, #162a4a 0%, #081930 45%, #030c18 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Particle Canvas Layer */
+.particles-js-canvas-el,
+#particle-canvas {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Vignette Cinematic Gradient */
+.vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(2, 8, 18, 0.65) 100%);
+    z-index: 1;
+}
+
+/* Content Container */
+.cta_container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(48px, 8vh, 100px) clamp(16px, 3.5vw, 36px);
+    box-sizing: border-box;
+}
+
+/* Inner Centered Card */
+.cta-inner {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+/* Watermark Background Letters */
+.cta-section::before {
+    content: 'SSH';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(8rem, 24vw, 22rem);
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.04);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+    z-index: 1;
+    line-height: 1;
+    user-select: none;
+    height: auto !important;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Tag / Badge */
+.section-tag {
+    font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--education, #f3b93a);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(12px, 2vh, 20px);
+}
+
+.section-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1.5px;
+    background: var(--education, #f3b93a);
+}
+
+/* Main Section Heading */
+.section-title-f,
+.cta-inner h2 {
+    font-size: clamp(1.8rem, 3.8vw, 3.25rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 auto clamp(14px, 2.2vh, 24px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    max-width: 22ch;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* Narrative Body Paragraph */
+.cta-section p,
+.cta-inner p.disp {
+    font-size: clamp(0.94rem, 1.15vw, 1.12rem);
+    color: #cbd5e1;
+    max-width: 58ch;
+    margin: 0 auto clamp(24px, 4vh, 40px);
+    line-height: 1.75;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons Container */
+.cta-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 1.5vw, 18px);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Action Buttons Base */
+.cta-btns .btn-outline,
+.cta-btns .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 26px;
+    font-family: inherit;
+    font-size: clamp(0.85rem, 0.95vw, 0.94rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Primary Action Button ("Become a Partner") */
+.cta-btns .btn-primary,
+.cta-btns .btA {
+    background: linear-gradient(135deg, #f3b93a 0%, #e5a41c 100%);
+    color: #071f3b;
+    border: 1.5px solid transparent;
+    box-shadow: 0 6px 20px rgba(243, 185, 58, 0.35);
+}
+
+.cta-btns .btn-primary:hover,
+.cta-btns .btA:hover {
+    background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+    color: #051527;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(243, 185, 58, 0.5);
+}
+
+/* Outline Buttons ("Corporate Partnership", "Request a Proposal") */
+.cta-btns .btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.cta-btns .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: #f3b93a;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K DESKTOPS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .set_bg {
+        min-height: 640px;
+    }
+
+    .cta_container {
+        max-width: 1200px;
+        padding: 100px 36px;
+    }
+
+    .cta-inner {
+        max-width: 920px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 3.25rem;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 1.15rem;
+        max-width: 60ch;
+        margin-bottom: 42px;
+    }
+
+    .cta-btns {
+        gap: 20px;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        min-height: 52px;
+        padding: 15px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1100px – 1399.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+    .set_bg {
+        min-height: 580px;
+    }
+
+    .cta_container {
+        max-width: 1050px;
+        padding: 85px 30px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 2.85rem;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 1.08rem;
+        margin-bottom: 36px;
+    }
+
+    .cta-btns {
+        gap: 16px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL LAPTOPS & LARGE TABLETS (860px – 1099.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 860px) and (max-width: 1099.98px) {
+    .set_bg {
+        min-height: 540px;
+    }
+
+    .cta_container {
+        padding: 70px 24px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 2.5rem;
+        max-width: 20ch;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 1.02rem;
+        max-width: 52ch;
+        margin-bottom: 32px;
+    }
+
+    .cta-btns {
+        gap: 14px;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        min-height: 48px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. PORTRAIT TABLETS & PHABLETS (640px – 859.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) and (max-width: 859.98px) {
+    .set_bg {
+        min-height: 500px;
+    }
+
+    .cta_container {
+        padding: 60px 20px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.98rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .cta-btns {
+        gap: 12px;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        min-height: 46px;
+        padding: 12px 20px;
+        font-size: 0.86rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. LARGE PHONES & MOBILE LANDSCAPE (481px – 639.98px)
+   Buttons wrap and can span comfortably
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 639.98px) {
+    .set_bg {
+        min-height: 480px;
+    }
+
+    .cta_container {
+        padding: 50px 18px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 1.95rem;
+        margin-bottom: 14px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.94rem;
+        line-height: 1.65;
+        margin-bottom: 26px;
+    }
+
+    .cta-btns {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 18px;
+        font-size: 0.86rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. STANDARD MOBILE PHONES (361px – 480.98px)
+   Stacked full-width buttons for comfortable touch accessibility
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480.98px) {
+    .set_bg {
+        min-height: 460px;
+    }
+
+    .cta_container {
+        padding: 44px 16px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 1.75rem;
+        margin-bottom: 12px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+
+    .cta-btns {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        width: 100%;
+        min-height: 46px;
+        padding: 12px 16px;
+        font-size: 0.84rem;
+        border-radius: 7px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. COMPACT MOBILE PHONES (321px – 360.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 321px) and (max-width: 360.98px) {
+    .set_bg {
+        min-height: 440px;
+    }
+
+    .cta_container {
+        padding: 38px 12px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 1.55rem;
+        margin-bottom: 10px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.86rem;
+        line-height: 1.55;
+        margin-bottom: 20px;
+    }
+
+    .cta-btns {
+        flex-direction: column;
+        gap: 9px;
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        width: 100%;
+        min-height: 44px;
+        padding: 11px 14px;
+        font-size: 0.8rem;
+        letter-spacing: 0.03em;
+        border-radius: 6px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ULTRA-NARROW & FOLDABLE DEVICES (max-width: 320px)
+   e.g. Galaxy Z Fold cover screen (280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 320px) {
+    .set_bg {
+        min-height: 420px;
+    }
+
+    .cta_container {
+        padding: 32px 8px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .cta-btns {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        padding: 0 4px;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 10px;
+        font-size: 0.76rem;
+        letter-spacing: 0.02em;
+        border-radius: 6px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. MOBILE LANDSCAPE ORIENTATION
+   (Short height, wider width)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    .set_bg {
+        min-height: auto;
+        padding: 30px 0;
+    }
+
+    .cta_container {
+        padding: 24px 16px;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        font-size: 1.65rem;
+        margin-bottom: 8px;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .cta-btns {
+        flex-direction: row;
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        width: auto;
+        min-height: 42px;
+        padding: 10px 18px;
+        font-size: 0.8rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. TOUCH DEVICES & HOVER RESET (@media (hover: none))
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    .cta-btns .btn-primary:hover,
+    .cta-btns .btn-outline:hover {
+        transform: none !important;
+    }
+
+    .cta-btns .btn-primary:active {
+        transform: scale(0.97) !important;
+        box-shadow: 0 4px 14px rgba(243, 185, 58, 0.4) !important;
+    }
+
+    .cta-btns .btn-outline:active {
+        transform: scale(0.97) !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. DARK MODE RESPONSIVE ADAPTATIONS (body.dark-mode)
+   -------------------------------------------------------------------------- */
+body.dark-mode .set_bg {
+    background: radial-gradient(120% 120% at 20% 15%, #0f1e33 0%, #051020 45%, #02070e 100%);
+}
+
+body.dark-mode .vignette {
+    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(1, 4, 9, 0.75) 100%);
+}
+
+body.dark-mode .section-title-f,
+body.dark-mode .cta-inner h2 {
+    color: #ffffff;
+}
+
+body.dark-mode .cta-section p,
+body.dark-mode .cta-inner p.disp {
+    color: #94a3b8;
+}
+
+body.dark-mode .cta-btns .btn-outline {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #f1f5f9;
+}
+
+/* --------------------------------------------------------------------------
+   12. REDUCED MOTION & PRINT ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .particles-js-canvas-el,
+    #particle-canvas {
+        display: none !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .cta-btns .btn-outline,
+    .cta-btns .btn-primary {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+@media print {
+    .cta-section {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 30px 0 !important;
+    }
+
+    .set_bg {
+        background: none !important;
+        min-height: auto !important;
+    }
+
+    .vignette,
+    .particles-js-canvas-el,
+    .cta-section::before {
+        display: none !important;
+    }
+
+    .section-title-f,
+    .cta-inner h2 {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+
+    .cta-section p,
+    .cta-inner p.disp {
+        color: #333 !important;
+        text-shadow: none !important;
+    }
+
+    .cta-btns {
+        display: none !important;
+    }
+}

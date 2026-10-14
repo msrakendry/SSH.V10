@@ -1,0 +1,317 @@
+/* ==========================================================================
+   SSH WEBSITE — VOICES OF CHANGE SECTION (DEDICATED RESPONSIVE STYLES)
+   Target: .hero_v, .set_voice, .story, .photo-wrap, .content_v, .quote, .person
+   File: style/voice-of-change-responsive.css
+   Breakpoints:
+     - Ultra-wide Desktops (1400px+)
+     - Standard Laptops & Desktops (1024px – 1399px)
+     - Tablets Portrait & Landscape (768px – 1023px)
+     - Large Phones & Mobile Landscape (481px – 767px)
+     - Standard Phones (361px – 480px)
+     - Mini Mobile Phones (320px – 360px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K SCREENS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .hero_v {
+        min-height: 480px;
+        margin: 70px 0;
+    }
+
+    .set_voice {
+        max-width: 1360px;
+        padding: 64px 56px;
+    }
+
+    .story {
+        grid-template-columns: 290px 1fr;
+        gap: 72px;
+    }
+
+    .photo-wrap {
+        width: 290px;
+        height: 290px;
+    }
+
+    .quote {
+        font-size: 1.6rem;
+        line-height: 1.65;
+    }
+
+    .person {
+        font-size: 1.25rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1024px – 1399px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .set_voice {
+        padding: 48px 40px;
+    }
+
+    .story {
+        grid-template-columns: 250px 1fr;
+        gap: 48px;
+    }
+
+    .photo-wrap {
+        width: 250px;
+        height: 250px;
+    }
+
+    .quote {
+        font-size: 1.38rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS (768px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero_v {
+        min-height: auto;
+        margin: 44px 0;
+        border-radius: 14px;
+    }
+
+    .set_voice {
+        padding: 44px 32px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+
+    .photo-wrap {
+        margin: 0 auto;
+        width: 220px;
+        height: 220px;
+    }
+
+    .content_v {
+        align-items: center;
+        text-align: center;
+    }
+
+    .quote-mark {
+        padding-top: 36px;
+    }
+
+    .quote-mark::before {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 64px;
+        top: -16px;
+    }
+
+    .quote {
+        font-size: 1.3rem;
+        line-height: 1.55;
+    }
+
+    .person {
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. LARGE PHONES & MOBILE (max-width: 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .hero_v {
+        min-height: auto;
+        margin: 32px 0;
+        border-radius: 12px;
+    }
+
+    .set_voice {
+        padding: 32px 20px;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        text-align: center;
+    }
+
+    .photo-wrap {
+        margin: 0 auto;
+        width: 180px;
+        height: 180px;
+        padding: 6px;
+        border-width: 2px;
+    }
+
+    .content_v {
+        align-items: center;
+        text-align: center;
+    }
+
+    .quote-mark {
+        padding-top: 28px;
+    }
+
+    .quote-mark::before {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 54px;
+        top: -14px;
+    }
+
+    .quote {
+        font-size: 1.15rem;
+        line-height: 1.55;
+        margin-bottom: 12px;
+    }
+
+    .caption-note {
+        font-size: 0.82rem;
+        margin-bottom: 14px;
+    }
+
+    .person {
+        font-size: 1rem;
+        justify-content: center;
+        margin-bottom: 18px;
+    }
+
+    .donate-btn,
+    .donate-btn.btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. SMALL SMARTPHONES (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .set_voice {
+        padding: 26px 14px;
+    }
+
+    .story {
+        gap: 20px;
+    }
+
+    .photo-wrap {
+        width: 160px;
+        height: 160px;
+    }
+
+    .quote-mark {
+        padding-top: 24px;
+    }
+
+    .quote-mark::before {
+        font-size: 46px;
+        top: -12px;
+    }
+
+    .quote {
+        font-size: 1.05rem;
+        line-height: 1.5;
+    }
+
+    .person {
+        font-size: 0.95rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. MINI SMARTPHONES (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .set_voice {
+        padding: 20px 10px;
+    }
+
+    .photo-wrap {
+        width: 140px;
+        height: 140px;
+        padding: 4px;
+    }
+
+    .quote-mark {
+        padding-top: 20px;
+    }
+
+    .quote-mark::before {
+        font-size: 40px;
+        top: -10px;
+    }
+
+    .quote {
+        font-size: 0.96rem;
+        line-height: 1.48;
+    }
+
+    .caption-note {
+        font-size: 0.78rem;
+    }
+
+    .donate-btn,
+    .donate-btn.btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE LANDSCAPE MODE (max-height: 520px and orientation: landscape)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    .set_voice {
+        padding: 24px 20px;
+    }
+
+    .story {
+        grid-template-columns: 160px 1fr;
+        gap: 24px;
+        text-align: left;
+    }
+
+    .photo-wrap {
+        width: 150px;
+        height: 150px;
+        margin: 0;
+    }
+
+    .content_v {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .quote-mark::before {
+        left: 0;
+        transform: none;
+    }
+
+    .person {
+        justify-content: flex-start;
+    }
+
+    .donate-btn,
+    .donate-btn.btn {
+        width: auto;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero_v,
+    .photo-wrap,
+    .donate-btn,
+    .donate-btn .arrow {
+        transition: none !important;
+        transform: none !important;
+    }
+}

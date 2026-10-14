@@ -1,0 +1,384 @@
+/* ==========================================================================
+   SSH WEBSITE — OUR MISSION / ABOUT SECTION (DEDICATED RESPONSIVE STYLES)
+   Target: #about, [id*="about"], .about-content, .about-text, .image_p2, .about-features
+   File: style/our-mission-responsive.css
+   Breakpoints:
+     - Ultra-wide Desktops (1400px+)
+     - Standard Laptops & Desktops (1024px – 1399px)
+     - Tablets Portrait & Landscape (768px – 1023px)
+     - Large Phones & Mobile Landscape (481px – 767px)
+     - Standard Phones (361px – 480px)
+     - Mini Mobile Phones (320px – 360px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K SCREENS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        max-width: 1360px;
+        padding: 56px 52px;
+    }
+
+    .about-content {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+        gap: 60px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 2.75rem;
+    }
+
+    #aboutText1 {
+        font-size: 1.22rem;
+        line-height: 1.8;
+    }
+
+    #aboutText2 {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        max-height: 480px;
+        aspect-ratio: 16 / 11;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1024px – 1399px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        padding: 44px 36px;
+    }
+
+    .about-content {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 42px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 2.25rem;
+    }
+
+    #aboutText1 {
+        font-size: 1.12rem;
+        line-height: 1.75;
+    }
+
+    #aboutText2 {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        max-height: 420px;
+        aspect-ratio: 16 / 11;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS (768px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    section[id*="about"],
+    #about,
+    .section#about {
+        padding: 40px 0;
+    }
+
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        padding: 36px 28px;
+        margin: 15px auto;
+        border-radius: 14px;
+    }
+
+    section[id*="about"] .sect,
+    #about .sect {
+        margin-bottom: 24px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 2rem;
+        padding-left: 14px;
+        border-left-width: 5px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    #aboutText1 {
+        font-size: 1.08rem;
+        line-height: 1.75;
+        margin-bottom: 18px;
+    }
+
+    #aboutText2 {
+        font-size: 0.98rem;
+        line-height: 1.75;
+        padding-left: 14px;
+        margin-bottom: 24px;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 300px;
+        max-height: 390px;
+        border-radius: 14px;
+    }
+
+    .about-features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 24px;
+    }
+
+    .feature-item {
+        padding: 20px 18px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. LARGE PHONES & MOBILE LANDSCAPE (481px – 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    section[id*="about"],
+    #about,
+    .section#about {
+        padding: 24px 0;
+    }
+
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        padding: 26px 18px;
+        border-radius: 12px;
+        margin: 12px auto;
+    }
+
+    section[id*="about"] .sect,
+    #about .sect {
+        margin-bottom: 18px;
+        gap: 6px;
+    }
+
+    .content-badge.education {
+        font-size: 0.74rem;
+        padding: 5px 12px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 1.75rem;
+        border-left-width: 4px;
+        padding-left: 12px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .about-text {
+        order: 1;
+    }
+
+    #aboutText1 {
+        font-size: 0.98rem;
+        line-height: 1.68;
+        margin-bottom: 14px;
+    }
+
+    #aboutText2 {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        padding-left: 12px;
+        margin-bottom: 18px;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        order: 2;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        min-height: 230px;
+        max-height: 320px;
+        border-radius: 12px;
+    }
+
+    .image-lab-badge {
+        bottom: 12px;
+        left: 12px;
+        font-size: 0.72rem;
+        padding: 5px 12px;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .feature-item {
+        padding: 16px 14px;
+    }
+
+    .feature-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .feature-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. STANDARD SMARTPHONES (361px – 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        padding: 20px 14px;
+        border-radius: 10px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 1.55rem;
+        border-left-width: 4px;
+        padding-left: 10px;
+    }
+
+    #aboutText1 {
+        font-size: 0.94rem;
+        line-height: 1.65;
+    }
+
+    #aboutText2 {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        padding-left: 10px;
+        border-left-width: 3px;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        aspect-ratio: 16 / 10;
+        min-height: 200px;
+        max-height: 270px;
+        border-radius: 10px;
+    }
+
+    .feature-item {
+        padding: 14px 12px;
+    }
+
+    .feature-item h4 {
+        font-size: 0.98rem;
+    }
+
+    .feature-item p {
+        font-size: 0.84rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. MINI SMARTPHONES (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    section[id*="about"] .container.last_news,
+    #about .container.last_news {
+        padding: 16px 10px;
+    }
+
+    section[id*="about"] .section-title,
+    #about .section-title {
+        font-size: 1.4rem;
+        padding-left: 8px;
+        border-left-width: 3px;
+    }
+
+    #aboutText1 {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    #aboutText2 {
+        font-size: 0.84rem;
+        line-height: 1.6;
+        padding-left: 8px;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        aspect-ratio: 4 / 3;
+        min-height: 180px;
+        max-height: 230px;
+        border-radius: 8px;
+    }
+
+    .image-lab-badge {
+        bottom: 8px;
+        left: 8px;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE LANDSCAPE MODE (max-height: 520px and orientation: landscape)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    section[id*="about"],
+    #about,
+    .section#about {
+        padding: 20px 0;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .about-content .image_p2,
+    .about-content .about-image {
+        aspect-ratio: 16 / 9;
+        max-height: 240px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    section[id*="about"] .container.last_news,
+    #about .container.last_news,
+    .about-content .image_p2,
+    .about-content .about-image,
+    .about-content .image_p2 img,
+    .about-content .about-image img,
+    .feature-item {
+        transition: none !important;
+        transform: none !important;
+    }
+}

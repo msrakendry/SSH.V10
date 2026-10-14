@@ -1,0 +1,1198 @@
+/* ==========================================================================
+   SSH WEBSITE — FULL PROFESSIONAL RESPONSIVE HEADER STYLESHEET
+   Supports: Ultra-wide Desktops (1440px+), Standard Laptops (1024px–1439px),
+             Tablets (768px–1023px), Large Phones (481px–767px),
+             Standard Phones (361px–480px), and Mini Phones (320px–360px).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ROOT VARIABLES & SIZING TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+    --hdr-height: 80px;
+    --hdr-pad-x: 18px;
+    --logo-size: 64px;
+    --logo-text-w: 220px;
+    --donate-w: 135px;
+    --donate-h: 44px;
+    --donate-font: 0.95rem;
+    --hdr-gap: 12px;
+    --hdr-z-index: 1000;
+}
+
+/* --------------------------------------------------------------------------
+   2. CORE HEADER & STICKY WRAPPER
+   -------------------------------------------------------------------------- */
+#site-header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: var(--hdr-height) !important;
+    z-index: var(--hdr-z-index) !important;
+    box-sizing: border-box !important;
+    transition: height 0.3s ease, background 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#site-header * {
+    box-sizing: border-box;
+}
+
+.nav-bg {
+    width: 100% !important;
+    height: 100% !important;
+    background-image: url('../images/head_footer/head.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    backdrop-filter: blur(18px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-bg.scrolled {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(21, 67, 96, 0.95) 60%, rgba(26, 82, 118, 0.95) 100%) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 1380px !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 var(--hdr-pad-x) !important;
+    padding-left: max(var(--hdr-pad-x), env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(var(--hdr-pad-x), env(safe-area-inset-right, 0px)) !important;
+    gap: var(--hdr-gap) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. RESPONSIVE LOGO SYSTEM
+   -------------------------------------------------------------------------- */
+.alogo_RH.logo-table {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: clamp(6px, 1vw, 10px) !important;
+    text-decoration: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    grid-template-columns: none !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: transform 0.25s ease, opacity 0.25s ease !important;
+}
+
+.alogo_RH.logo-table:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+/* Circular Rotating Emblem */
+.logo-container_RH {
+    position: relative !important;
+    width: var(--logo-size) !important;
+    height: var(--logo-size) !important;
+    min-width: var(--logo-size) !important;
+    min-height: var(--logo-size) !important;
+    max-width: var(--logo-size) !important;
+    max-height: var(--logo-size) !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border-radius: 50% !important;
+}
+
+.rotating-ring_RH {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    animation: rotateClockwise 20s linear infinite !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.rotating-ring_RH img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+    pointer-events: none !important;
+}
+
+.center-text_RH {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+.center-text_RH .ssh_latters_RH,
+.center-text_RH img {
+    width: 58% !important;
+    height: auto !important;
+    max-height: 58% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+/* Logo Text Image */
+.text-img {
+    width: var(--logo-text-w) !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 1 !important;
+    overflow: hidden !important;
+}
+
+.text-img .SSH-TEXT,
+.text-img img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 42px !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: max-height 0.3s ease !important;
+}
+
+/* Divider Between Logo and Primary Nav */
+.topbar-divider {
+    width: 1px !important;
+    height: 38px !important;
+    background: rgba(255, 255, 255, 0.22) !important;
+    margin: 0 clamp(4px, 1vw, 14px) !important;
+    flex-shrink: 0 !important;
+    border-radius: 1px !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. PRIMARY NAVIGATION & DROPDOWNS (DESKTOP)
+   -------------------------------------------------------------------------- */
+.nav-primary {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(2px, 0.5vw, 8px) !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.nav-item {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.nav-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 8px clamp(7px, 0.75vw, 12px) !important;
+    font-size: clamp(0.85rem, 0.95vw, 0.98rem) !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    font-family: inherit !important;
+    letter-spacing: 0.01em !important;
+    transition: color 0.2s ease, background 0.2s ease !important;
+    touch-action: manipulation;
+}
+
+.nav-link:hover,
+.nav-item.active > .nav-link,
+.nav-item:hover > .nav-link {
+    color: #00d4ff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.nav-link svg.chevron {
+    width: 16px !important;
+    height: 16px !important;
+    color: currentColor !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.25s ease !important;
+}
+
+.nav-item:hover > .nav-link svg.chevron,
+.nav-item.active > .nav-link svg.chevron {
+    transform: rotate(180deg) !important;
+}
+
+/* Desktop Dropdown Panels & Mega Menus (Boundary & Overflow Protection) */
+.dropdown,
+.mega-menu {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1050 !important;
+    border-radius: 12px !important;
+    background: rgba(14, 24, 40, 0.97) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    max-width: min(680px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease !important;
+}
+
+.nav-item:hover > .dropdown,
+.nav-item:hover > .mega-menu,
+.nav-item.active > .dropdown,
+.nav-item.active > .mega-menu,
+.nav-item:focus-within > .dropdown,
+.nav-item:focus-within > .mega-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.dropdown.menuSTYLING.WH_1 {
+    width: 320px !important;
+    max-width: 90vw !important;
+    height: auto !important;
+    max-height: calc(100vh - 110px) !important;
+    padding: 12px !important;
+}
+
+.mega-menu.menuSTYLING.WH_3 {
+    width: 580px !important;
+    max-width: min(680px, 94vw) !important;
+    height: auto !important;
+    max-height: calc(100vh - 110px) !important;
+    padding: 14px !important;
+}
+
+.dropdown.menuSTYLING.WH_5,
+.dropdown.menuSTYLING.WH_7 {
+    width: 310px !important;
+    max-width: 90vw !important;
+    height: auto !important;
+    max-height: calc(100vh - 110px) !important;
+    padding: 12px !important;
+}
+
+.drop_bg {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.mega-inner {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+}
+
+.mega-col-title {
+    font-size: 0.82rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: #00d4ff !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dropdown-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 8px 10px !important;
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease !important;
+    font-size: 0.92rem !important;
+}
+
+.dropdown-link:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transform: translateX(3px);
+}
+
+.dropdown-link .label {
+    color: inherit !important;
+    font-weight: 500 !important;
+}
+
+.dropdown-link .dropsvg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0 !important;
+    fill: currentColor !important;
+}
+
+.mega-footer {
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.mega-footer-text {
+    color: #94a3b8 !important;
+    font-size: 0.78rem !important;
+}
+
+.mega-footer-link {
+    color: #00d4ff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+}
+
+/* Three Dots Impact Mega Menu */
+.idot {
+    position: relative !important;
+}
+
+.JiIQc.dropdown-toggle {
+    background: transparent !important;
+    border: none !important;
+    padding: 6px 8px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 6px !important;
+    transition: background 0.2s ease !important;
+}
+
+.JiIQc.dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.three_dot {
+    width: 22px !important;
+    height: 22px !important;
+    color: #ffffff !important;
+    stroke: currentColor !important;
+    display: block !important;
+}
+
+.mega-menuIDOT {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: -10px !important;
+    left: auto !important;
+    transform: none !important;
+    width: min(780px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    background: rgba(14, 24, 40, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    z-index: 1060 !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease !important;
+}
+
+.idot:hover .mega-menuIDOT,
+.idot.active .mega-menuIDOT,
+.idot:focus-within .mega-menuIDOT {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.mega-menuIDOT::before {
+    display: none !important;
+}
+
+.mega-grid {
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.drop-menu h3 {
+    color: #00d4ff !important;
+    font-size: 0.98rem !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.drop-menu h3 svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: currentColor !important;
+}
+
+.work-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+}
+
+.about-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+.block h4 {
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    margin-bottom: 6px !important;
+    padding-bottom: 4px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.block ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.menuAho {
+    color: #cbd5e1 !important;
+    font-size: 0.88rem !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 4px 6px !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.menuAho:hover {
+    color: #00d4ff !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    transform: translateX(3px) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. DONATION CTA BUTTON (ANIMATED HEART FLIP)
+   -------------------------------------------------------------------------- */
+.aa {
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    outline: none !important;
+}
+
+.book {
+    position: relative !important;
+    width: var(--donate-w) !important;
+    height: var(--donate-h) !important;
+    min-width: var(--donate-w) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius:2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    perspective: 800px !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.book:hover,
+.book:focus-visible {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(193, 18, 31, 0.35) !important;
+}
+
+.cover {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* background: linear-gradient(135deg, #e63946 0%, #c1121f 55%, #780000 100%) !important; */
+    border-radius:2px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transform-origin: left center !important;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 2 !important;
+}
+
+.book:hover .cover,
+.book:active .cover {
+    transform: rotateY(-140deg) !important;
+}
+
+.cover p {
+    color: #ffffff !important;
+    font-size: var(--donate-font) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.heart-stage {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+}
+
+.heart-wrapper {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.heart {
+    width: clamp(24px, 35%, 34px) !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. HAMBURGER BUTTON (MOBILE / TABLET)
+   -------------------------------------------------------------------------- */
+.hamburger {
+    display: none !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.24) !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    z-index: 1002 !important;
+    flex-shrink: 0 !important;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation !important;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.hamburger:active {
+    transform: scale(0.95);
+}
+
+.hamburger span {
+    display: block !important;
+    height: 2.5px !important;
+    background: #ffffff !important;
+    border-radius: 3px !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, width 0.3s ease !important;
+    transform-origin: center !important;
+}
+
+.hamburger span:nth-child(1) {
+    width: 22px !important;
+}
+
+.hamburger span:nth-child(2) {
+    width: 15px !important;
+    align-self: flex-start !important;
+    margin-left: 11px !important;
+}
+
+.hamburger span:nth-child(3) {
+    width: 22px !important;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg) !important;
+    width: 22px !important;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg) !important;
+    width: 22px !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE DRAWER & NAVIGATION PANEL
+   -------------------------------------------------------------------------- */
+.mobile-panel {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 99999 !important;
+    display: block !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s !important;
+}
+
+.mobile-panel.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+.mobile-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    background: rgba(5, 15, 28, 0.72) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.mobile-panel.open .mobile-overlay {
+    opacity: 1 !important;
+}
+
+.mobile-drawer {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: min(390px, 86vw) !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(180deg, #0e1e32 0%, #0a1625 100%) !important;
+    color: #ffffff !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1) !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6) !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.12) !important;
+    z-index: 2 !important;
+}
+
+.mobile-panel.open .mobile-drawer {
+    transform: translateX(0) !important;
+}
+
+.mobile-panel-head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 20px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.mobile-panel-head .logo-emblem svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.mobile-close {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.mobile-close:hover,
+.mobile-close:active {
+    background: rgba(230, 57, 70, 0.3) !important;
+    border-color: #e63946 !important;
+    color: #ff8585 !important;
+    transform: rotate(90deg) !important;
+}
+
+.mobile-nav {
+    padding: 14px 16px !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.mobile-nav-item {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    margin-bottom: 2px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.mobile-nav-item:focus-within,
+.mobile-nav-item:hover {
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.mobile-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 13px 16px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: #f8fafc !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 9px !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    font-family: inherit !important;
+    transition: background 0.2s ease, color 0.2s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #00d4ff !important;
+}
+
+.mobile-nav-link svg {
+    color: #94a3b8 !important;
+    transition: transform 0.25s ease, color 0.25s ease !important;
+    flex-shrink: 0 !important;
+}
+
+.mobile-nav-link.active svg {
+    transform: rotate(180deg) !important;
+    color: #00d4ff !important;
+}
+
+.mobile-submenu {
+    display: none !important;
+    padding: 4px 8px 10px 16px !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-left: 2px solid #00d4ff !important;
+    margin: 0 10px 8px 16px !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+
+.mobile-submenu.open {
+    display: block !important;
+    animation: fadeInSubmenu 0.25s ease-out !important;
+}
+
+@keyframes fadeInSubmenu {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobile-submenu-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 9px 12px !important;
+    font-size: 0.88rem !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+}
+
+.mobile-submenu-link:hover,
+.mobile-submenu-link:active {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    transform: translateX(4px) !important;
+}
+
+.mobile-submenu-link .icon {
+    font-size: 1rem !important;
+}
+
+.mobile-panel-foot {
+    padding: 18px 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(5, 12, 22, 0.8) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.mobile-panel-foot .btn-ghost {
+    width: 100% !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    border: 1.5px solid #00d4ff !important;
+    color: #00d4ff !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.mobile-panel-foot .btn-ghost:hover {
+    background: rgba(0, 212, 255, 0.15) !important;
+}
+
+.mobile-panel-foot .btn-primary {
+    width: 100% !important;
+    padding: 13px !important;
+    border-radius: 8px !important;
+    background: linear-gradient(135deg, #e63946, #c1121f) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    display: block !important;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.35) !important;
+    transition: all 0.2s ease !important;
+}
+
+.mobile-panel-foot .btn-primary:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.5) !important;
+}
+
+/* ==========================================================================
+   8. COMPREHENSIVE MEDIA QUERY BREAKPOINTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. ULTRA-WIDE SCREENS (1440px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+    :root {
+        --hdr-height: 84px;
+        --hdr-pad-x: 28px;
+        --logo-size: 68px;
+        --logo-text-w: 245px;
+        --donate-w: 145px;
+        --donate-h: 46px;
+        --donate-font: 1rem;
+        --hdr-gap: 16px;
+    }
+
+    .nav-bar {
+        max-width: 1440px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   B. STANDARD DESKTOPS & LAPTOPS (1024px to 1439px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    :root {
+        --hdr-height: 76px;
+        --hdr-pad-x: 14px;
+        --logo-size: 58px;
+        --logo-text-w: 195px;
+        --donate-w: 125px;
+        --donate-h: 42px;
+        --donate-font: 0.9rem;
+        --hdr-gap: 8px;
+    }
+
+    .nav-link {
+        padding: 7px 8px !important;
+        font-size: 0.88rem !important;
+    }
+
+    .topbar-divider {
+        margin: 0 8px !important;
+        height: 32px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   C. TABLETS & COLLAPSIBLE VIEWPORTS (< 1024px)
+      Here Desktop Nav disappears, Hamburger appears.
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+    .nav-primary {
+        display: none !important;
+    }
+
+    .topbar-divider {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   D. TABLETS PORTRAIT (768px to 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --hdr-height: 72px;
+        --hdr-pad-x: 16px;
+        --logo-size: 54px;
+        --logo-text-w: 180px;
+        --donate-w: 120px;
+        --donate-h: 40px;
+        --donate-font: 0.88rem;
+        --hdr-gap: 12px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   E. LARGE PHONES & PHABLETS (481px to 767px)
+      e.g. iPhone 14/15/16 Pro Max, Galaxy S23/S24 Ultra, Pixel XL
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+    :root {
+        --hdr-height: 66px;
+        --hdr-pad-x: 12px;
+        --logo-size: 46px;
+        --logo-text-w: 145px;
+        --donate-w: 102px;
+        --donate-h: 36px;
+        --donate-font: 0.82rem;
+        --hdr-gap: 8px;
+    }
+
+    .hamburger {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .hamburger span:nth-child(1),
+    .hamburger span:nth-child(3) {
+        width: 20px !important;
+    }
+
+    .hamburger span:nth-child(2) {
+        width: 13px !important;
+        margin-left: 10px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   F. STANDARD SMARTPHONES (361px to 480px)
+      e.g. iPhone 12/13/14/15/16, Galaxy S21/S22/S23, Pixel
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480px) {
+    :root {
+        --hdr-height: 62px;
+        --hdr-pad-x: 10px;
+        --logo-size: 40px;
+        --logo-text-w: 120px;
+        --donate-w: 86px;
+        --donate-h: 34px;
+        --donate-font: 0.76rem;
+        --hdr-gap: 6px;
+    }
+
+    .hamburger {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 8px !important;
+    }
+
+    .hamburger span {
+        height: 2px !important;
+    }
+
+    .hamburger span:nth-child(1),
+    .hamburger span:nth-child(3) {
+        width: 18px !important;
+    }
+
+    .hamburger span:nth-child(2) {
+        width: 12px !important;
+        margin-left: 9px !important;
+    }
+
+    .cover p {
+        letter-spacing: 0.02em !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   G. MINI PHONES & COMPACT SCREENS (320px to 360px)
+      e.g. iPhone SE, Galaxy Z Flip cover, small budget phones
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    :root {
+        --hdr-height: 56px;
+        --hdr-pad-x: 6px;
+        --logo-size: 35px;
+        --logo-text-w: 96px;
+        --donate-w: 72px;
+        --donate-h: 30px;
+        --donate-font: 0.70rem;
+        --hdr-gap: 4px;
+    }
+
+    .nav-bar {
+        gap: 4px !important;
+    }
+
+    .alogo_RH.logo-table {
+        gap: 4px !important;
+    }
+
+    .hamburger {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        min-height: 34px !important;
+        border-radius: 7px !important;
+    }
+
+    .hamburger span {
+        height: 2px !important;
+    }
+
+    .hamburger span:nth-child(1),
+    .hamburger span:nth-child(3) {
+        width: 16px !important;
+    }
+
+    .hamburger span:nth-child(2) {
+        width: 10px !important;
+        margin-left: 8px !important;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+    }
+
+    .cover p {
+        font-size: 0.68rem !important;
+        letter-spacing: 0 !important;
+    }
+
+    .mobile-drawer {
+        width: 92vw !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   H. ULTRA-NARROW FOLDABLE COVERS (<= 310px)
+      e.g. Galaxy Fold front screen (280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 310px) {
+    :root {
+        --hdr-height: 54px;
+        --hdr-pad-x: 4px;
+        --logo-size: 32px;
+        --logo-text-w: 0px;
+        --donate-w: 66px;
+        --donate-h: 28px;
+        --donate-font: 0.65rem;
+        --hdr-gap: 4px;
+    }
+
+    /* Hide text image to allow emblem + donate + hamburger without cramming */
+    .text-img {
+        display: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. ACCESSIBILITY: REDUCED MOTION PREFERENCE
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .rotating-ring_RH {
+        animation: none !important;
+    }
+
+    .cover,
+    .hamburger span,
+    .mobile-drawer,
+    .mobile-panel {
+        transition-duration: 0.01ms !important;
+    }
+}

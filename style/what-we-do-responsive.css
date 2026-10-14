@@ -1,0 +1,677 @@
+/* ==========================================================================
+   SSH WEBSITE — FULL PROFESSIONAL RESPONSIVE "WHAT WE DO" / STRATEGIC OBJECTIVES SECTION
+   Target: .page (.left, .left__content, .right, #heroImageW, .tabs-row, .slide-content, .nav-controls)
+   Supports: Ultra-wide Desktops (1440px+), Standard Laptops (1024px–1439px),
+             Tablets (768px–1023px), Large Phones (481px–767px),
+             Standard Phones (361px–480px), and Mini Phones (320px–360px).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SECTION CONTAINER (.page)
+   -------------------------------------------------------------------------- */
+.page {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 1360px !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: clamp(36px, 5vh, 70px) clamp(16px, 3vw, 40px) !important;
+    gap: clamp(24px, 4vw, 56px) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+.page * {
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. LEFT COLUMN (MISSION NARRATIVE & OVERVIEW)
+   -------------------------------------------------------------------------- */
+.left {
+    flex: 1 1 48% !important;
+    width: 100% !important;
+    max-width: 600px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 0 !important;
+    background: transparent !important;
+    position: relative !important;
+}
+
+.left__content {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Section Heading */
+.left__title {
+    font-size: clamp(1.85rem, 3.2vw, 2.75rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+    color: #071f3b !important;
+    margin: 0 0 clamp(16px, 2.5vh, 24px) 0 !important;
+    padding: 0 !important;
+    letter-spacing: -0.01em !important;
+    position: relative !important;
+    display: block !important;
+}
+
+/* Narrative Body Text */
+.left__text {
+    font-size: clamp(0.92rem, 1.1vw, 1.05rem) !important;
+    line-height: 1.75 !important;
+    color: #334155 !important;
+    margin: 0 0 clamp(20px, 3vh, 32px) 0 !important;
+    padding: 0 !important;
+    text-transform: none !important;
+    font-weight: 400 !important;
+}
+
+/* Learn More Action Button */
+.learn-more,
+.learn-more.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 12px 28px !important;
+    background: #0c4a60 !important;
+    color: #ffffff !important;
+    font-size: 0.94rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 4px 14px rgba(12, 74, 96, 0.25) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent !important;
+    width: fit-content !important;
+}
+
+.learn-more:hover {
+    background: #00d4ff !important;
+    color: #071f3b !important;
+    transform: translateX(4px) translateY(-1px) !important;
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.35) !important;
+    text-decoration: none !important;
+}
+
+.learn-more:active {
+    transform: translateX(0) scale(0.98) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. RIGHT COLUMN (INTERACTIVE OBJECTIVES SLIDER CARD)
+   -------------------------------------------------------------------------- */
+.right {
+    flex: 1 1 52% !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.right:hover {
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Subtle accent line on top of card */
+.right::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #00d4ff, #e63946) !important;
+    z-index: 10 !important;
+}
+
+.right::after {
+    display: none !important;
+}
+
+/* Strategic Pillar Image */
+.hero-imageW,
+#heroImageW {
+    width: 100% !important;
+    height: clamp(220px, 30vh, 320px) !important;
+    min-height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    border-radius: 20px 20px 0 0 !important;
+    transition: opacity 0.35s ease, transform 0.5s ease !important;
+}
+
+.hero-imageW.is-fading {
+    opacity: 0.3 !important;
+}
+
+/* Right Card Body Content */
+.right__body {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: clamp(20px, 2.5vw, 32px) !important;
+    background: #ffffff !important;
+    gap: 14px !important;
+    min-height: 240px !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. TABS & PAGE INDICATOR ROW
+   -------------------------------------------------------------------------- */
+.tabs-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    border-bottom: 2px solid #f1f5f9 !important;
+    padding-bottom: 10px !important;
+    margin-bottom: 8px !important;
+    flex-wrap: wrap !important;
+}
+
+.tabs {
+    display: flex !important;
+    align-items: center !important;
+    gap: clamp(10px, 1.6vw, 22px) !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-wrap: wrap !important;
+}
+
+.tabs li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.tabs button {
+    background: transparent !important;
+    border: none !important;
+    padding: 6px 4px 10px !important;
+    font-family: inherit !important;
+    font-size: clamp(0.75rem, 0.9vw, 0.85rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    color: #64748b !important;
+    cursor: pointer !important;
+    position: relative !important;
+    transition: color 0.2s ease !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.tabs button:hover {
+    color: #071f3b !important;
+}
+
+.tabs button.active {
+    color: #071f3b !important;
+}
+
+.tabs button::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: -11px !important;
+    height: 3px !important;
+    background: transparent !important;
+    border-radius: 3px !important;
+    transition: background 0.25s ease !important;
+}
+
+.tabs button.active::after {
+    background: #00d4ff !important;
+}
+
+/* Page Indicator Badge */
+.page-indicator,
+#pageIndicator {
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    color: #071f3b !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. SLIDE TEXT CONTENT & TITLES
+   -------------------------------------------------------------------------- */
+.slide-content,
+#slideContent {
+    flex: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transition: opacity 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    margin: 4px 0 !important;
+    min-height: 100px !important;
+}
+
+.slide-content.is-fading {
+    opacity: 0.2 !important;
+}
+
+.slide-title,
+#slideTitle {
+    font-size: clamp(1.3rem, 2.2vw, 1.85rem) !important;
+    font-weight: 800 !important;
+    color: #071f3b !important;
+    line-height: 1.25 !important;
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    letter-spacing: -0.01em !important;
+}
+
+.slide-text,
+#slideText {
+    font-size: clamp(0.9rem, 1vw, 1rem) !important;
+    line-height: 1.65 !important;
+    color: #475569 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   6. SLIDER NAVIGATION CONTROLS (ARROWS)
+   -------------------------------------------------------------------------- */
+.nav-controls {
+    position: relative !important;
+    top: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 8px !important;
+    margin: 8px 0 0 0 !important;
+    padding: 0 !important;
+    z-index: 5 !important;
+}
+
+.nav-btn,
+#prevBtnW,
+#nextBtnW {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #f8fafc !important;
+    color: #071f3b !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    -webkit-tap-highlight-color: transparent !important;
+    padding: 0 !important;
+}
+
+.nav-btn:hover {
+    background: #071f3b !important;
+    color: #ffffff !important;
+    border-color: #071f3b !important;
+    transform: scale(1.08) !important;
+}
+
+.nav-btn:active {
+    transform: scale(0.95) !important;
+}
+
+.nav-btn svg {
+    width: 22px !important;
+    height: 22px !important;
+    fill: currentColor !important;
+    pointer-events: none !important;
+    transition: fill 0.2s ease !important;
+}
+
+.nav-btn:hover svg {
+    fill: #ffffff !important;
+}
+
+/* ==========================================================================
+   7. COMPREHENSIVE RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. ULTRA-WIDE SCREENS (1440px and up)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+    .page {
+        max-width: 1440px !important;
+        padding: 80px 48px !important;
+        gap: 64px !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 350px !important;
+    }
+
+    .right__body {
+        padding: 36px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   B. STANDARD DESKTOPS & LAPTOPS (1024px to 1439px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .page {
+        padding: 50px 24px !important;
+        gap: 40px !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 280px !important;
+    }
+
+    .right__body {
+        padding: 24px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   C. TABLETS & SMALL DESKTOPS (< 1024px)
+      Transition to comfortable vertical stack
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+    .page {
+        flex-direction: column !important;
+        padding: 40px 20px !important;
+        gap: 36px !important;
+    }
+
+    .left {
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+    }
+
+    .right {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: clamp(240px, 36vh, 320px) !important;
+    }
+
+    .right__body {
+        padding: 24px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   D. LARGE PHONES / PHABLETS (481px to 767px)
+      e.g. iPhone 14/15/16 Pro Max, Galaxy S23/S24 Ultra
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+    .page {
+        padding: 32px 16px !important;
+        gap: 28px !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 230px !important;
+    }
+
+    .right__body {
+        padding: 20px !important;
+    }
+
+    .tabs-row {
+        gap: 10px !important;
+    }
+
+    .tabs {
+        gap: 12px !important;
+    }
+
+    .tabs button {
+        font-size: 0.78rem !important;
+        padding-bottom: 8px !important;
+    }
+
+    .slide-title {
+        font-size: 1.35rem !important;
+    }
+
+    .slide-text {
+        font-size: 0.94rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   E. STANDARD SMARTPHONES (361px to 480px)
+      e.g. iPhone 12/13/14/15/16, Galaxy S21/S22/S23
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480px) {
+    .page {
+        padding: 24px 12px !important;
+        gap: 24px !important;
+    }
+
+    .left__title {
+        font-size: 1.65rem !important;
+        margin-bottom: 14px !important;
+    }
+
+    .left__text {
+        font-size: 0.92rem !important;
+        line-height: 1.65 !important;
+        margin-bottom: 22px !important;
+    }
+
+    .learn-more,
+    .learn-more.btn {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 195px !important;
+        min-height: 180px !important;
+    }
+
+    .right__body {
+        padding: 18px 14px !important;
+    }
+
+    .tabs-row {
+        gap: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+    .tabs {
+        gap: 8px !important;
+    }
+
+    .tabs button {
+        font-size: 0.72rem !important;
+        padding: 4px 2px 8px !important;
+    }
+
+    .tabs button::after {
+        bottom: -9px !important;
+    }
+
+    .page-indicator {
+        font-size: 0.75rem !important;
+        padding: 3px 8px !important;
+    }
+
+    .slide-title {
+        font-size: 1.25rem !important;
+        margin-bottom: 8px !important;
+    }
+
+    .slide-text {
+        font-size: 0.88rem !important;
+        line-height: 1.6 !important;
+    }
+
+    .nav-btn {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        min-height: 36px !important;
+    }
+
+    .nav-btn svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   F. MINI PHONES & COMPACT SCREENS (320px to 360px)
+      e.g. iPhone SE, Galaxy Z Flip cover, small budget phones
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .page {
+        padding: 18px 8px !important;
+        gap: 20px !important;
+    }
+
+    .left__title {
+        font-size: 1.45rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .left__text {
+        font-size: 0.86rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 18px !important;
+    }
+
+    .learn-more,
+    .learn-more.btn {
+        width: 100% !important;
+        padding: 11px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 170px !important;
+        min-height: 160px !important;
+    }
+
+    .right__body {
+        padding: 14px 10px !important;
+    }
+
+    .tabs-row {
+        gap: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .tabs {
+        gap: 6px !important;
+    }
+
+    .tabs button {
+        font-size: 0.68rem !important;
+        padding: 3px 2px 6px !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .tabs button::after {
+        bottom: -7px !important;
+        height: 2px !important;
+    }
+
+    .page-indicator {
+        font-size: 0.7rem !important;
+        padding: 2px 6px !important;
+    }
+
+    .slide-title {
+        font-size: 1.12rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .slide-text {
+        font-size: 0.84rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .nav-btn {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px !important;
+        min-height: 34px !important;
+    }
+
+    .nav-btn svg {
+        width: 16px !important;
+        height: 16px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   G. ULTRA-NARROW FOLDABLE SCREENS (<= 310px)
+      e.g. Galaxy Fold front screen (280px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 310px) {
+    .page {
+        padding: 14px 4px !important;
+    }
+
+    .hero-imageW,
+    #heroImageW {
+        height: 145px !important;
+    }
+
+    .tabs button {
+        font-size: 0.64rem !important;
+    }
+
+    .slide-title {
+        font-size: 1.05rem !important;
+    }
+
+    .slide-text {
+        font-size: 0.8rem !important;
+    }
+}

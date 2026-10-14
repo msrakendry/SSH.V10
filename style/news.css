@@ -1,0 +1,394 @@
+/* ==========================================================================
+   SSH WEBSITE — NEWS & BLOG SECTION (BASE COMPONENT STYLES)
+   Target: .blog-section, .news-section, .hero-card, .news-grid, .blog-grid
+   Responsive Styles: See style/news-responsive.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ROOT VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    --news-accent: var(--education, #f3b93a);
+    --news-accent-glow: rgba(243, 185, 58, 0.25);
+    --news-card-bg: rgba(255, 255, 255, 0.06);
+    --news-card-border: rgba(255, 255, 255, 0.12);
+    --news-radius:4px;
+    --news-btn-bg: #0c4a60;
+    --news-btn-hover: #093748;
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION WRAPPER (.blog-section & .news-section)
+   -------------------------------------------------------------------------- */
+.blog-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(32px, 5vh, 64px) 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.blog-section .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 3.5vw, 40px);
+    box-sizing: border-box;
+}
+
+.news-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Section Title */
+.news-section .section-title,
+.latest-btn .section-title {
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    border-left: 5px solid var(--news-accent);
+    padding-left: clamp(12px, 1.8vw, 18px);
+    margin: 0 0 clamp(24px, 3.5vh, 36px) 0;
+    position: relative;
+    text-transform: capitalize;
+}
+
+/* --------------------------------------------------------------------------
+   3. FEATURED STORY HERO CARD (.hero-card)
+   -------------------------------------------------------------------------- */
+.hero-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: clamp(40px, 5.5vh, 64px);
+    border-radius: var(--news-radius);
+    box-sizing: border-box;
+}
+
+.hero-card img {
+    width: 80%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--news-radius);
+    display: block;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-card:hover img {
+    transform: scale(1.02);
+}
+
+.hero-content {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44%;
+    max-width: 500px;
+    background: var(--news-accent);
+    padding: clamp(28px, 3.5vw, 44px);
+    border-radius: var(--news-radius);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover .hero-content {
+    box-shadow: 0 22px 56px rgba(0, 0, 0, 0.22);
+}
+
+.hero-content .category,
+.news-info .category {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(0, 0, 0, 0.08);
+    padding: 5px 12px;
+    border-radius: 30px;
+    color: #1e293b;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.hero-content h3 {
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0b1a2d;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.01em;
+}
+
+.hero-content p {
+    font-size: clamp(0.9rem, 1.05vw, 1rem);
+    line-height: 1.7;
+    color: #1e293b;
+    margin: 0 0 24px 0;
+    text-wrap: pretty;
+}
+
+.hero-content .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 26px;
+    background: var(--news-btn-bg);
+    color: #ffffff !important;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(12, 74, 96, 0.28);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+}
+
+.hero-content .btn:hover {
+    background: var(--news-btn-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(12, 74, 96, 0.38);
+}
+
+/* --------------------------------------------------------------------------
+   4. NEWS GRID ARTICLES (.news-grid & .news-item)
+   -------------------------------------------------------------------------- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 3.5vw, 42px);
+    margin-bottom: clamp(48px, 6.5vh, 80px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.news-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--news-radius);
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.news-item img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--news-radius);
+    display: block;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.news-item:hover img {
+    transform: scale(1.03);
+}
+
+/* Overlapping Info Card (Zero Horizontal Overflow Bug) */
+.news-info {
+    background: #f8fafc;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius:4px;
+    padding: clamp(22px, 2.6vw, 32px);
+    margin: -36px auto 0 auto;
+    position: relative;
+    width: calc(100% - 32px);
+    max-width: 94%;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.09);
+    box-sizing: border-box;
+    z-index: 2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover .news-info {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+}
+
+.news-info .category {
+    background: rgba(243, 185, 58, 0.16);
+    color: #b45309;
+    border: 1px solid rgba(243, 185, 58, 0.35);
+    margin-bottom: 12px;
+}
+
+.news-info h4 {
+    font-size: clamp(1.18rem, 1.6vw, 1.48rem);
+    font-weight: 800;
+    line-height: 1.35;
+    color: #0f172a;
+    margin: 0 0 18px 0;
+    letter-spacing: -0.01em;
+}
+
+.read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #0c4a60;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    border-bottom: 2px solid var(--news-accent);
+    padding-bottom: 3px;
+    transition: all 0.25s ease;
+}
+
+.news-item:hover .read-link {
+    color: #04293a;
+    border-bottom-color: #0c4a60;
+    padding-left: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   5. LATEST STORIES DIVIDER (.latest-btn)
+   -------------------------------------------------------------------------- */
+.latest-btn {
+    width: 100%;
+    margin: clamp(20px, 3vh, 36px) 0 clamp(24px, 3.5vh, 40px) 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. BLOG GRID (.blog-grid & .blog-card)
+   -------------------------------------------------------------------------- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: clamp(20px, 3vw, 32px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    border-radius:4px;
+    overflow: hidden;
+    background: var(--news-card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--news-card-border);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    box-sizing: border-box;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+    border-color: rgba(243, 185, 58, 0.4);
+}
+
+.program-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #0c1c2e;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card:hover .program-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: clamp(20px, 2.6vw, 28px);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #b45309;
+    margin-bottom: 12px;
+}
+
+.blog-meta i {
+    margin-right: 5px;
+}
+
+.blog-content h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+}
+
+.blog-content p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0;
+    flex-grow: 1;
+    text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   7. BASE DARK MODE SUPPORT
+   -------------------------------------------------------------------------- */
+body.dark-mode .news-section .section-title,
+body.dark-mode .latest-btn .section-title {
+    color: #f1faee;
+}
+
+body.dark-mode .news-info {
+    background: #152238;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .news-info h4 {
+    color: #f1faee;
+}
+
+body.dark-mode .news-info .read-link {
+    color: var(--news-accent);
+}
+
+body.dark-mode .blog-card {
+    background: rgba(18, 28, 48, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .blog-content h3 {
+    color: #f1faee;
+}
+
+body.dark-mode .blog-content p {
+    color: #94a3b8;
+}
+
+body.dark-mode .blog-meta {
+    color: var(--news-accent);
+}
