@@ -1,6 +1,6 @@
 
         /* Button Container */
-        .container {
+        .container_v {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,7 +87,7 @@
 
         /* Mobile Responsive */
         @media (max-width: 480px) {
-            .container {
+            .container_v {
                 padding: 20px 15px;
             }
 
