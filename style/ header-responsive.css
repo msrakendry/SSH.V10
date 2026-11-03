@@ -1,0 +1,1061 @@
+/* ==========================================================================
+   SUDAN SUSTAINABILITY HUB (SSH) - RESPONSIVE HEADER COMPONENT STYLES
+   File: style/header-responsive.css
+   
+   Provides robust, professional responsive behavior across:
+   - Ultra-wide & Desktop (> 1200px)
+   - Laptops & Small Desktops (1024px - 1199px)
+   - Tablets & Landscape Mobiles (768px - 1023px)
+   - Mobile Phones (< 768px down to 320px)
+   
+   Preserves:
+   - Visual design, colors, typography, brand assets
+   - Rotating logo emblem & typography
+   - 3D Book & Beating Heart Donate Button
+   - Mega menus, dropdowns, and three-dots navigation
+   - WCAG 2.1 AA keyboard accessibility and reduced-motion preferences
+========================================================================== */
+
+/* ==========================================================================
+   1. ACCESSIBILITY & REDUCED MOTION PREFERENCES
+   ========================================================================== */
+
+/* Visible keyboard focus indicators */
+.nav-link:focus-visible,
+.dropdown-link:focus-visible,
+.dropdown-toggle:focus-visible,
+.hamburger:focus-visible,
+.mobile-close:focus-visible,
+.mobile-nav-link:focus-visible,
+.mobile-submenu-link:focus-visible,
+.aa:focus-visible,
+.mobile-panel-foot .btn-primary:focus-visible,
+.mobile-panel-foot .btn-ghost:focus-visible {
+    outline: 2px solid var(--clr-accent, #d4ac0d) !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 4px rgba(212, 172, 13, 0.25) !important;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .rotating-ring_RH,
+    .heart,
+    .artery,
+    .heart-wrapper {
+        animation: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ==========================================================================
+   2. DESKTOP BASE REFINEMENTS & DROPDOWN VIEWPORT SAFETY
+   ========================================================================== */
+
+/* Ensure header container never creates unexpected horizontal overflow */
+#header {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.nav-bar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
+    gap: 12px;
+}
+
+/* Make logo container responsive and prevent overflow */
+.alogo_RH.logo-table {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    max-width: 100%;
+    transition: opacity 0.2s ease;
+}
+
+.alogo_RH.logo-table:hover {
+    opacity: 0.95;
+}
+
+.logo-container_RH {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+}
+
+.rotating-ring_RH img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+    display: block;
+}
+
+.center-text_RH {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.center-text_RH img.ssh_latters_RH {
+    width: 42px;
+    height: 17px;
+    object-fit: contain;
+}
+
+.text-img {
+    width: auto;
+    max-width: 285px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.SSH-TEXT {
+    width: 100%;
+    max-height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+.topbar-divider {
+    height: 60px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 12px;
+    flex-shrink: 0;
+}
+
+/* Primary nav items */
+.nav-primary {
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 10px;
+    background: transparent;
+    border: none;
+    color: var(--white, #ffffff);
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link svg.chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.25s ease;
+    color: currentColor;
+    flex-shrink: 0;
+}
+
+.nav-item.active > .nav-link svg.chevron,
+.nav-item:hover > .nav-link svg.chevron {
+    transform: rotate(180deg);
+}
+
+.nav-item:hover > .nav-link,
+.nav-item.active > .nav-link,
+.nav-item:focus-within > .nav-link {
+    color: var(--education, #ffd736);
+}
+
+/* ==========================================================================
+   3. DROPDOWN & MEGA MENU VIEWPORT BOUNDS (PREVENT OFF-SCREEN CLIPPING)
+   ========================================================================== */
+
+/* Universal styling for dropdown cards */
+.menuSTYLING {
+    position: absolute;
+    top: calc(100% + 8px);
+    z-index: 1050;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    max-height: calc(85vh - 75px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* Responsive dimensions replacing rigid vw/vh */
+.nav-item .WH_1,
+.nav-item .WH_5,
+.nav-item .WH_7 {
+    width: 300px;
+    max-width: 90vw;
+    height: auto;
+    max-height: calc(82vh - 70px);
+}
+
+.nav-item .WH_2,
+.nav-item .WH_6,
+.nav-item .WH_8 {
+    width: 100%;
+    height: auto;
+    position: static;
+    box-shadow: none;
+}
+
+.dropdown-items {
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+}
+
+/* Mega menu (Programs) */
+.nav-item .WH_3 {
+    width: 580px;
+    max-width: min(92vw, 680px);
+    height: auto;
+    max-height: calc(85vh - 70px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-item .WH_4 {
+    height: auto;
+    max-height: none;
+    position: static;
+    box-shadow: none;
+}
+
+.mega-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    gap: 0;
+}
+
+.mega-col {
+    width: auto;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.mega-col-title {
+    font-size: 0.88rem;
+    padding: 0 0 6px 4px;
+    margin-bottom: 8px;
+}
+
+/* THREE-DOTS MEGA MENU - FIXED VIEWPORT PLACEMENT & RESPONSIVE BEHAVIOR */
+.idot {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.JiIQc {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.JiIQc svg {
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #ffffff;
+}
+
+.idot:hover .JiIQc svg,
+.idot.active .JiIQc svg,
+.idot.open .JiIQc svg {
+    background-color: rgba(240, 242, 247, 0.2);
+    color: var(--education, #ffd736) !important;
+}
+
+.mega-menuIDOT {
+    width: min(88vw, 860px) !important;
+    max-width: 95vw !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    height: auto !important;
+    max-height: calc(85vh - 70px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1500 !important;
+}
+
+.mega-menuIDOT::before {
+    left: auto !important;
+    right: 20px !important;
+    transform: rotate(45deg) !important;
+}
+
+/* Force open state regardless of inline style="opacity:0; visibility:hidden;" */
+.idot:hover .mega-menuIDOT,
+.idot.active .mega-menuIDOT,
+.idot.open .mega-menuIDOT,
+.mega-menuIDOT.is-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    display: block !important;
+}
+
+.mega-grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 24px !important;
+    padding: 8px !important;
+    box-shadow: none !important;
+}
+
+.work-grid,
+.about-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+.drop-menu .about-grid {
+    width: 100% !important;
+}
+
+.block h4 {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+}
+
+.SET-drop-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.SET-drop-menu li {
+    max-width: 100% !important;
+}
+
+.menuAho {
+    font-size: 0.86rem;
+    line-height: 1.35;
+    padding: 4px 6px;
+    display: block;
+    color: #1a202c;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: normal;
+}
+
+.menuAho:hover,
+.SET-drop-menu li:hover .menuAho {
+    background-color: #082258;
+    color: var(--education, #ffd736) !important;
+    font-weight: 600;
+}
+
+/* Keyboard open states for dropdowns */
+.nav-item.active .dropdown,
+.nav-item.active .mega-menu,
+.nav-item.open .dropdown,
+.nav-item.open .mega-menu,
+.idot.active .mega-menuIDOT,
+.idot.open .mega-menuIDOT {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* ==========================================================================
+   4. LAPTOP & SMALL DESKTOP SCREENS (1024px – 1199px)
+   ========================================================================== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .nav-bar {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .alogo_RH.logo-table {
+        gap: 8px;
+    }
+
+    .logo-container_RH {
+        width: 58px;
+        height: 58px;
+    }
+
+    .center-text_RH img.ssh_latters_RH {
+        width: 34px;
+        height: 14px;
+    }
+
+    .text-img {
+        max-width: 220px;
+    }
+
+    .SSH-TEXT {
+        max-height: 30px;
+    }
+
+    .topbar-divider {
+        margin: 0 8px;
+        height: 48px;
+    }
+
+    .nav-primary {
+        gap: 6px;
+    }
+
+    .nav-link {
+        padding: 8px 6px;
+        font-size: 0.88rem;
+    }
+
+    .book {
+        width: 120px;
+        height: 40px;
+    }
+
+    .cover p {
+        font-size: 0.95rem;
+    }
+
+    .nav-item .WH_3 {
+        width: 500px;
+    }
+
+    .mega-menuIDOT {
+        width: 740px !important;
+    }
+}
+
+/* ==========================================================================
+   5. TABLET & MOBILE BREAKPOINT (<= 1023px)
+      Switch seamlessly to mobile drawer navigation
+   ========================================================================== */
+@media (max-width: 1023px) {
+    #header {
+        height: 72px;
+    }
+
+    .nav-bg {
+        height: 72px;
+    }
+
+    .nav-bar {
+        height: 72px;
+        padding: 0 14px;
+        justify-content: space-between;
+    }
+
+    /* Tablet Nav: hide regular nav links, but KEEP .idot (three-dots) directly accessible in header */
+    .nav-primary > .nav-item {
+        display: none !important;
+    }
+
+    .nav-primary {
+        display: flex !important;
+        align-items: center !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 2px !important;
+        list-style: none !important;
+    }
+
+    .nav-primary > .idot {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        height: 100% !important;
+    }
+
+    .JiIQc {
+        width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+    }
+
+    .topbar-divider {
+        display: none !important;
+    }
+
+    /* THREE-DOTS MEGA MENU RESPONSIVE (TABLET) */
+    .mega-menuIDOT {
+        position: fixed !important;
+        top: 76px !important;
+        left: 14px !important;
+        right: 14px !important;
+        width: auto !important;
+        max-width: calc(100vw - 28px) !important;
+        max-height: calc(86vh - 76px) !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        transform: none !important;
+        z-index: 2100 !important;
+        padding: 20px !important;
+        border-radius: 8px !important;
+        background: #ffffff !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .mega-menuIDOT::before {
+        display: none !important;
+    }
+
+    .mega-grid {
+        display: grid !important;
+        grid-template-columns: 1.15fr 1fr !important;
+        gap: 24px !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .drop-menu .about-grid {
+        width: 100% !important;
+    }
+
+    .work-grid,
+    .about-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    /* Logo scaling on tablet */
+    .alogo_RH.logo-table {
+        gap: 8px;
+    }
+
+    .logo-container_RH {
+        width: 52px;
+        height: 52px;
+    }
+
+    .center-text_RH img.ssh_latters_RH {
+        width: 30px;
+        height: 13px;
+    }
+
+    .text-img {
+        max-width: 200px;
+    }
+
+    .SSH-TEXT {
+        max-height: 26px;
+    }
+
+    /* Donate button scaling for tablet */
+    .book {
+        width: 110px;
+        height: 38px;
+    }
+
+    .cover p {
+        font-size: 0.92rem;
+    }
+
+    .heart {
+        width: 40px;
+    }
+
+    /* Show hamburger toggle button */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        padding: 10px;
+        border: none;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1001;
+        transition: background-color 0.2s ease;
+    }
+
+    .hamburger:hover {
+        background: rgba(255, 255, 255, 0.22);
+    }
+
+    .hamburger span {
+        display: block;
+        height: 2.5px;
+        background: #ffffff;
+        border-radius: 2px;
+        margin: 2.5px 0;
+        transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+    }
+
+    .hamburger span:nth-child(1) { width: 22px; }
+    .hamburger span:nth-child(2) { width: 17px; }
+    .hamburger span:nth-child(3) { width: 22px; }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+        width: 22px;
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+        width: 22px;
+    }
+
+    /* Mobile Drawer */
+    .mobile-panel {
+        display: block !important;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        visibility: hidden;
+        pointer-events: none;
+        transition: visibility 0.35s ease;
+    }
+
+    .mobile-panel.open {
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .mobile-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(8, 20, 45, 0.65);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .mobile-panel.open .mobile-overlay {
+        opacity: 1;
+    }
+
+    .mobile-drawer {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: min(390px, 88vw);
+        background: #ffffff;
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-direction: column;
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.25);
+        z-index: 2;
+    }
+
+    .mobile-panel.open .mobile-drawer {
+        transform: translateX(0);
+    }
+
+    .mobile-panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        background: #f8fafc;
+        border-bottom: 1px solid #e2e8f0;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .mobile-panel-head .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+    }
+
+    .mobile-logo-text {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--clr-brand, #1a5276);
+    }
+
+    .mobile-close {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1.5px solid #cbd5e1;
+        background: #ffffff;
+        color: #475569;
+        font-size: 1.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-close:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+        border-color: #94a3b8;
+    }
+
+    .mobile-nav {
+        padding: 14px 16px;
+        flex: 1;
+    }
+
+    .mobile-nav-item {
+        border-radius: 8px;
+        margin-bottom: 4px;
+        border: 1px solid transparent;
+        background: #ffffff;
+        transition: background-color 0.2s ease;
+    }
+
+    .mobile-nav-item:has(.mobile-submenu.open) {
+        border-color: #e2e8f0;
+        background: #f8fafc;
+    }
+
+    .mobile-nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 0.96rem;
+        font-weight: 600;
+        color: #1e293b;
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: left;
+        text-decoration: none;
+        transition: background-color 0.2s, color 0.2s;
+        box-sizing: border-box;
+    }
+
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+        background: rgba(26, 82, 118, 0.08);
+        color: var(--clr-brand, #1a5276);
+    }
+
+    .mobile-nav-link svg {
+        transition: transform 0.25s ease;
+        color: #64748b;
+        flex-shrink: 0;
+    }
+
+    .mobile-nav-link.active svg {
+        transform: rotate(180deg);
+        color: var(--clr-brand, #1a5276);
+    }
+
+    .mobile-submenu {
+        display: none;
+        padding: 4px 12px 10px 18px;
+        border-top: 1px dashed #e2e8f0;
+    }
+
+    .mobile-submenu.open {
+        display: block;
+    }
+
+    .mobile-submenu-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 42px;
+        padding: 8px 12px;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: #475569;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .mobile-submenu-link .icon {
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .mobile-submenu-link:hover {
+        background: #ffffff;
+        color: var(--clr-brand, #1a5276);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-direct-link {
+        justify-content: flex-start;
+    }
+
+    .mobile-panel-foot {
+        padding: 16px 20px 24px;
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .mobile-btn-partner,
+    .mobile-btn-donate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 46px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        border-radius: 8px;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mobile-btn-partner {
+        background: transparent;
+        border: 2px solid var(--clr-brand, #1a5276);
+        color: var(--clr-brand, #1a5276);
+    }
+
+    .mobile-btn-partner:hover {
+        background: rgba(26, 82, 118, 0.08);
+    }
+
+    .mobile-btn-donate {
+        background: linear-gradient(135deg, #d4ac0d 0%, #b7950b 100%);
+        color: #0c2340;
+        box-shadow: 0 4px 12px rgba(212, 172, 13, 0.3);
+    }
+
+    .mobile-btn-donate:hover {
+        box-shadow: 0 6px 16px rgba(212, 172, 13, 0.4);
+        transform: translateY(-1px);
+    }
+}
+
+/* ==========================================================================
+   6. SMARTPHONE SCREENS (< 640px)
+   ========================================================================== */
+@media (max-width: 639px) {
+    #header {
+        height: 66px;
+    }
+
+    .nav-bg {
+        height: 66px;
+    }
+
+    .nav-bar {
+        height: 66px;
+        padding: 0 10px;
+        gap: 6px;
+    }
+
+    .alogo_RH.logo-table {
+        gap: 6px;
+    }
+
+    .logo-container_RH {
+        width: 44px;
+        height: 44px;
+    }
+
+    .center-text_RH img.ssh_latters_RH {
+        width: 25px;
+        height: 10px;
+    }
+
+    .text-img {
+        max-width: 155px;
+    }
+
+    .SSH-TEXT {
+        max-height: 22px;
+    }
+
+    .JiIQc {
+        width: 38px !important;
+        height: 38px !important;
+        min-height: 38px !important;
+    }
+
+    .JiIQc svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    /* Smartphone Three-Dots Mega Menu */
+    .mega-menuIDOT {
+        top: 68px !important;
+        left: 8px !important;
+        right: 8px !important;
+        width: auto !important;
+        max-width: calc(100vw - 16px) !important;
+        max-height: calc(88vh - 68px) !important;
+        padding: 16px 12px !important;
+    }
+
+    .mega-grid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .work-grid,
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .drop-menu h3 {
+        font-size: 0.95rem !important;
+        margin-bottom: 8px !important;
+        color: #1a5276 !important;
+        border-bottom: 2px solid var(--clr-accent, #d4ac0d) !important;
+        padding-bottom: 4px !important;
+    }
+
+    .block h4 {
+        font-size: 0.82rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    .menuAho {
+        font-size: 0.8rem !important;
+        padding: 3px 4px !important;
+        white-space: normal !important;
+    }
+
+    /* Sleek compact Donate button in smartphone header */
+    .book {
+        width: 90px;
+        height: 34px;
+    }
+
+    .cover p {
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+    }
+
+    .heart {
+        width: 32px;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .hamburger span:nth-child(1) { width: 19px; }
+    .hamburger span:nth-child(2) { width: 15px; }
+    .hamburger span:nth-child(3) { width: 19px; }
+}
+
+/* ==========================================================================
+   7. ULTRA-COMPACT SMARTPHONES (< 380px)
+   ========================================================================== */
+@media (max-width: 379px) {
+    .nav-bar {
+        padding: 0 8px;
+        gap: 4px;
+    }
+
+    .logo-container_RH {
+        width: 38px;
+        height: 38px;
+    }
+
+    .center-text_RH img.ssh_latters_RH {
+        width: 22px;
+        height: 9px;
+    }
+
+    .text-img {
+        max-width: 125px;
+    }
+
+    .SSH-TEXT {
+        max-height: 19px;
+    }
+
+    .book {
+        width: 78px;
+        height: 32px;
+    }
+
+    .cover p {
+        font-size: 0.78rem;
+    }
+
+    .work-grid,
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+
+    .mega-menuIDOT {
+        top: 66px !important;
+        left: 6px !important;
+        right: 6px !important;
+        padding: 12px 10px !important;
+    }
+
+    .hamburger {
+        width: 38px;
+        height: 38px;
+        padding: 6px;
+    }
+}
+

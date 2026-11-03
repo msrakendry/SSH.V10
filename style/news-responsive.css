@@ -1,0 +1,484 @@
+/* ==========================================================================
+   SSH WEBSITE — NEWS & BLOG SECTION (DEDICATED RESPONSIVE STYLES)
+   Target: .blog-section, .news-section, .hero-card, .news-grid, .blog-grid
+   File: style/news-responsive.css
+   Breakpoints:
+     - Ultra-wide Desktops (1400px+)
+     - Standard Laptops & Desktops (1024px – 1399px)
+     - Tablets Portrait & Landscape (768px – 1023px)
+     - Large Phones & Mobile Landscape (481px – 767px)
+     - Standard Phones (361px – 480px)
+     - Mini Mobile Phones (320px – 360px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K SCREENS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .blog-section .container {
+        max-width: 1360px;
+    }
+
+    .news-section .section-title,
+    .latest-btn .section-title {
+        font-size: 2.75rem;
+    }
+
+    .hero-card img {
+        width: 80%;
+        height: 540px;
+    }
+
+    .hero-content {
+        width: 42%;
+        max-width: 520px;
+        padding: 44px;
+    }
+
+    .hero-content h3 {
+        font-size: 2rem;
+    }
+
+    .news-item img {
+        height: 360px;
+    }
+
+    .news-info h4 {
+        font-size: 1.55rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 36px;
+    }
+
+    .program-image {
+        height: 240px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1024px – 1399px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .hero-card img {
+        width: 78%;
+        height: 480px;
+    }
+
+    .hero-content {
+        width: 46%;
+        max-width: 480px;
+        padding: 36px 30px;
+    }
+
+    .hero-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .news-item img {
+        height: 310px;
+    }
+
+    .news-info h4 {
+        font-size: 1.35rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .program-image {
+        height: 210px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS (768px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .blog-section {
+        padding: 40px 0;
+    }
+
+    .news-section .section-title,
+    .latest-btn .section-title {
+        font-size: 2.1rem;
+        padding-left: 14px;
+        border-left-width: 5px;
+        margin-bottom: 28px;
+    }
+
+    /* Hero Card Stacks into Modern Editorial Card */
+    .hero-card {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 44px;
+    }
+
+    .hero-card img {
+        width: 100%;
+        height: 380px;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .hero-content {
+        position: relative;
+        transform: none;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: 100%;
+        margin-top: -30px;
+        border-radius: 14px;
+        padding: 32px 28px;
+    }
+
+    .hero-content h3 {
+        font-size: 1.65rem;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+        margin-bottom: 50px;
+    }
+
+    .news-item img {
+        height: 280px;
+    }
+
+    .news-info {
+        width: calc(100% - 24px);
+        padding: 24px 20px;
+        margin-top: -30px;
+    }
+
+    .news-info h4 {
+        font-size: 1.25rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .program-image {
+        height: 210px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. LARGE PHONES & MOBILE (max-width: 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .blog-section {
+        padding: 28px 0;
+    }
+
+    .blog-section .container {
+        padding: 0 16px;
+    }
+
+    .news-section .section-title,
+    .latest-btn .section-title {
+        font-size: 1.75rem;
+        border-left-width: 4px;
+        padding-left: 12px;
+        margin-bottom: 22px;
+    }
+
+    /* Hero Card Mobile Layout */
+    .hero-card {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 36px;
+        border-radius: 12px;
+    }
+
+    .hero-card img {
+        width: 100%;
+        height: 260px;
+        border-radius: 12px;
+    }
+
+    .hero-content {
+        position: relative;
+        transform: none;
+        top: auto;
+        right: auto;
+        width: calc(100% - 16px);
+        max-width: 100%;
+        margin: -24px auto 0 auto;
+        border-radius: 12px;
+        padding: 24px 18px;
+    }
+
+    .hero-content .category {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .hero-content p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+    }
+
+    .hero-content .btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    /* News Grid Mobile Stacking */
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 40px;
+    }
+
+    .news-item img {
+        height: 240px;
+        border-radius: 12px;
+    }
+
+    .news-info {
+        width: calc(100% - 20px);
+        margin: -26px auto 0 auto;
+        padding: 20px 16px;
+        border-radius: 12px;
+    }
+
+    .news-info h4 {
+        font-size: 1.25rem;
+        line-height: 1.35;
+        margin-bottom: 14px;
+    }
+
+    /* Latest Divider */
+    .latest-btn {
+        margin: 24px 0 20px 0;
+    }
+
+    /* Blog Grid Mobile Stacking */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .blog-card {
+        border-radius: 12px;
+    }
+
+    .program-image {
+        height: 190px;
+    }
+
+    .blog-content {
+        padding: 20px 16px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    .blog-content p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. SMALL SMARTPHONES (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .blog-section .container {
+        padding: 0 12px;
+    }
+
+    .news-section .section-title,
+    .latest-btn .section-title {
+        font-size: 1.55rem;
+        padding-left: 10px;
+        border-left-width: 4px;
+        margin-bottom: 18px;
+    }
+
+    .hero-card img {
+        height: 220px;
+    }
+
+    .hero-content {
+        width: calc(100% - 8px);
+        padding: 20px 14px;
+        margin-top: -20px;
+    }
+
+    .hero-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .hero-content p {
+        font-size: 0.88rem;
+    }
+
+    .news-item img {
+        height: 210px;
+    }
+
+    .news-info {
+        width: calc(100% - 12px);
+        padding: 18px 14px;
+        margin-top: -22px;
+    }
+
+    .news-info h4 {
+        font-size: 1.15rem;
+    }
+
+    .program-image {
+        height: 180px;
+    }
+
+    .blog-content {
+        padding: 18px 14px;
+    }
+
+    .blog-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .blog-content p {
+        font-size: 0.86rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. MINI SMARTPHONES (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .blog-section .container {
+        padding: 0 8px;
+    }
+
+    .news-section .section-title,
+    .latest-btn .section-title {
+        font-size: 1.4rem;
+        padding-left: 8px;
+        border-left-width: 3px;
+    }
+
+    .hero-card img {
+        height: 190px;
+    }
+
+    .hero-content {
+        width: 100%;
+        margin-top: -16px;
+        padding: 16px 12px;
+    }
+
+    .hero-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .hero-content p {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .news-item img {
+        height: 180px;
+    }
+
+    .news-info {
+        width: 100%;
+        margin-top: -16px;
+        padding: 16px 12px;
+    }
+
+    .news-info h4 {
+        font-size: 1.08rem;
+    }
+
+    .program-image {
+        height: 160px;
+    }
+
+    .blog-content {
+        padding: 16px 12px;
+    }
+
+    .blog-content h3 {
+        font-size: 1rem;
+    }
+
+    .blog-content p {
+        font-size: 0.82rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE LANDSCAPE MODE (max-height: 520px and orientation: landscape)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    .hero-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-card img {
+        width: 60%;
+        height: 280px;
+    }
+
+    .hero-content {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .news-item img {
+        height: 200px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero-card img,
+    .hero-content,
+    .news-item img,
+    .news-info,
+    .blog-card,
+    .program-image img,
+    .hero-content .btn,
+    .read-link {
+        transition: none !important;
+        transform: none !important;
+    }
+}

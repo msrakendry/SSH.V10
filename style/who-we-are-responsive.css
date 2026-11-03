@@ -1,0 +1,385 @@
+/* ==========================================================================
+   SSH WEBSITE — WHO WE ARE SECTION (DEDICATED RESPONSIVE STYLES)
+   Target: .who-card, .card-grid, .image-wrapper, .content-section, #whoWeAreContent
+   File: style/who-we-are-responsive.css
+   Breakpoints:
+     - Ultra-wide Desktops (1400px+)
+     - Standard Laptops & Desktops (1024px – 1399px)
+     - Tablets Portrait & Landscape (768px – 1023px)
+     - Large Phones & Mobile Landscape (481px – 767px)
+     - Standard Phones (361px – 480px)
+     - Mini Mobile Phones (320px – 360px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K SCREENS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .who-card {
+        max-width: 1360px;
+        margin-bottom: 48px;
+    }
+
+    .who-card .container {
+        padding: 56px 52px;
+    }
+
+    .card-grid {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 60px;
+    }
+
+    .image-wrapper .image_p2 {
+        max-height: 620px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 2.75rem;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .sec-lead {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1024px – 1399px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399px) {
+    .who-card .container {
+        padding: 44px 36px;
+    }
+
+    .card-grid {
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 40px;
+    }
+
+    .image-wrapper .image_p2 {
+        max-height: 520px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 2.25rem;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 1.12rem;
+        line-height: 1.75;
+    }
+
+    .sec-lead {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS (768px – 1023px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .who-card {
+        border-radius: 14px;
+        margin: 20px auto 36px auto;
+    }
+
+    .who-card .container {
+        padding: 36px 28px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .image-wrapper {
+        order: 1;
+        width: 100%;
+    }
+
+    .image-wrapper .image_p2 {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        min-height: 320px;
+        max-height: 400px;
+        border-radius: 14px;
+    }
+
+    .content-section {
+        order: 2;
+    }
+
+    .heading-group {
+        margin-bottom: 20px;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 2rem;
+        padding-left: 14px;
+        border-left-width: 5px;
+    }
+
+    .description-content {
+        max-height: 250px;
+    }
+
+    .description-content.expanded {
+        max-height: 3500px;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 1.08rem;
+        line-height: 1.75;
+    }
+
+    .sec-lead {
+        font-size: 0.98rem;
+        line-height: 1.75;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. LARGE PHONES & MOBILE LANDSCAPE (481px – 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    .who-card {
+        border-radius: 12px;
+        margin: 16px auto 28px auto;
+    }
+
+    .who-card .container {
+        padding: 26px 18px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .image-wrapper {
+        order: 1;
+        width: 100%;
+    }
+
+    .image-wrapper .image_p2 {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        min-height: 230px;
+        max-height: 320px;
+        border-radius: 12px;
+    }
+
+    .image-badge-who {
+        bottom: 12px;
+        left: 12px;
+        font-size: 0.72rem;
+        padding: 5px 12px;
+    }
+
+    .content-section {
+        order: 2;
+    }
+
+    .heading-group {
+        margin-bottom: 16px;
+        gap: 10px;
+    }
+
+    .small-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .small-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 1.75rem;
+        border-left-width: 4px;
+        padding-left: 12px;
+    }
+
+    .description-content {
+        max-height: 220px;
+    }
+
+    .description-content.expanded {
+        max-height: 4000px;
+    }
+
+    .description-content:not(.expanded)::after {
+        height: 80px;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 0.98rem;
+        line-height: 1.68;
+        margin-bottom: 12px;
+    }
+
+    .sec-lead {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+
+    .read-more-btn {
+        width: 100%;
+        padding: 12px 20px;
+        margin-top: 14px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. STANDARD SMARTPHONES (361px – 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+    .who-card {
+        border-radius: 10px;
+    }
+
+    .who-card .container {
+        padding: 20px 14px;
+    }
+
+    .card-grid {
+        gap: 20px;
+    }
+
+    .image-wrapper .image_p2 {
+        aspect-ratio: 16 / 10;
+        min-height: 200px;
+        max-height: 260px;
+        border-radius: 10px;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 1.55rem;
+        border-left-width: 4px;
+        padding-left: 10px;
+    }
+
+    .description-content {
+        max-height: 200px;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 0.94rem;
+        line-height: 1.65;
+    }
+
+    .sec-lead {
+        font-size: 0.88rem;
+        line-height: 1.65;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. MINI SMARTPHONES (320px – 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .who-card .container {
+        padding: 16px 10px;
+    }
+
+    .card-grid {
+        gap: 16px;
+    }
+
+    .image-wrapper .image_p2 {
+        aspect-ratio: 4 / 3;
+        min-height: 180px;
+        max-height: 220px;
+        border-radius: 8px;
+    }
+
+    .image-badge-who {
+        bottom: 8px;
+        left: 8px;
+        font-size: 0.68rem;
+        padding: 4px 10px;
+    }
+
+    .section-le,
+    .who-card .section-le {
+        font-size: 1.4rem;
+        padding-left: 8px;
+        border-left-width: 3px;
+    }
+
+    .description-content {
+        max-height: 190px;
+    }
+
+    .description-content p.sec-lead:first-child {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .sec-lead {
+        font-size: 0.84rem;
+        line-height: 1.6;
+    }
+
+    .read-more-btn {
+        padding: 10px 16px;
+        font-size: 0.88rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE LANDSCAPE MODE (max-height: 520px and orientation: landscape)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    .who-card .container {
+        padding: 20px 16px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .image-wrapper {
+        order: 1;
+    }
+
+    .image-wrapper .image_p2 {
+        aspect-ratio: 16 / 9;
+        max-height: 250px;
+    }
+
+    .content-section {
+        order: 2;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .who-card,
+    .image-wrapper .image_p2,
+    .image-wrapper .image_p2 img,
+    .read-more-btn,
+    .description-content {
+        transition: none !important;
+        transform: none !important;
+    }
+}

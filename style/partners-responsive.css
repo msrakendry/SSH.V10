@@ -1,0 +1,651 @@
+/* ==========================================================================
+   SSH WEBSITE — OUR ESTIMATE PARTNERS SECTION
+   Dedicated Comprehensive Responsive Stylesheet
+   Target Components:
+     - Section: .partners
+     - Container: .partners .container
+     - Header: .section-partner, .section-partner .section-title
+     - Slider & Track: .slider, .track
+     - Partner Cards: .partner-card, .partner-card a
+     - Partner Logos: .partner-card a svg, .partner-card a img, .AOFCE
+   Breakpoints:
+     0. Base Component & Fluid Foundation
+     1. Ultra-Wide & 4K Desktops (min-width: 1400px)
+     2. Standard Laptops & Desktops (1100px – 1399.98px)
+     3. Small Laptops & Large Tablets (860px – 1099.98px)
+     4. Portrait Tablets & Small Tablets (640px – 859.98px)
+     5. Large Phones & Mobile Landscape (481px – 639.98px)
+     6. Standard Mobile Phones (361px – 480.98px)
+     7. Compact Mobile Phones (321px – 360.98px)
+     8. Ultra-Narrow & Foldable Devices (max-width: 320px)
+     9. Mobile Landscape Orientation (@media (max-height: 520px) and (orientation: landscape))
+    10. Touch Devices & Hover Reset (@media (hover: none))
+    11. Dark Mode Adaptations (body.dark-mode)
+    12. Reduced Motion & Print Accessibility
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. BASE COMPONENT & FLUID FOUNDATION
+   -------------------------------------------------------------------------- */
+.partners {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding: clamp(24px, 4.5vh, 56px) 0;
+    margin: clamp(32px, 5vh, 64px) 0 !important;
+    overflow: hidden;
+}
+
+.partners .container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 clamp(14px, 3vw, 36px);
+    box-sizing: border-box;
+}
+
+/* Section Title */
+.section-partner {
+    width: 100%;
+    margin-bottom: clamp(16px, 3vh, 32px);
+}
+
+.section-partner .section-title {
+    font-size: clamp(1.4rem, 2.5vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: #00335b;
+    border-left: 4px solid var(--education, #f3b93a);
+    padding-left: clamp(8px, 1.2vw, 14px);
+    margin: 0;
+    position: relative;
+}
+
+/* Slider Masked Viewport (Fade Gradients on Edges) */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 12px 0;
+    box-sizing: border-box;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+/* Continuous Marquee Track */
+.track {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.4vw, 36px);
+    width: max-content;
+    will-change: transform;
+    animation: scroll 35s linear infinite;
+}
+
+.slider:hover .track,
+.slider:active .track {
+    animation-play-state: paused;
+}
+
+/* Individual Partner Card */
+.partner-card {
+    position: relative;
+    width: 250px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 51, 91, 0.08);
+    border-radius: clamp(10px, 1.2vw, 14px);
+    box-shadow: 0 4px 16px rgba(0, 51, 91, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 1.5vw, 18px);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease,
+                background 0.35s ease;
+    user-select: none;
+}
+
+.partner-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    background: #ffffff;
+    box-shadow: 0 16px 36px rgba(0, 51, 91, 0.12);
+    border-color: rgba(0, 51, 91, 0.16);
+}
+
+.partner-card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Partner Logos */
+.partner-card a svg {
+    max-width: 150px;
+    max-height: 85px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), filter 0.35s ease;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.05));
+}
+
+.partner-card:hover a svg {
+    transform: scale(1.06);
+}
+
+.partner-card a img {
+    max-width: 135px;
+    max-height: 75px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.05));
+}
+
+.partner-card:hover a img {
+    transform: scale(1.06);
+}
+
+/* Animation Keyframe */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   1. ULTRA-WIDE & 4K DESKTOPS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .partners {
+        margin: 54px 0 !important;
+        padding: 48px 0;
+    }
+
+    .section-partner .section-title {
+        font-size: 2.25rem;
+    }
+
+    .track {
+        gap: 36px;
+        animation-duration: 38s;
+    }
+
+    .partner-card {
+        width: 280px;
+        height: 145px;
+        border-radius: 16px;
+        padding: 20px;
+    }
+
+    .partner-card a svg {
+        max-width: 175px;
+        max-height: 95px;
+    }
+
+    .partner-card a img {
+        max-width: 155px;
+        max-height: 85px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDARD LAPTOPS & DESKTOPS (1100px – 1399.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1100px) and (max-width: 1399.98px) {
+    .partners {
+        margin: 44px 0 !important;
+        padding: 40px 0;
+    }
+
+    .section-partner .section-title {
+        font-size: 2rem;
+    }
+
+    .track {
+        gap: 30px;
+        animation-duration: 35s;
+    }
+
+    .partner-card {
+        width: 250px;
+        height: 130px;
+        border-radius: 14px;
+        padding: 16px;
+    }
+
+    .partner-card a svg {
+        max-width: 150px;
+        max-height: 85px;
+    }
+
+    .partner-card a img {
+        max-width: 135px;
+        max-height: 75px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. SMALL LAPTOPS & LARGE TABLETS (860px – 1099.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 860px) and (max-width: 1099.98px) {
+    .partners {
+        margin: 38px 0 !important;
+        padding: 34px 0;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.85rem;
+    }
+
+    .track {
+        gap: 24px;
+        animation-duration: 32s;
+    }
+
+    .partner-card {
+        width: 220px;
+        height: 120px;
+        border-radius: 12px;
+        padding: 14px;
+    }
+
+    .partner-card a svg {
+        max-width: 135px;
+        max-height: 75px;
+    }
+
+    .partner-card a img {
+        max-width: 120px;
+        max-height: 65px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. PORTRAIT TABLETS & SMALL TABLETS (640px – 859.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 640px) and (max-width: 859.98px) {
+    .partners {
+        margin: 32px 0 !important;
+        padding: 28px 0;
+    }
+
+    .section-partner {
+        margin-bottom: 20px;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.65rem;
+    }
+
+    .slider {
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .track {
+        gap: 20px;
+        animation-duration: 28s;
+    }
+
+    .partner-card {
+        width: 195px;
+        height: 110px;
+        border-radius: 12px;
+        padding: 12px;
+    }
+
+    .partner-card a svg {
+        max-width: 120px;
+        max-height: 68px;
+    }
+
+    .partner-card a img {
+        max-width: 110px;
+        max-height: 60px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. LARGE PHONES & MOBILE LANDSCAPE (481px – 639.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 639.98px) {
+    .partners {
+        margin: 28px 0 !important;
+        padding: 24px 0;
+    }
+
+    .section-partner {
+        margin-bottom: 18px;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.5rem;
+    }
+
+    .slider {
+        padding: 8px 0;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    }
+
+    .track {
+        gap: 16px;
+        animation-duration: 25s;
+    }
+
+    .partner-card {
+        width: 175px;
+        height: 100px;
+        border-radius: 11px;
+        padding: 10px;
+    }
+
+    .partner-card a svg {
+        max-width: 110px;
+        max-height: 60px;
+    }
+
+    .partner-card a img {
+        max-width: 100px;
+        max-height: 52px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. STANDARD MOBILE PHONES (361px – 480.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480.98px) {
+    .partners {
+        margin: 24px 0 !important;
+        padding: 20px 0;
+    }
+
+    .section-partner {
+        margin-bottom: 16px;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.35rem;
+    }
+
+    .slider {
+        padding: 6px 0;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
+
+    .track {
+        gap: 14px;
+        animation-duration: 22s;
+    }
+
+    .partner-card {
+        width: 155px;
+        height: 90px;
+        border-radius: 10px;
+        padding: 8px;
+    }
+
+    .partner-card a svg {
+        max-width: 100px;
+        max-height: 52px;
+    }
+
+    .partner-card a img {
+        max-width: 90px;
+        max-height: 46px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. COMPACT MOBILE PHONES (321px – 360.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 321px) and (max-width: 360.98px) {
+    .partners {
+        margin: 20px 0 !important;
+        padding: 18px 0;
+    }
+
+    .section-partner {
+        margin-bottom: 14px;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.25rem;
+    }
+
+    .slider {
+        padding: 4px 0;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    }
+
+    .track {
+        gap: 12px;
+        animation-duration: 20s;
+    }
+
+    .partner-card {
+        width: 140px;
+        height: 80px;
+        border-radius: 9px;
+        padding: 6px;
+    }
+
+    .partner-card a svg {
+        max-width: 88px;
+        max-height: 46px;
+    }
+
+    .partner-card a img {
+        max-width: 80px;
+        max-height: 40px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ULTRA-NARROW & FOLDABLE DEVICES (max-width: 320px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 320px) {
+    .partners {
+        margin: 18px 0 !important;
+        padding: 16px 0;
+    }
+
+    .partners .container {
+        padding: 0 8px;
+    }
+
+    .section-partner {
+        margin-bottom: 12px;
+    }
+
+    .section-partner .section-title {
+        font-size: 1.15rem;
+    }
+
+    .slider {
+        padding: 4px 0;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .track {
+        gap: 10px;
+        animation-duration: 18s;
+    }
+
+    .partner-card {
+        width: 125px;
+        height: 72px;
+        border-radius: 8px;
+        padding: 5px;
+    }
+
+    .partner-card a svg {
+        max-width: 78px;
+        max-height: 40px;
+    }
+
+    .partner-card a img {
+        max-width: 70px;
+        max-height: 35px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. MOBILE LANDSCAPE ORIENTATION
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) and (max-width: 920px) {
+    .partners {
+        margin: 20px 0 !important;
+        padding: 16px 0;
+    }
+
+    .section-partner {
+        margin-bottom: 12px;
+    }
+
+    .track {
+        gap: 16px;
+        animation-duration: 24s;
+    }
+
+    .partner-card {
+        width: 160px;
+        height: 85px;
+        padding: 8px;
+    }
+
+    .partner-card a svg {
+        max-width: 95px;
+        max-height: 48px;
+    }
+
+    .partner-card a img {
+        max-width: 85px;
+        max-height: 42px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. TOUCH DEVICES & HOVER RESET (@media (hover: none))
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    .partner-card:hover {
+        transform: none !important;
+        box-shadow: 0 4px 16px rgba(0, 51, 91, 0.04) !important;
+        background: rgba(255, 255, 255, 0.88) !important;
+        border-color: rgba(0, 51, 91, 0.08) !important;
+    }
+
+    .partner-card:hover a svg,
+    .partner-card:hover a img {
+        transform: none !important;
+    }
+
+    .partner-card:active {
+        transform: scale(0.96) !important;
+        transition: transform 0.15s ease !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. DARK MODE RESPONSIVE ADAPTATIONS (body.dark-mode)
+   -------------------------------------------------------------------------- */
+body.dark-mode .section-partner .section-title {
+    color: #ffffff;
+}
+
+body.dark-mode .partner-card {
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .partner-card:hover {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .slider {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+body.dark-mode .partner-card a img {
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   12. REDUCED MOTION & PRINT ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .track {
+        animation: none !important;
+    }
+
+    .slider {
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+
+    .partner-card {
+        scroll-snap-align: start;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .partner-card a svg,
+    .partner-card a img {
+        transition: none !important;
+        transform: none !important;
+    }
+}
+
+@media print {
+    .partners {
+        margin: 20px 0 !important;
+        padding: 10px 0 !important;
+    }
+
+    .slider {
+        overflow: visible !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+    }
+
+    .track {
+        animation: none !important;
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .partner-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        background: #fff !important;
+        page-break-inside: avoid;
+    }
+}
