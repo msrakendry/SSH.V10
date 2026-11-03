@@ -1,0 +1,680 @@
+<!-- ==========================================================================
+     SUDAN SUSTAINABILITY HUB (SSH) - RESPONSIVE HEADER COMPONENT
+     File: components/header.html
+     
+     Preserves:
+     - Full original design, branding, typography, and color palette
+     - Rotating emblem logo + SSH typography
+     - Primary navigation: About, Programs (Mega Menu), Governance, Our Team, Contact
+     - Three-dots (Our Work & Who We Are) Mega Menu
+     - 3D Beating Heart Donate Button
+     - Announcement Bar
+     - Responsive Mobile Drawer with full navigation coverage & accordions
+     - WCAG 2.1 AA accessibility (ARIA states, focus management, keyboard navigation)
+     
+     Dependencies:
+     - style/global-Style.css
+     - style/header.css
+     - style/header-responsive.css
+     - Script/header-responsive.js
+========================================================================== -->
+
+<!-- =============================================
+        ANNOUNCEMENT BAR
+============================================= -->
+<div class="nav-announcement" role="banner" aria-label="Announcement">
+    <strong>SSH Vision 2026–2030:</strong> Empowering refugee and Sudanese communities through sustainable humanitarian
+    action
+</div>
+
+<!-- =============================================
+        STICKY HEADER + NAVIGATION
+============================================= -->
+<header id="header" class="site-header" role="banner">
+    <div class="nav-bg" id="navBg">
+        <nav class="nav-bar" role="navigation" aria-label="Main navigation">
+
+            <!-- LOGO -->
+            <a class="alogo_RH logo-table" href="#home" aria-label="Sudan Sustainability Hub Homepage">
+                <div class="logo-container_RH" aria-hidden="true">
+                    <div class="rotating-ring_RH">
+                        <img src="images/SSH-ROTATE-LOGO/SSH_LOGO_CIRCLE.png" alt="SSH Circular Emblem" width="80"
+                            height="80">
+                    </div>
+                    <div class="center-text_RH">
+                        <img class="ssh_latters_RH" src="images/SSH-ROTATE-LOGO/SSH_LOGO_SSH.png" alt="SSH Letters"
+                            width="45" height="18">
+                    </div>
+                </div>
+                <div class="text-img">
+                    <img class="SSH-TEXT" src="images/SSH-ROTATE-LOGO/SSH-TEXT.png" alt="Sudan Sustainability Hub"
+                        width="315" height="38" />
+                </div>
+            </a>
+            <!-- END LOGO -->
+
+            <div class="topbar-divider" aria-hidden="true"></div>
+
+            <!-- PRIMARY NAV (DESKTOP / LAPTOP) -->
+            <ul class="nav-primary" role="menubar" aria-label="Primary navigation menu">
+
+                <!-- 1. ABOUT -->
+                <li class="nav-item" role="none">
+                    <button class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="dropdown-about" id="nav-btn-about">
+                        About
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            aria-hidden="true" focusable="false">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="dropdown menuSTYLING WH_1" id="dropdown-about" role="menu"
+                        aria-labelledby="nav-btn-about">
+                        <div class="drop_bg WH_2">
+                            <div class="mega-col-title">Organization</div>
+                            <div class="dropdown-items WH_2">
+                                <a href="SSH POLICY/SSH_policy.html" class="dropdown-link" role="menuitem">
+                                    <span class="label">Who We Are</span>
+                                </a>
+                                <a href="SSH EMPLOYEE STRUCTURE/FULL_STRUCTURE_V1.html" class="dropdown-link"
+                                    role="menuitem">
+                                    <span class="label menuAhoF">SSH structure</span>
+                                </a>
+                                <a href="SSH EMPLOYEE STRUCTURE/FULL_ORGANIZAL_DIRECTORY_V1.html" class="dropdown-link"
+                                    role="menuitem">
+                                    <span class="label menuAhoF">SSH directory</span>
+                                </a>
+                                <div class="dropdown-divider" role="separator"></div>
+                                <a href="pages/SSH_PRINCIPLE.html" class="dropdown-link" role="menuitem">
+                                    <span class="label">Governance & Principles</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 2. PROGRAMS (MEGA MENU) -->
+                <li class="nav-item" role="none">
+                    <button class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="dropdown-programs" id="nav-btn-programs">
+                        Programs
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            aria-hidden="true" focusable="false">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="mega-menu menuSTYLING WH_3" id="dropdown-programs" role="menu"
+                        aria-labelledby="nav-btn-programs">
+                        <div class="drop_bg WH_4">
+                            <div class="mega-inner">
+                                <div class="mega-col">
+                                    <div class="mega-col-title">Core Pillars</div>
+                                    <a href="4PILLARS/WASH/SSH-SWS_dashboard_v2.html" class="dropdown-link"
+                                        role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="dropsvg fwash"
+                                            viewBox="0 0 352 512" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M205.22 22.09c-7.94-28.78-49.44-30.12-58.44 0C100.01 179.85 0 222.72 0 333.91 0 432.35 78.72 512 176 512s176-79.65 176-178.09c0-111.75-99.79-153.34-146.78-311.82zM176 448c-61.75 0-112-50.25-112-112 0-8.84 7.16-16 16-16s16 7.16 16 16c0 44.11 35.89 80 80 80 8.84 0 16 7.16 16 16s-7.16 16-16 16z">
+                                            </path>
+                                        </svg>
+                                        <span class="label">WASH </span>
+                                        <div class="WASH display-none" aria-hidden="true">
+                                            <span class="water">water</span>
+                                            <span class="sanitation">sanitation</span>
+                                            <span class="hygien">hygien</span>
+                                        </div>
+                                    </a>
+                                    <a href="#programs" class="dropdown-link" role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="dropsvg flivelihood"
+                                            viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M200 48l112 0c4.4 0 8 3.6 8 8l0 40-128 0 0-40c0-4.4 3.6-8 8-8zm-56 8l0 40-80 0C28.7 96 0 124.7 0 160l0 96 512 0 0-96c0-35.3-28.7-64-64-64l-80 0 0-40c0-30.9-25.1-56-56-56L200 0c-30.9 0-56 25.1-56 56zM512 304l-192 0 0 16c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32-14.3-32-32l0-16-192 0 0 112c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-112z">
+                                            </path>
+                                        </svg>
+                                        <span class="label">Livelihood</span>
+                                    </a>
+                                    <a href="#programs" class="dropdown-link" role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="dropsvg fenergy"
+                                            viewBox="0 0 640 512" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M431.98 448.01l-47.97.05V416h-128v32.21l-47.98.05c-8.82.01-15.97 7.16-15.98 15.99l-.05 31.73c-.01 8.85 7.17 16.03 16.02 16.02l223.96-.26c8.82-.01 15.97-7.16 15.98-15.98l.04-31.73c.01-8.85-7.17-16.03-16.02-16.02zM585.2 26.74C582.58 11.31 568.99 0 553.06 0H86.93C71 0 57.41 11.31 54.79 26.74-3.32 369.16.04 348.08.03 352c-.03 17.32 14.29 32 32.6 32h574.74c18.23 0 32.51-14.56 32.59-31.79.02-4.08 3.35 16.95-54.76-325.47zM259.83 64h120.33l9.77 96H250.06l9.77-96zm-75.17 256H71.09L90.1 208h105.97l-11.41 112zm16.29-160H98.24l16.29-96h96.19l-9.77 96zm32.82 160l11.4-112h149.65l11.4 112H233.77zm195.5-256h96.19l16.29 96H439.04l-9.77-96zm26.06 256l-11.4-112H549.9l19.01 112H455.33z">
+                                            </path>
+                                        </svg>
+                                        <span class="label">Energy</span>
+                                    </a>
+                                    <a href="#programs" class="dropdown-link" role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="dropsvg feducation" width="30"
+                                            height="30" viewBox="0 0 576 512" aria-hidden="true" focusable="false">
+                                            <path
+                                                d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z">
+                                            </path>
+                                        </svg>
+                                        <span class="label">Education</span>
+                                    </a>
+                                </div>
+                                <div class="mega-col">
+                                    <div class="mega-col-title">Special Initiatives</div>
+                                    <a href="#programs" class="dropdown-link" role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="peace_svg tow_pillars"
+                                            width="35px" height="35px" viewBox="0 0 64 64" aria-hidden="true"
+                                            focusable="false" role="img" preserveAspectRatio="xMidYMid meet">
+                                            <path
+                                                d="M9.7 12h8.5c3.2-2.2 7-3.7 11.1-4.2V12h5.6V7.8c4.1.5 7.8 2 11.1 4.2h8.5C48.8 5.9 40.9 2 32 2S15.2 5.9 9.7 12"
+                                                fill="#f8f9fa">
+                                            </path>
+                                            <g fill="#fdfdfc">
+                                                <path
+                                                    d="M54.2 22h6.1c-1.3-3.7-3.4-7.1-5.9-10h-8.5c3.6 2.5 6.5 6 8.3 10">
+                                                </path>
+                                                <path d="M18.1 12H9.7c-2.6 2.9-4.7 6.3-6 10h6.1c1.8-4 4.7-7.5 8.3-10">
+                                                </path>
+                                                <path d="M29.2 12h5.6v10h-5.6z">
+                                                </path>
+                                            </g>
+                                            <g fill="#fcfcfa">
+                                                <path d="M29.2 30.6L27.8 32h8.4l-1.4-1.4V22h-5.6z">
+                                                </path>
+                                                <path d="M56.4 32H62c0-3.5-.6-6.9-1.7-10h-6.1c1.4 3.1 2.2 6.4 2.2 10">
+                                                </path>
+                                                <path d="M3.7 22C2.6 25.1 2 28.5 2 32h5.6c0-3.6.8-6.9 2.2-10H3.7z">
+                                                </path>
+                                            </g>
+                                            <g fill="#fffefd">
+                                                <path d="M56.4 32c0 3.6-.8 6.9-2.2 10h6.1c1.1-3.1 1.7-6.5 1.7-10h-5.6">
+                                                </path>
+                                                <path d="M17.8 42h7.9l3.5-3.4V42h5.6v-3.4l3.5 3.4h7.9l-10-10h-8.4z">
+                                                </path>
+                                                <path d="M9.8 42c-1.4-3.1-2.2-6.4-2.2-10H2c0 3.5.6 6.9 1.7 10h6.1">
+                                                </path>
+                                            </g>
+                                            <g fill="#faf8f8">
+                                                <path d="M29.2 42h5.6v10h-5.6z">
+                                                </path>
+                                                <path
+                                                    d="M46.2 42h-8l9 9c-.4.4-.9.7-1.3 1h8.4c2.6-2.9 4.6-6.3 5.9-10h-6.1c-.8 1.8-1.8 3.5-3 5l-4.9-5">
+                                                </path>
+                                                <path
+                                                    d="M25.7 42h-8l-5 5c-1.2-1.5-2.2-3.2-3-5h-6c1.3 3.7 3.4 7.1 5.9 10H18c-.5-.3-.9-.7-1.3-1l9-9">
+                                                </path>
+                                            </g>
+                                            <path
+                                                d="M54.3 52h-8.4c-3.2 2.2-7 3.7-11.1 4.2V52h-5.6v4.2c-4.1-.5-7.9-2-11.1-4.2H9.7c5.5 6.1 13.5 10 22.3 10c8.9 0 16.8-3.9 22.3-10"
+                                                fill="#f9f8fa">
+                                            </path>
+                                        </svg>
+                                        <span class="label pill2_text">Youth Peacebuilding</span>
+                                    </a>
+                                    <a href="#programs" class="dropdown-link" role="menuitem">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="dropsvg fssh-lab"
+                                            viewBox="0 0 109.93 122.88" aria-hidden="true" focusable="false">
+                                            <defs>
+                                                <style>
+                                                    .cls-1 {
+                                                        fill: #2a62a7;
+                                                    }
+
+                                                    .cls-1,
+                                                    .cls-2,
+                                                    .cls-3,
+                                                    .cls-4 {
+                                                        fill-rule: evenodd;
+                                                    }
+
+                                                    .cls-2 {
+                                                        fill: #ff5255;
+                                                    }
+
+                                                    .cls-3 {
+                                                        fill: #46926f;
+                                                    }
+
+                                                    .cls-4 {
+                                                        fill: #ffd736;
+                                                    }
+                                                </style>
+                                            </defs>
+                                            <path
+                                                d="M107.78,92.16c-3.44,6-12.68,7.61-24.82,5.43a87.6,87.6,0,0,1-8.69-2,86.88,86.88,0,0,1-2.57,8.55c-4.18,11.61-10.22,18.79-17.12,18.79s-12.93-7.18-17.12-18.79c-.94-2.63-1.8-5.49-2.56-8.55-1.5.43-3,.81-4.41,1.15,0-.16,0-.32,0-.48a10.53,10.53,0,0,0-.69-3.74c1.35-.33,2.72-.69,4.13-1.1A136,136,0,0,1,31.6,74.7,138.14,138.14,0,0,1,18.35,64.35a80.75,80.75,0,0,0-6,6.35C5.59,78.7,2.63,85.78,5.08,90A7.92,7.92,0,0,0,9.75,93.4a10.72,10.72,0,0,0-.28,4.29c-3.72-1-6.51-2.8-8.09-5.53-3.45-6-.26-14.8,7.7-24.22a86.36,86.36,0,0,1,6.13-6.5,86.36,86.36,0,0,1-6.13-6.5c-8-9.42-11.15-18.24-7.7-24.22s12.68-7.61,24.82-5.43a87.76,87.76,0,0,1,8.7,2.05c.29-1.17.6-2.32.92-3.44a10.32,10.32,0,0,0,4,1.45c-.3,1.06-.59,2.15-.86,3.26a139.67,139.67,0,0,1,15.6,6.3,139.67,139.67,0,0,1,15.6-6.3,82.07,82.07,0,0,0-2.49-8.38c-3.56-9.85-8.2-15.95-13.11-15.95-2,0-4,1.06-5.92,3A10.57,10.57,0,0,0,45.05,5c2.88-3.21,6.1-5,9.53-5,6.9,0,12.94,7.18,17.12,18.79a86.88,86.88,0,0,1,2.57,8.55A86.94,86.94,0,0,1,83,25.29c12.14-2.18,21.38-.54,24.82,5.43s.26,14.8-7.7,24.22A88.22,88.22,0,0,1,94,61.44C95.55,63,97,64.5,98.39,66a10.84,10.84,0,0,0-3.08,2.14h0l-.38.4c-1.27-1.39-2.64-2.8-4.11-4.21A139.58,139.58,0,0,1,77.56,74.7a136,136,0,0,1-2.35,16.67,84.84,84.84,0,0,0,8.51,2c10.31,1.85,17.91.87,20.37-3.37a7.08,7.08,0,0,0,.83-4,10.47,10.47,0,0,0,4-1.76,11.6,11.6,0,0,1-1.16,8Zm-37.6,2.11A139.55,139.55,0,0,1,54.59,88,137.9,137.9,0,0,1,39,94.27a84.62,84.62,0,0,0,2.5,8.38c3.55,9.85,8.2,15.95,13.1,15.95s9.55-6.1,13.11-15.95a82.07,82.07,0,0,0,2.49-8.38ZM38,90.09c3.74-1.25,7.63-2.78,11.63-4.56q-3.41-1.75-6.83-3.73h0l-.11-.07q-3.37-2-6.55-4c.45,4.35,1.08,8.48,1.86,12.34ZM73,77.75c-2.14,1.38-4.36,2.73-6.64,4l0,0q-3.4,2-6.8,3.71c4,1.79,7.89,3.31,11.62,4.56.78-3.86,1.41-8,1.86-12.34Zm2.23-46.24a136,136,0,0,1,2.35,16.67A139.58,139.58,0,0,1,90.82,58.53a84.66,84.66,0,0,0,6-6.35c6.76-8,9.71-15.08,7.27-19.32S94,27.64,83.72,29.49a84.84,84.84,0,0,0-8.51,2Zm2.7,22.15c.12,2.55.18,5.15.18,7.78s-.06,5.23-.18,7.78c3.54-2.56,6.8-5.17,9.75-7.78-3-2.61-6.21-5.22-9.75-7.78ZM31.25,69.22q-.18-3.82-.18-7.78c0-2.63.06-5.23.18-7.78-3.53,2.56-6.8,5.17-9.74,7.78,2.94,2.61,6.21,5.22,9.74,7.78Zm.35-21A138,138,0,0,1,34,31.51a84,84,0,0,0-8.5-2c-10.31-1.85-17.92-.87-20.37,3.37s.51,11.32,7.26,19.32a82.87,82.87,0,0,0,6,6.35A138.14,138.14,0,0,1,31.6,48.18ZM38,32.79c-.78,3.86-1.41,8-1.86,12.34q3.23-2.07,6.64-4.05l0,0c2.27-1.31,4.55-2.55,6.8-3.71-4-1.79-7.88-3.31-11.62-4.56ZM35.72,50.54c-.24,3.53-.37,7.17-.37,10.9s.13,7.37.37,10.9q4.37,2.93,9.16,5.71l.11.06q4.83,2.79,9.59,5.12c3.13-1.54,6.31-3.23,9.49-5.06a1.74,1.74,0,0,1,.26-.15q4.77-2.76,9.12-5.68c.23-3.53.36-7.17.36-10.9s-.13-7.37-.36-10.9q-4.36-2.92-9.17-5.71l-.11-.06c-3.21-1.86-6.42-3.57-9.58-5.12q-4.71,2.31-9.5,5.06a1.35,1.35,0,0,1-.26.15c-3.17,1.84-6.22,3.74-9.11,5.68ZM73,45.13c-.45-4.35-1.08-8.48-1.86-12.34C67.39,34,63.49,35.57,59.5,37.35c2.26,1.17,4.54,2.41,6.82,3.73h0l.1.07c2.25,1.3,4.44,2.63,6.55,4Z">
+                                            </path>
+                                            <path class="cls-1"
+                                                d="M54.58,52.89A8.55,8.55,0,1,1,46,61.44a8.55,8.55,0,0,1,8.55-8.55Z">
+                                            </path>
+                                            <path class="cls-2"
+                                                d="M41.34,7.75a7.14,7.14,0,1,1-7.14,7.14,7.15,7.15,0,0,1,7.14-7.14Z">
+                                            </path>
+                                            <path class="cls-3"
+                                                d="M19.94,89.07a7.14,7.14,0,1,1-7.14,7.14,7.14,7.14,0,0,1,7.14-7.14Z">
+                                            </path>
+                                            <path class="cls-4"
+                                                d="M102.79,68.47a7.15,7.15,0,1,1-7.15,7.15,7.15,7.15,0,0,1,7.15-7.15Z">
+                                            </path>
+                                        </svg>
+                                        <span class="label pill2_text">SSH-LAB Innovation</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mega-footer">
+                                <span class="mega-footer-text">Serving refugee &amp; Sudanese communities</span>
+                                <a href="#programs" class="mega-footer-link">View all programs ›</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 3. GOVERNANCE -->
+                <li class="nav-item" role="none">
+                    <button class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="dropdown-governance" id="nav-btn-governance">
+                        Governance
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            aria-hidden="true" focusable="false">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="dropdown menuSTYLING WH_5" id="dropdown-governance" role="menu"
+                        aria-labelledby="nav-btn-governance">
+                        <div class="drop_bg WH_6">
+                            <div class="mega-col-title">Roles &amp; Responsibilities</div>
+                            <div class="dropdown-items">
+                                <a href="#board" class="dropdown-link" role="menuitem">
+                                    <span class="label">Board of Directors</span>
+                                </a>
+                                <a href="#executive" class="dropdown-link" role="menuitem">
+                                    <span class="label">Executive Management</span>
+                                </a>
+                                <div class="dropdown-divider" role="separator"></div>
+                                <a href="#positions" class="dropdown-link" role="menuitem">
+                                    <span class="label">Position Descriptions</span>
+                                </a>
+                                <a href="SSH POLICY/SSH_policy.html" class="dropdown-link" role="menuitem">
+                                    <span class="label">Policies &amp; Frameworks</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 4. OUR TEAM -->
+                <li class="nav-item" role="none">
+                    <button class="nav-link" role="menuitem" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="dropdown-team" id="nav-btn-team">
+                        Our Team
+                        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            aria-hidden="true" focusable="false">
+                            <polyline points="6 9 12 15 18 9" />
+                        </svg>
+                    </button>
+                    <div class="dropdown menuSTYLING WH_7" id="dropdown-team" role="menu"
+                        aria-labelledby="nav-btn-team">
+                        <div class="drop_bg WH_8">
+                            <div class="mega-col-title">Departments</div>
+                            <div class="dropdown-items">
+                                <a href="#positions" class="dropdown-link" role="menuitem">
+                                    <span class="label">Executive Office</span>
+                                </a>
+                                <a href="#positions" class="dropdown-link" role="menuitem">
+                                    <span class="label">Finance &amp; Administration</span>
+                                </a>
+                                <a href="#positions" class="dropdown-link" role="menuitem">
+                                    <span class="label">Communications &amp; Media</span>
+                                </a>
+                                <a href="#positions" class="dropdown-link" role="menuitem">
+                                    <span class="label">Partnerships &amp; Fundraising</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 5. CONTACT -->
+                <li class="nav-item contact-US" role="none">
+                    <a href="#contactUS" class="nav-link" role="menuitem">Contact</a>
+                </li>
+
+                <!-- ================START idothtml ..THREE dots=================-->
+                <li class="idot impact" role="none">
+                    <button aria-label="open menu" class=" JiIQc dropdown-toggle" aria-haspopup="true"
+                        aria-expanded="false" aria-controls="dropdown-idot" id="nav-btn-idot">
+                        <svg class="three_dot" width="24" height="25" viewBox="0 0 24 25" fill="#8b1339">
+                            <path
+                                d="M19 13.5C19.5523 13.5 20 13.0523 20 12.5C20 11.9477 19.5523 11.5 19 11.5C18.4477 11.5 18 11.9477 18 12.5C18 13.0523 18.4477 13.5 19 13.5Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path
+                                d="M12 13.5C12.5523 13.5 13 13.0523 13 12.5C13 11.9477 12.5523 11.5 12 11.5C11.4477 11.5 11 11.9477 11 12.5C11 13.0523 11.4477 13.5 12 13.5Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                            <path
+                                d="M5 13.5C5.55228 13.5 6 13.0523 6 12.5C6 11.9477 5.55228 11.5 5 11.5C4.44772 11.5 4 11.9477 4 12.5C4 13.0523 4.44772 13.5 5 13.5Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- ==================START DROP .DOWN .MENU -->
+                    <div class="mega-menuIDOT menubc menuSTYLING" id="dropdown-idot"
+                        style="opacity:0; visibility: hidden; pointer-events: auto;">
+                        <div class="mega-grid">
+                            <!-- OUR WORK -->
+                            <div class="drop-menu">
+                                <h3> <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M0 80C0 53.5 21.5 32 48 32l96 0c26.5 0 48 21.5 48 48l0 16 128 0 0-16c0-26.5 21.5-48 48-48l96 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-16-128 0 0 16c0 7.3-1.7 14.3-4.6 20.5l68.6 91.5 80 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-96 0c-26.5 0-48-21.5-48-48l0-96c0-7.3 1.7-14.3 4.6-20.5L128 224 48 224c-26.5 0-48-21.5-48-48L0 80z">
+                                        </path>
+                                    </svg> Our Work</h3>
+                                <div class="work-grid">
+                                    <div class="block">
+                                        <h4>Livelihood</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho" href="#">Economic Empowerment</a></li>
+                                            <li><a class="menuAho" href="#">Women Programs</a></li>
+                                            <li><a class="menuAho" href="#">SME Support</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="block">
+                                        <h4>Wash</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho" href="4PILLARS/WASH/SSH-SWS_dashboard_v2.html">Clean
+                                                    Water</a>
+                                            </li>
+                                            <li><a class="menuAho" href="#">Sanitation</a></li>
+                                            <li><a class="menuAho" href="#">Hygiene</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="block">
+                                        <h4>Energy</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho" href="#">Solar Energy</a></li>
+                                            <li><a class="menuAho" href="#">Renewable Systems</a></li>
+                                            <li><a class="menuAho" href="#">Community Power</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="block">
+                                        <h4>Education</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho" href="#">Basic Education</a></li>
+                                            <li><a class="menuAho" href="#">Digital Learning</a></li>
+                                            <li><a class="menuAho" href="#">Teacher Training</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- WHO WE ARE -->
+                            <div class="drop-menu">
+                                <h3> <svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512 512"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                                        <path
+                                            d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z">
+                                        </path>
+                                    </svg> Who We Are</h3>
+                                <div class="about-grid">
+                                    <div class="block">
+                                        <h4>Organization</h4>
+                                    </div>
+                                    <div class="block">
+                                        <h4>DONATION</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho" href="pages/SSH-CRM.html">
+                                                    Receipt Verification Portal</a></li>
+                                            <!-- <li><a class="menuAho" href="pages/Notes.html">nots</a></li>
+                                            <li><a class="menuAho" href="pages/web+nots/keep-links.html">grants</a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                    <div class="block">
+                                        <h4>Financial Reports</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho"
+                                                    href="pages/SSH-REPORTS/US Financial Information.html">Annual
+                                                    Budget Report</a></li>
+                                            <li><a id="policyA" class="menuAho"
+                                                    href="pages/SSH-REPORTS/US Financial Information.html">External
+                                                    Audit Report</a></li>
+                                            <!-- <li><a id="policyA" class="menuAho"
+                                                    href="VESION 2026-2023/Vission 2026 - 2030-deepseek.html">20230 deep vission</a></li> -->
+
+                                        </ul>
+                                    </div>
+                                    <div class="block">
+                                        <h4>vision 2026-2030</h4>
+                                        <ul class="SET-drop-menu">
+                                            <li><a class="menuAho"
+                                                    href="VESION 2026-2023/SSH_phases_2026-2030.html">phases</a>
+                                            </li>
+                                            <li><a class="menuAho" href="VESION 2026-2023/ADVANCED.html">advance</a>
+                                            </li>
+                                            <li><a class="menuAho" href="VESION 2026-2023/8-reasons.html">
+                                                    8-reasons</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ===============================END DROP DOWN MENU -->
+                </li>
+            </ul>
+
+            <!-- DONATION ACTION (3D BOOK + BEATING HEART) -->
+            <a href="pages/donate.html" class="aa" aria-label="Donate to Sudan Sustainability Hub">
+                <div class="book">
+                    <div class="heart-stage" aria-hidden="true">
+                        <div class="heart-wrapper">
+                            <svg class="heart" viewBox="0 0 300 300" aria-hidden="true" focusable="false">
+                                <defs>
+                                    <linearGradient id="heartGradComp" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ff758f"></stop>
+                                        <stop offset="50%" stop-color="#c1121f"></stop>
+                                        <stop offset="100%" stop-color="#780000"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path class="artery" d="M145 70 C130 40,120 25,130 10" stroke="#ffccd5"
+                                    stroke-width="10" fill="none" stroke-linecap="round"></path>
+                                <path class="artery" d="M170 75 C200 40,210 20,195 5" stroke="#ffccd5" stroke-width="10"
+                                    fill="none" stroke-linecap="round"></path>
+                                <path fill="url(#heartGradComp)" d="
+                                M150 255
+                                C120 230 55 180 50 120
+                                C45 60 95 40 125 75
+                                C135 87 145 100 150 115
+                                C155 100 165 87 175 75
+                                C205 40 255 60 250 120
+                                C245 180 180 230 150 255
+                                Z"></path>
+                                <ellipse cx="115" cy="110" rx="18" ry="40" fill="rgba(255,255,255,.25)" opacity=".35">
+                                </ellipse>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cover">
+                        <p>Donate</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- RESPONSIVE HAMBURGER TOGGLE -->
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation menu"
+                aria-expanded="false" aria-controls="mobilePanel">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- =============================================
+        RESPONSIVE MOBILE DRAWER
+============================================= -->
+<div class="mobile-panel" id="mobilePanel" role="dialog" aria-modal="true" aria-hidden="true"
+    aria-label="Mobile Navigation Menu">
+    <div class="mobile-overlay" id="mobileOverlay" tabindex="-1"></div>
+    <div class="mobile-drawer" role="document">
+
+        <!-- DRAWER HEADER -->
+        <div class="mobile-panel-head">
+            <a href="#home" class="nav-logo" aria-label="SSH Home">
+                <div class="logo-emblem" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7v10l10 5 10-5V7L12 2z" fill="rgba(26,82,118,.25)" stroke="#1a5276"
+                            stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M12 2v20M2 7l10 5 10-5" stroke="#1a5276" stroke-width="1.5" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <span class="mobile-logo-text">Sudan Sustainability Hub</span>
+            </a>
+            <button class="mobile-close" id="mobileClose" type="button" aria-label="Close navigation menu">✕</button>
+        </div>
+
+        <!-- DRAWER NAV ACCORDION -->
+        <nav class="mobile-nav" aria-label="Mobile Drawer Navigation">
+
+            <!-- About Accordion -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>About</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="SSH POLICY/SSH_policy.html" class="mobile-submenu-link"><span class="icon">🏛️</span> Who
+                        We Are</a>
+                    <a href="SSH EMPLOYEE STRUCTURE/FULL_STRUCTURE_V1.html" class="mobile-submenu-link"><span
+                            class="icon">📋</span> SSH Structure</a>
+                    <a href="SSH EMPLOYEE STRUCTURE/FULL_ORGANIZAL_DIRECTORY_V1.html" class="mobile-submenu-link"><span
+                            class="icon">👥</span> SSH Directory</a>
+                    <a href="pages/SSH_PRINCIPLE.html" class="mobile-submenu-link"><span class="icon">⚖️</span>
+                        Governance &amp; Principles</a>
+                </div>
+            </div>
+
+            <!-- Programs Accordion -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>Programs</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="4PILLARS/WASH/SSH-SWS_dashboard_v2.html" class="mobile-submenu-link"><span
+                            class="icon">💧</span> WASH Programs</a>
+                    <a href="#programs" class="mobile-submenu-link"><span class="icon">🌾</span> Livelihood Programs</a>
+                    <a href="#programs" class="mobile-submenu-link"><span class="icon">☀️</span> Energy Programs</a>
+                    <a href="#programs" class="mobile-submenu-link"><span class="icon">📚</span> Education Programs</a>
+                    <a href="#programs" class="mobile-submenu-link"><span class="icon">🕊️</span> Youth
+                        Peacebuilding</a>
+                    <a href="#programs" class="mobile-submenu-link"><span class="icon">💡</span> SSH-LAB Innovation</a>
+                </div>
+            </div>
+
+            <!-- Governance Accordion -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>Governance</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="#board" class="mobile-submenu-link"><span class="icon">🏛️</span> Board of Directors</a>
+                    <a href="#executive" class="mobile-submenu-link"><span class="icon">👔</span> Executive
+                        Management</a>
+                    <a href="#positions" class="mobile-submenu-link"><span class="icon">📝</span> Position
+                        Descriptions</a>
+                    <a href="SSH POLICY/SSH_policy.html" class="mobile-submenu-link"><span class="icon">📜</span>
+                        Policies &amp; Frameworks</a>
+                </div>
+            </div>
+
+            <!-- Our Team Accordion -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>Our Team</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="#positions" class="mobile-submenu-link"><span class="icon">💼</span> Executive Office</a>
+                    <a href="#positions" class="mobile-submenu-link"><span class="icon">💰</span> Finance &amp;
+                        Administration</a>
+                    <a href="#positions" class="mobile-submenu-link"><span class="icon">📣</span> Communications &amp;
+                        Media</a>
+                    <a href="#positions" class="mobile-submenu-link"><span class="icon">🤝</span> Partnerships &amp;
+                        Fundraising</a>
+                </div>
+            </div>
+
+            <!-- Our Work (Expanded from Three-dots) -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>Our Work &amp; Pillars</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="#livelihood" class="mobile-submenu-link"><span class="icon">🌱</span> Economic
+                        Empowerment</a>
+                    <a href="#livelihood" class="mobile-submenu-link"><span class="icon">👩‍🌾</span> Women Programs</a>
+                    <a href="#livelihood" class="mobile-submenu-link"><span class="icon">🏢</span> SME Support</a>
+                    <a href="4PILLARS/WASH/SSH-SWS_dashboard_v2.html" class="mobile-submenu-link"><span
+                            class="icon">🚰</span> Clean Water (Dashboard)</a>
+                    <a href="#wash" class="mobile-submenu-link"><span class="icon">🚿</span> Sanitation &amp;
+                        Hygiene</a>
+                    <a href="#energy" class="mobile-submenu-link"><span class="icon">⚡</span> Solar &amp; Renewable
+                        Energy</a>
+                    <a href="#education" class="mobile-submenu-link"><span class="icon">📖</span> Digital Learning &amp;
+                        Training</a>
+                </div>
+            </div>
+
+            <!-- Transparency & Reports (From Three-dots) -->
+            <div class="mobile-nav-item">
+                <button class="mobile-nav-link" type="button" data-accordion aria-expanded="false">
+                    <span>Reports &amp; Vision</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        aria-hidden="true" focusable="false">
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </button>
+                <div class="mobile-submenu" role="region">
+                    <a href="pages/SSH-CRM.html" class="mobile-submenu-link"><span class="icon">🎫</span> Receipt
+                        Verification Portal</a>
+                    <a href="pages/SSH-REPORTS/US Financial Information.html" class="mobile-submenu-link"><span
+                            class="icon">📊</span> Annual Budget Report</a>
+                    <a href="pages/SSH-REPORTS/US Financial Information.html" class="mobile-submenu-link"><span
+                            class="icon">📑</span> External Audit Report</a>
+                    <a href="VESION 2026-2023/SSH_phases_2026-2030.html" class="mobile-submenu-link"><span
+                            class="icon">🎯</span> Vision 2026-2030 Phases</a>
+                    <a href="VESION 2026-2023/ADVANCED.html" class="mobile-submenu-link"><span class="icon">🚀</span>
+                        Vision Advanced</a>
+                    <a href="VESION 2026-2023/8-reasons.html" class="mobile-submenu-link"><span class="icon">🌟</span> 8
+                        Reasons to Support SSH</a>
+                </div>
+            </div>
+
+            <!-- Direct Links -->
+            <div class="mobile-nav-item">
+                <a href="#impact" class="mobile-nav-link mobile-direct-link">Impact</a>
+            </div>
+            <div class="mobile-nav-item">
+                <a href="#contactUS" class="mobile-nav-link mobile-direct-link">Contact</a>
+            </div>
+        </nav>
+
+        <!-- DRAWER FOOTER ACTIONS -->
+        <div class="mobile-panel-foot">
+            <a href="#contactUS" class="btn-ghost mobile-btn-partner">Partner with Us</a>
+            <a href="pages/donate.html" class="btn-primary mobile-btn-donate">❤️ Donate to SSH</a>
+        </div>
+    </div>
+</div>
