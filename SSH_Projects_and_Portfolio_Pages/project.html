@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | Sudan Sustainability Hub</title>
+
+    <style>
+        :root {
+            --navy: #082B55;
+            --blue: #145DA0;
+            --orange: #ED7D19;
+            --green: #218653;
+            --light: #F4F7FA;
+            --white: #FFFFFF;
+            --text: #243447;
+            --muted: #64748B;
+            --border: #DCE5EE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+
+
+
+        .nav {
+            min-height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .brand small {
+            display: block;
+            font-size: 11px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .menu-btn {
+            display: none;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 7px;
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(8, 43, 85, .95),
+                    rgba(8, 43, 85, .55)),
+                url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=85") center/cover;
+
+            color: white;
+        }
+
+        .hero-content {
+            padding: 75px 0;
+            max-width: 800px;
+        }
+
+        .breadcrumb {
+            color: #D5E7F8;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .category {
+            display: inline-block;
+            background: rgba(255, 255, 255, .15);
+            padding: 7px 13px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #E7F0FA;
+            max-width: 700px;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 7px 14px;
+            background: #DDF6E6;
+            color: #187342;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* PROJECT SUMMARY */
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: -30px;
+            position: relative;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 23px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 25px #082b550c;
+        }
+
+        .summary-card span {
+            font-size: 12px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .summary-card strong {
+            color: var(--navy);
+            font-size: 18px;
+        }
+
+        /* GENERAL SECTION */
+
+        .section {
+            padding: 55px 0;
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 27px;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 26px;
+        }
+
+        .panel h3 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .panel p {
+            font-size: 14px;
+            color: #526477;
+            margin-bottom: 15px;
+        }
+
+        /* PROJECT INFORMATION */
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            font-size: 13px;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list span {
+            color: var(--muted);
+        }
+
+        .info-list strong {
+            color: var(--navy);
+            text-align: right;
+        }
+
+        /* OBJECTIVES */
+
+        .objective-box {
+            border-left: 4px solid var(--orange);
+            padding: 18px;
+            background: #FFF7ED;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .objective-box h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .objective-box p {
+            font-size: 14px;
+            color: #526477;
+        }
+
+        /* ACTIVITIES */
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .activity-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .activity-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .activity-content {
+            padding: 20px;
+        }
+
+        .activity-content h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .activity-content p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* RESULTS */
+
+        .results {
+            background: var(--navy);
+            color: white;
+        }
+
+        .results .section-title {
+            color: white;
+        }
+
+        .results .section-subtitle {
+            color: #D5E7F8;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .result-card {
+            padding: 25px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 12px;
+        }
+
+        .result-card strong {
+            font-size: 32px;
+            color: #FFB66D;
+            display: block;
+        }
+
+        .result-card span {
+            font-size: 13px;
+            color: #E1EBF6;
+        }
+
+        /* REPORTS */
+
+        .report-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .report {
+            background: white;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .report h3 {
+            color: var(--navy);
+            font-size: 15px;
+        }
+
+        .report p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .report-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 9px 15px;
+            background: var(--blue);
+            color: white;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-orange {
+            background: var(--orange);
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #061F3E;
+            color: #DCE7F4;
+            padding: 35px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer small {
+            color: #AABBD0;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 900px) {
+
+            .summary,
+            .result-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-grid,
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                flex-direction: column;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .summary,
+            .result-grid,
+            .activity-grid,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 45px 0;
+            }
+
+            .report {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .report-actions {
+                width: 100%;
+            }
+
+            .report-actions .btn {
+                flex: 1;
+                text-align: center;
+            }
+
+            .gallery img {
+                height: 210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="#" class="brand">
+                SSH
+                <small>Sudan Sustainability Hub</small>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰ Menu
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Programs</a>
+                <a href="#">Projects</a>
+                <a href="#">Reports</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PROJECT HERO -->
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="breadcrumb">
+                Home / Projects / Project Profile
+            </div>
+
+            <span class="category" id="projectCategory"></span>
+
+            <h1 id="projectTitle"></h1>
+
+            <p id="projectDescription"></p>
+
+            <span class="status" id="projectStatus"></span>
+
+        </div>
+    </section>
+
+    <main class="container">
+
+        <!-- PROJECT SUMMARY -->
+
+        <div class="summary" id="summary"></div>
+
+        <!-- PROJECT OVERVIEW -->
+
+        <section class="section">
+
+            <h2 class="section-title">Project Overview</h2>
+
+            <p class="section-subtitle">
+                Detailed project information and institutional profile.
+            </p>
+
+            <div class="content-grid">
+
+                <div class="panel">
+
+                    <h3>About the Project</h3>
+
+                    <p id="projectOverview"></p>
+
+                    <div class="objective-box">
+                        <h3>Project Objective</h3>
+                        <p id="projectObjective"></p>
+                    </div>
+
+                    <h3>Expected Outcomes</h3>
+
+                    <p id="projectOutcomes"></p>
+
+                </div>
+
+                <div class="panel">
+
+                    <h3>Project Information</h3>
+
+                    <ul class="info-list" id="projectInfo"></ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACTIVITIES -->
+
+        <section class="section">
+
+            <h2 class="section-title">Project Activities</h2>
+
+            <p class="section-subtitle">
+                Key interventions and implementation activities.
+            </p>
+
+            <div class="activity-grid" id="activities"></div>
+
+        </section>
+
+    </main>
+
+    <!-- PROJECT RESULTS -->
+
+    <section class="section results">
+
+        <div class="container">
+
+            <h2 class="section-title">Project Results & Impact</h2>
+
+            <p class="section-subtitle">
+                Verified achievements and measurable project indicators.
+            </p>
+
+            <div class="result-grid" id="results"></div>
+
+        </div>
+
+    </section>
+
+    <main class="container">
+
+        <!-- REPORTS -->
+
+        <section class="section">
+
+            <h2 class="section-title">Project Reports & Documents</h2>
+
+            <p class="section-subtitle">
+                Publicly approved project reports and institutional documentation.
+            </p>
+
+            <div class="report-list" id="reports"></div>
+
+        </section>
+
+        <!-- IMAGE GALLERY -->
+
+        <section class="section">
+
+            <h2 class="section-title">Project Gallery</h2>
+
+            <p class="section-subtitle">
+                Authorized photographs documenting project activities.
+            </p>
+
+            <div class="gallery" id="gallery"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <strong>Sudan Sustainability Hub (SSH)</strong>
+                <br>
+                <small>Empowering Communities · Building a Sustainable Future</small>
+            </div>
+
+            <small>
+                © <span id="year"></span> SSH. All rights reserved.
+            </small>
+        </div>
+    </footer>
+
+    <script>
+
+        /* ===================================
+           PROJECT DATA
+           Replace with verified project data.
+        =================================== */
+
+        const project = {
+
+            title: "Community Development and Empowerment Project",
+
+            code: "SSH-PROJ-2025-001",
+
+            category: "Community Development",
+
+            program: "Community Empowerment Program",
+
+            location: "Kiryandongo Refugee Settlement, Uganda",
+
+            donor: "Donor Name — To Be Verified",
+
+            duration: "January 2025 – December 2025",
+
+            budget: "UGX — Approved Budget Required",
+
+            status: "Completed",
+
+            description:
+                "A community-focused initiative designed to strengthen resilience, improve access to essential services, and support vulnerable communities.",
+
+            overview:
+                "This project aims to address community development priorities through structured interventions, community participation, capacity building, and accountable implementation. All project activities and achievements must be supported by verified monitoring and reporting information.",
+
+            objective:
+                "To improve the well-being, resilience, and opportunities of vulnerable people through inclusive, sustainable, and community-led interventions.",
+
+            outcomes:
+                "Improved access to services, enhanced community participation, strengthened capacities, and measurable improvements in the target population's well-being."
+        };
+
+
+        /* PROJECT SUMMARY CARDS */
+
+        const summaryData = [
+            ["Project Code", project.code],
+            ["Implementation Location", project.location],
+            ["Project Duration", project.duration],
+            ["Approved Budget", project.budget]
+        ];
+
+        document.getElementById("summary").innerHTML =
+            summaryData.map(item => `
+    <div class="summary-card">
+        <span>${item[0]}</span>
+        <strong>${item[1]}</strong>
+    </div>
+`).join("");
+
+        /* HERO */
+
+        document.getElementById("projectCategory").textContent =
+            project.category;
+
+        document.getElementById("projectTitle").textContent =
+            project.title;
+
+        document.getElementById("projectDescription").textContent =
+            project.description;
+
+        document.getElementById("projectStatus").textContent =
+            "PROJECT STATUS: " + project.status;
+
+        /* OVERVIEW */
+
+        document.getElementById("projectOverview").textContent =
+            project.overview;
+
+        document.getElementById("projectObjective").textContent =
+            project.objective;
+
+        document.getElementById("projectOutcomes").textContent =
+            project.outcomes;
+
+        /* PROJECT INFORMATION */
+
+        const info = [
+            ["Project Code", project.code],
+            ["Program", project.program],
+            ["Location", project.location],
+            ["Donor", project.donor],
+            ["Duration", project.duration],
+            ["Budget", project.budget],
+            ["Status", project.status]
+        ];
+
+        document.getElementById("projectInfo").innerHTML =
+            info.map(item => `
+    <li>
+        <span>${item[0]}</span>
+        <strong>${item[1]}</strong>
+    </li>
+`).join("");
+
+        /* ACTIVITIES */
+
+        const activities = [
+            {
+                title: "Community Mobilization",
+                description:
+                    "Community consultations, participation, and identification of priority needs.",
+                image:
+                    "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                title: "Capacity Building",
+                description:
+                    "Training, skills development, and strengthening community capacities.",
+                image:
+                    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+            },
+
+            {
+                title: "Humanitarian Support",
+                description:
+                    "Support interventions designed around verified community needs.",
+                image:
+                    "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        document.getElementById("activities").innerHTML =
+            activities.map(activity => `
+    <article class="activity-card">
+        <img src="${activity.image}" alt="${activity.title}">
+        <div class="activity-content">
+            <h3>${activity.title}</h3>
+            <p>${activity.description}</p>
+        </div>
+    </article>
+`).join("");
+
+        /* RESULTS
+           Replace with actual verified indicators.
+        */
+
+        const results = [
+            ["0", "Verified Beneficiaries"],
+            ["0", "Activities Implemented"],
+            ["0", "Communities Reached"],
+            ["0%", "Achievement Rate"]
+        ];
+
+        document.getElementById("results").innerHTML =
+            results.map(result => `
+    <div class="result-card">
+        <strong>${result[0]}</strong>
+        <span>${result[1]}</span>
+    </div>
+`).join("");
+
+        /* REPORTS */
+
+        const reports = [
+            {
+                title: "Project Proposal",
+                year: "2025",
+                type: "PDF",
+                file: "documents/project-proposal.pdf"
+            },
+
+            {
+                title: "Project Progress Report",
+                year: "2025",
+                type: "PDF",
+                file: "documents/project-progress-report.pdf"
+            },
+
+            {
+                title: "Project Final Report",
+                year: "2025",
+                type: "PDF",
+                file: "documents/project-final-report.pdf"
+            }
+        ];
+
+        document.getElementById("reports").innerHTML =
+            reports.map(report => `
+    <div class="report">
+        <div>
+            <h3>${report.title}</h3>
+            <p>${report.type} · ${report.year} · Public Document</p>
+        </div>
+
+        <div class="report-actions">
+            <a href="${report.file}"
+               target="_blank"
+               rel="noopener"
+               class="btn">
+               View Report
+            </a>
+
+            <a href="${report.file}"
+               download
+               class="btn btn-orange">
+               Download
+            </a>
+        </div>
+    </div>
+`).join("");
+
+        /* GALLERY */
+
+        const images = [
+            "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80",
+
+            "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=900&q=80",
+
+            "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=900&q=80"
+        ];
+
+        document.getElementById("gallery").innerHTML =
+            images.map((image, index) => `
+    <img src="${image}"
+         alt="Project activity photograph ${index + 1}"
+         loading="lazy">
+`).join("");
+
+        /* MOBILE MENU */
+
+        document.getElementById("menuBtn").addEventListener("click", () => {
+
+            document.getElementById("navLinks")
+                .classList.toggle("open");
+
+        });
+
+        /* FOOTER */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+
+</html>

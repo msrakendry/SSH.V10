@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional NGO project profile template for Sudan Sustainability Hub.">
+  <title>Project Profile | Sudan Sustainability Hub</title>
+  <style>
+    :root {
+      --navy: #082b55;
+      --blue: #145da0;
+      --sky: #eaf3fb;
+      --orange: #ed7d19;
+      --green: #218653;
+      --ink: #1d2b3a;
+      --muted: #64748b;
+      --line: #dce5ee;
+      --paper: #fff;
+      --canvas: #f4f7fa;
+      --radius: 14px;
+      --shadow: 0 8px 26px rgba(8, 43, 85, .08)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .breadcrumb {
+      padding: 17px 0;
+      color: var(--muted);
+      font-size: .85rem
+    }
+
+    .breadcrumb span {
+      color: var(--blue);
+      font-weight: 650
+    }
+
+    .hero {
+      background: linear-gradient(90deg, rgba(8, 43, 85, .92), rgba(8, 43, 85, .56)), url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1800&q=80") center/cover;
+      background-color: var(--navy);
+      color: #fff
+    }
+
+    .hero-inner {
+      padding: 55px 0 48px;
+      max-width: 850px
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #dceeff;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 800
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.45rem);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+      margin: 13px 0
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #edf5ff;
+      font-size: 1.06rem;
+      margin: 0
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px
+    }
+
+    .pill {
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, .12);
+      border-radius: 99px;
+      padding: 6px 12px;
+      font-size: .82rem;
+      font-weight: 700
+    }
+
+    .pill.status {
+      background: #e6f6ed;
+      border-color: #bde5ce;
+      color: #176b3f
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 24px;
+      margin: 28px auto 60px;
+      align-items: start
+    }
+
+
+    .main {
+      min-width: 0
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 20px
+    }
+
+    .card-head {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .card-head h2 {
+      margin: 0;
+      font-size: 1.08rem;
+      color: var(--navy)
+    }
+
+    .card-body {
+      padding: 20px
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin: 0 0 16px
+    }
+
+    .project-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0
+    }
+
+    .fact {
+      padding: 15px 18px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .fact:nth-child(3n) {
+      border-right: 0
+    }
+
+    .fact:nth-last-child(-n+3) {
+      border-bottom: 0
+    }
+
+    .fact label {
+      display: block;
+      color: var(--muted);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 800;
+      margin-bottom: 4px
+    }
+
+    .fact strong {
+      font-size: .94rem;
+      color: var(--ink);
+      overflow-wrap: anywhere
+    }
+
+    .fact .unverified {
+      color: #8a5a13;
+      font-weight: 650
+    }
+
+    .content-section {
+      scroll-margin-top: 100px;
+      margin-bottom: 20px
+    }
+
+    .content-section h2 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin: 0 0 10px
+    }
+
+    .content-section p {
+      margin: 0;
+      color: #425466
+    }
+
+    .objectives {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .objective {
+      border: 1px solid var(--line);
+      background: #fbfdff;
+      border-radius: 10px;
+      padding: 14px
+    }
+
+    .objective b {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px
+    }
+
+    .objective span {
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .activity-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .activity-list li {
+      display: flex;
+      gap: 10px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px
+    }
+
+    .check {
+      color: var(--green);
+      font-weight: 900
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px
+    }
+
+    .result {
+      background: var(--sky);
+      border-radius: 10px;
+      padding: 16px
+    }
+
+    .result strong {
+      display: block;
+      font-size: 1.45rem;
+      color: var(--blue);
+      line-height: 1.3
+    }
+
+    .result span {
+      font-size: .84rem;
+      color: #425466
+    }
+
+    .table-wrap {
+      overflow-x: auto
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 540px
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: .9rem
+    }
+
+    th {
+      background: #f7fafc;
+      color: var(--navy);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .05em
+    }
+
+    tr:last-child td {
+      border-bottom: 0
+    }
+
+    .report-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .report-row:last-child {
+      border-bottom: 0
+    }
+
+    .report-info {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .pdf-icon {
+      width: 40px;
+      height: 44px;
+      border-radius: 7px;
+      background: #fff0ed;
+      color: #c24131;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: .75rem
+    }
+
+    .report-info b {
+      display: block;
+      color: var(--ink);
+      font-size: .92rem
+    }
+
+    .report-info small {
+      color: var(--muted)
+    }
+
+    .download {
+      border: 1px solid #bfd7ef;
+      background: #f0f7ff;
+      color: var(--blue);
+      border-radius: 7px;
+      padding: 7px 11px;
+      font-weight: 750;
+      font-size: .82rem
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .gallery figure {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 9px;
+      background: #e4edf5
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      transition: transform .25s
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04)
+    }
+
+    .gallery figcaption {
+      font-size: .78rem;
+      padding: 7px 9px;
+      color: var(--muted);
+      background: #fff
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 105px
+    }
+
+    .side-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+      overflow: hidden
+    }
+
+    .side-head {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 17px;
+      font-weight: 800
+    }
+
+    .side-body {
+      padding: 17px
+    }
+
+    .side-body p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .side-nav {
+      display: grid;
+      gap: 4px
+    }
+
+    .side-nav a {
+      padding: 9px 11px;
+      border-radius: 7px;
+      color: #425466;
+      font-size: .9rem;
+      font-weight: 650
+    }
+
+    .side-nav a:hover,
+    .side-nav a.active {
+      background: var(--sky);
+      color: var(--blue)
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .88rem
+    }
+
+    .summary-line:last-child {
+      border: 0
+    }
+
+    .summary-line span {
+      color: var(--muted)
+    }
+
+    .summary-line b {
+      text-align: right;
+      color: var(--navy)
+    }
+
+    .side-btn {
+      width: 100%;
+      margin-top: 12px
+    }
+
+    .notice {
+      border-left: 4px solid var(--orange);
+      background: #fff8ed;
+      padding: 12px 14px;
+      border-radius: 6px;
+      color: #7b4b12;
+      font-size: .85rem
+    }
+
+    .footer {
+      background: #061f3e;
+      color: #dce7f4;
+      padding: 32px 0
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap
+    }
+
+    .footer strong {
+      color: #fff
+    }
+
+    .footer small {
+      color: #aabbd0
+    }
+
+
+    @media(max-width:640px) {
+      .topbar .container {
+        justify-content: center;
+        text-align: center
+      }
+
+      .nav {
+        min-height: 72px
+      }
+
+      .navlinks {
+        top: 72px
+      }
+
+      .brand {
+        font-size: .95rem
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px
+      }
+
+      .hero-inner {
+        padding: 38px 0
+      }
+
+      .layout {
+        margin-top: 18px
+      }
+
+      .project-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      }
+
+      .fact:nth-child(3n) {
+        border-right: 1px solid var(--line)
+      }
+
+      .fact:nth-child(2n) {
+        border-right: 0
+      }
+
+      .fact:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--line)
+      }
+
+      .fact:nth-last-child(-n+2) {
+        border-bottom: 0
+      }
+
+      .objectives,
+      .activity-list {
+        grid-template-columns: 1fr
+      }
+
+      .results {
+        grid-template-columns: 1fr
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .gallery img {
+        height: 125px
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr
+      }
+
+      .card-body {
+        padding: 16px
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff
+      }
+
+      .header,
+      .topbar,
+      .sidebar,
+      .footer,
+      .nav-cta,
+      .menu-toggle {
+        display: none !important
+      }
+
+      .hero {
+        background: #fff !important;
+        color: var(--navy);
+        border-bottom: 2px solid var(--navy)
+      }
+
+      .hero p,
+      .eyebrow {
+        color: var(--ink)
+      }
+
+      .layout {
+        display: block;
+        margin: 0
+      }
+
+      .card {
+        box-shadow: none;
+        break-inside: avoid
+      }
+
+      .container {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container breadcrumb">Home　›　Our Projects　›　<span id="crumbTitle">Project Profile</span></div>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow">PROJECT PROFILE · <span id="heroProgram">PROGRAM</span></span>
+        <h1 id="projectTitle">Project Title — Official Name</h1>
+        <p id="heroObjective">A concise, approved project summary describing the intended development outcome and
+          communities served.</p>
+        <div class="hero-meta"><span class="pill" id="projectCodePill">Project Code: SSH-XXX-000</span><span
+            class="pill status" id="statusPill">● Active</span><span class="pill" id="locationPill">Location: District,
+            Settlement</span></div>
+      </div>
+    </section>
+
+    <div class="container layout">
+      <div class="main">
+        <section class="card" id="details">
+          <div class="card-head">
+            <h2>Project Information</h2><span style="color:var(--muted);font-size:.8rem">Institutional project
+              profile</span>
+          </div>
+          <div class="project-facts" id="projectFacts"></div>
+        </section>
+
+        <section class="card content-section" id="overview">
+          <div class="card-head">
+            <h2>Project Overview</h2>
+          </div>
+          <div class="card-body">
+            <p id="overviewText">Provide the approved project overview, context, needs addressed, and approach.</p>
+          </div>
+        </section>
+
+        <section class="card content-section" id="objectives">
+          <div class="card-head">
+            <h2>Objective & Expected Outcomes</h2>
+          </div>
+          <div class="card-body">
+            <p class="section-intro" id="objectiveText">Describe the project's overall objective and intended change.
+            </p>
+            <div class="objectives" id="outcomes"></div>
+          </div>
+        </section>
+
+        <section class="card content-section" id="activities">
+          <div class="card-head">
+            <h2>Key Activities & Interventions</h2>
+          </div>
+          <div class="card-body">
+            <p class="section-intro">Major interventions implemented or planned under the approved project design.</p>
+            <ul class="activity-list" id="activityList"></ul>
+          </div>
+        </section>
+
+        <section class="card content-section" id="beneficiaries">
+          <div class="card-head">
+            <h2>Target Groups & Beneficiaries</h2>
+          </div>
+          <div class="card-body">
+            <p class="section-intro" id="beneficiaryIntro">Beneficiary data should be verified, disaggregated where
+              appropriate, and approved for public reporting.</p>
+            <div class="results" id="beneficiaryStats"></div>
+          </div>
+        </section>
+
+        <section class="card content-section" id="results">
+          <div class="card-head">
+            <h2>Results & Achievements</h2>
+          </div>
+          <div class="card-body">
+            <p class="section-intro">Report measurable outputs and outcomes against approved indicators. Do not publish
+              unverified figures.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Indicator / Achievement</th>
+                    <th>Target</th>
+                    <th>Actual result</th>
+                    <th>Evidence</th>
+                  </tr>
+                </thead>
+                <tbody id="resultsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="card content-section" id="reports">
+          <div class="card-head">
+            <h2>Public Project Reports</h2>
+          </div>
+          <div class="card-body">
+            <p class="section-intro">Only approved documents cleared for public release should appear here.</p>
+            <div id="reportList"></div>
+          </div>
+        </section>
+
+        <section class="card content-section" id="gallery">
+          <div class="card-head">
+            <h2>Project Gallery</h2><span style="font-size:.8rem;color:var(--muted)">Authorized photographs</span>
+          </div>
+          <div class="card-body">
+            <div class="gallery" id="galleryGrid"></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar" aria-label="Project sidebar">
+        <section class="side-card">
+          <div class="side-head">Project at a Glance</div>
+          <div class="side-body" id="glance"></div>
+        </section>
+        <section class="side-card">
+          <div class="side-head">Project Navigation</div>
+          <div class="side-body side-nav">
+            <a href="#details" class="active">Project Information</a><a href="#overview">Overview</a><a
+              href="#objectives">Objectives & Outcomes</a><a href="#activities">Activities</a><a
+              href="#beneficiaries">Beneficiaries</a><a href="#results">Results</a><a href="#reports">Reports</a><a
+              href="#gallery">Gallery</a>
+          </div>
+        </section>
+        <section class="side-card">
+          <div class="side-head">Partner With SSH</div>
+          <div class="side-body">
+            <p>For project partnerships, institutional collaboration, or further information, contact the SSH team.</p>
+            <a class="btn side-btn" href="mailto:info@ssh.org?subject=Project%20Partnership%20Inquiry">Contact the Team
+              ↗</a>
+          </div>
+        </section>
+        <div class="notice">Public-facing template. Replace sample or placeholder information with verified, approved
+          project data before publication.</div>
+      </aside>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>Sudan Sustainability Hub (SSH)</strong><br><small>Empowering communities · Building a sustainable
+          future</small></div><small>© <span id="year"></span> SSH. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    /* Replace this sample object with approved project content from your CMS/API. */
+    const project = {
+      title: "Project Title — Official Name",
+      code: "SSH-PRG-001",
+      program: "Program Name",
+      location: "Country · District · Settlement",
+      donor: "Donor name (publish only if verified and authorized)",
+      duration: "Start date — End date",
+      budget: "Approved amount and currency",
+      objective: "State the approved objective and expected development outcome in clear, concise language.",
+      status: "Active",
+      overview: "Write a professional summary of the project context, the needs it addresses, the approach being used, and the communities involved. This text is a placeholder and should be replaced by the approved project narrative.",
+      outcomes: [
+        { title: "Expected outcome 01", description: "Describe the expected measurable change for the target community." },
+        { title: "Expected outcome 02", description: "Describe another approved outcome and how it will be assessed." }
+      ],
+      activities: ["Activity or intervention one (approved)", "Activity or intervention two (approved)", "Activity or intervention three (approved)", "Activity or intervention four (approved)"],
+      beneficiaries: [
+        { value: "—", label: "Direct beneficiaries (verified)" },
+        { value: "—", label: "Indirect beneficiaries (verified)" },
+        { value: "—", label: "Target households (verified)" }
+      ],
+      results: [
+        { indicator: "Approved project indicator", target: "Set approved target", actual: "Publish verified result", evidence: "Approved report / evidence" },
+        { indicator: "Outcome indicator", target: "Set approved target", actual: "Publish verified result", evidence: "M&E evidence" }
+      ],
+      reports: [
+        { title: "Project Report — approved public version", meta: "PDF · Reporting period", href: "#" }
+      ],
+      images: [
+        { src: "https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=700&q=80", alt: "Community project activity photograph", caption: "Community activity" },
+        { src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80", alt: "Project training or engagement", caption: "Training / engagement" },
+        { src: "https://images.unsplash.com/photo-1509099388-6e1a9c9e3f4b?auto=format&fit=crop&w=700&q=80", alt: "Community development activity", caption: "Project implementation" }
+      ]
+    };
+
+    const $ = id => document.getElementById(id);
+    function escapeHTML(value) { return String(value ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+    function render() {
+      $("projectTitle").textContent = project.title; $("crumbTitle").textContent = project.title;
+      $("heroProgram").textContent = project.program; $("heroObjective").textContent = project.objective;
+      $("projectCodePill").textContent = "Project Code: " + project.code;
+      $("statusPill").textContent = "● " + project.status; $("locationPill").textContent = "Location: " + project.location;
+      const facts = [["Project title", project.title], ["Project code", project.code], ["Program", project.program], ["Location", project.location], ["Donor", project.donor], ["Duration", project.duration], ["Approved budget", project.budget], ["Project status", project.status], ["Objective", project.objective]];
+      $("projectFacts").innerHTML = facts.map(([label, value]) => `<div class="fact"><label>${escapeHTML(label)}</label><strong>${escapeHTML(value)}</strong></div>`).join("");
+      $("overviewText").textContent = project.overview; $("objectiveText").textContent = project.objective;
+      $("outcomes").innerHTML = project.outcomes.map((o, i) => `<div class="objective"><b>${String(i + 1).padStart(2, "0")} · ${escapeHTML(o.title)}</b><span>${escapeHTML(o.description)}</span></div>`).join("");
+      $("activityList").innerHTML = project.activities.map(a => `<li><span class="check">✓</span><span>${escapeHTML(a)}</span></li>`).join("");
+      $("beneficiaryStats").innerHTML = project.beneficiaries.map(b => `<div class="result"><strong>${escapeHTML(b.value)}</strong><span>${escapeHTML(b.label)}</span></div>`).join("");
+      $("resultsTable").innerHTML = project.results.map(r => `<tr><td>${escapeHTML(r.indicator)}</td><td>${escapeHTML(r.target)}</td><td>${escapeHTML(r.actual)}</td><td>${escapeHTML(r.evidence)}</td></tr>`).join("");
+      $("reportList").innerHTML = project.reports.length ? project.reports.map(r => `<div class="report-row"><div class="report-info"><div class="pdf-icon">PDF</div><div><b>${escapeHTML(r.title)}</b><small>${escapeHTML(r.meta)}</small></div></div><a class="download" href="${escapeHTML(r.href)}" ${r.href === "#" ? 'aria-disabled="true"' : ''}>View / Download</a></div>`).join("") : '<p class="section-intro">No approved public reports are currently available.</p>';
+      $("galleryGrid").innerHTML = project.images.map(img => `<figure><img loading="lazy" src="${escapeHTML(img.src)}" alt="${escapeHTML(img.alt)}"><figcaption>${escapeHTML(img.caption)}</figcaption></figure>`).join("");
+      $("glance").innerHTML = [["Program", project.program], ["Location", project.location], ["Donor", project.donor], ["Duration", project.duration], ["Budget", project.budget], ["Status", project.status]].map(([k, v]) => `<div class="summary-line"><span>${escapeHTML(k)}</span><b>${escapeHTML(v)}</b></div>`).join("");
+    }
+    render();
+    $("year").textContent = new Date().getFullYear();
+    $("menuToggle").addEventListener("click", () => { const nav = $("navLinks"), open = nav.classList.toggle("open"); $("menuToggle").setAttribute("aria-expanded", String(open)); });
+    document.querySelectorAll(".side-nav a").forEach(link => link.addEventListener("click", () => { document.querySelectorAll(".side-nav a").forEach(a => a.classList.remove("active")); link.classList.add("active"); }));
+  </script>
+</body>
+
+</html>
