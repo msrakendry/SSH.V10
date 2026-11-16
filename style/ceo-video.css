@@ -1,0 +1,461 @@
+/* ==========================================================================
+   SSH WEBSITE — CEO VIDEO PLAYER & VIDEO FRAME
+   Dedicated Comprehensive Responsive Stylesheet
+   File: style/ceo-video.css
+   Target Components:
+     - Outer Container / Stage: body, .video-stage, .container
+     - Video Frame: .video-frame, #videoFrame
+     - Brand Watermark Overlay: .video-frame img
+     - Video Player: .video-frame video, #video, .set-video
+     - Back / Close Action: .video-frame .back-btn
+   Breakpoints:
+     0. CSS Variables & Theme Foundation
+     1. Theater Stage & Outer Layout
+     2. Base Frame & Video Player
+     3. Watermark Logo & Back Button
+     4. Ultra-Wide & 4K Displays (min-width: 1400px)
+     5. Standard Desktops & Laptops (1024px – 1399.98px)
+     6. Tablets Portrait & Landscape (641px – 1023.98px)
+     7. Mobile Phones (361px – 640.98px)
+     8. Ultra-Compact & Foldable Screens (max-width: 360px)
+     9. Mobile Landscape Mode (@media (max-height: 520px) and (orientation: landscape))
+    10. Touch Device Ergonomics (@media (hover: none))
+    11. Dark Mode & Ambient Glow
+    12. Accessibility: Reduced Motion & High Contrast
+    13. Print Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. CSS VARIABLES & THEME FOUNDATION
+   -------------------------------------------------------------------------- */
+:root {
+    --vf-navy-deep: #071b3a;
+    --vf-navy-light: #164779;
+    --vf-gold-primary: #d4af37;
+    --vf-gold-bright: #f2d675;
+    --vf-gold-glow: rgba(212, 175, 55, 0.45);
+    --vf-blue-glow: rgba(0, 112, 226, 0.35);
+    --vf-white: #ffffff;
+    --vf-black: #000000;
+    
+    --vf-max-width: 960px;
+    --vf-aspect-ratio: 16 / 9;
+    --vf-radius: clamp(12px, 1.8vw, 20px);
+    --vf-border-width: 2px;
+    
+    --vf-shadow-frame: 0 24px 64px -10px rgba(0, 0, 0, 0.75), 0 0 32px rgba(7, 27, 58, 0.45), 0 2px 8px rgba(0, 0, 0, 0.5);
+    --vf-shadow-btn: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --vf-shadow-btn-hover: 0 8px 24px rgba(7, 27, 58, 0.55), 0 0 12px rgba(242, 214, 117, 0.35);
+    
+    --vf-font: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --vf-transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   1. THEATER STAGE & OUTER LAYOUT
+   -------------------------------------------------------------------------- */
+body:has(.video-frame),
+body.video-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: clamp(16px, 3.5vw, 44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at 50% 40%, #0d223d 0%, #050b14 100%);
+    box-sizing: border-box;
+    font-family: var(--vf-font);
+    overflow-x: hidden;
+}
+
+.container:has(.video-frame),
+.video-stage {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE FRAME & VIDEO PLAYER
+   -------------------------------------------------------------------------- */
+.video-frame,
+#videoFrame {
+    width: 100%;
+    max-width: var(--vf-max-width);
+    aspect-ratio: var(--vf-aspect-ratio);
+    max-height: 85vh;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--vf-black);
+    border: var(--vf-border-width) solid var(--vf-gold-glow);
+    border-radius: var(--vf-radius);
+    box-shadow: var(--vf-shadow-frame);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: var(--vf-transition);
+}
+
+/* Ambient inner border glow */
+.video-frame::after,
+#videoFrame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* Video Element */
+.video-frame video,
+.video-frame .set-video,
+#videoFrame video,
+#videoFrame #video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    background: var(--vf-black);
+    border-radius: inherit;
+    position: relative;
+    z-index: 1;
+    outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. WATERMARK LOGO & BACK BUTTON
+   -------------------------------------------------------------------------- */
+
+/* Brand Watermark (SSH Logo) */
+.video-frame img,
+#videoFrame img {
+    position: absolute;
+    top: clamp(12px, 2.2vw, 22px);
+    left: clamp(12px, 2.2vw, 22px);
+    width: clamp(42px, 5.5vw, 68px);
+    height: auto;
+    max-height: clamp(42px, 5.5vw, 68px);
+    object-fit: contain;
+    z-index: 10;
+    pointer-events: none;
+    user-select: none;
+    background: rgba(7, 27, 58, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+    opacity: 0.92;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-frame:hover img,
+#videoFrame:hover img {
+    opacity: 1;
+}
+
+/* Floating Frosted Glass Back Button */
+.video-frame .back-btn,
+#videoFrame .back-btn {
+    position: absolute;
+    top: clamp(12px, 2.2vw, 22px);
+    right: clamp(12px, 2.2vw, 22px);
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: clamp(8px, 1.2vh, 11px) clamp(16px, 1.8vw, 22px);
+    background: rgba(7, 27, 58, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--vf-white);
+    border: 1.5px solid var(--vf-gold-glow);
+    border-radius: 50px;
+    font-family: var(--vf-font);
+    font-size: clamp(0.82rem, 0.95vw, 0.92rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--vf-shadow-btn);
+    transition: var(--vf-transition);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.video-frame .back-btn:hover,
+#videoFrame .back-btn:hover {
+    background: linear-gradient(135deg, var(--vf-navy-light) 0%, var(--vf-navy-deep) 100%);
+    border-color: var(--vf-gold-bright);
+    color: var(--vf-gold-bright);
+    transform: translateY(-2px);
+    box-shadow: var(--vf-shadow-btn-hover);
+}
+
+.video-frame .back-btn:active,
+#videoFrame .back-btn:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.video-frame .back-btn:focus-visible,
+#videoFrame .back-btn:focus-visible {
+    outline: 2px solid var(--vf-gold-primary);
+    outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   4. ULTRA-WIDE & 4K DISPLAYS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .video-frame,
+    #videoFrame {
+        --vf-max-width: 1120px;
+        border-width: 2.5px;
+    }
+
+    .video-frame img,
+    #videoFrame img {
+        width: 72px;
+        max-height: 72px;
+        top: 24px;
+        left: 24px;
+        padding: 8px 12px;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        top: 24px;
+        right: 24px;
+        min-height: 44px;
+        padding: 11px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. STANDARD DESKTOPS & LAPTOPS (1024px – 1399.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399.98px) {
+    .video-frame,
+    #videoFrame {
+        --vf-max-width: 960px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. TABLETS PORTRAIT & LANDSCAPE (641px – 1023.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 641px) and (max-width: 1023.98px) {
+    .video-frame,
+    #videoFrame {
+        max-width: 94vw;
+        border-radius: 16px;
+    }
+
+    .video-frame img,
+    #videoFrame img {
+        width: 52px;
+        max-height: 52px;
+        top: 16px;
+        left: 16px;
+        padding: 5px 8px;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        top: 16px;
+        right: 16px;
+        min-height: 38px;
+        padding: 8px 18px;
+        font-size: 0.86rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. MOBILE PHONES (361px – 640.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 640.98px) {
+    body:has(.video-frame),
+    body.video-page {
+        padding: 16px 10px;
+    }
+
+    .video-frame,
+    #videoFrame {
+        width: 100%;
+        max-width: 96vw;
+        border-radius: 14px;
+        border-width: 1.5px;
+    }
+
+    .video-frame img,
+    #videoFrame img {
+        width: 40px;
+        max-height: 40px;
+        top: 12px;
+        left: 12px;
+        padding: 4px 6px;
+        border-radius: 8px;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        top: 12px;
+        right: 12px;
+        min-height: 36px;
+        padding: 7px 14px;
+        font-size: 0.80rem;
+        gap: 6px;
+        border-width: 1px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ULTRA-COMPACT & FOLDABLE SCREENS (max-width: 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    body:has(.video-frame),
+    body.video-page {
+        padding: 10px 6px;
+    }
+
+    .video-frame,
+    #videoFrame {
+        max-width: 98vw;
+        border-radius: 10px;
+        border-width: 1.5px;
+    }
+
+    .video-frame img,
+    #videoFrame img {
+        width: 34px;
+        max-height: 34px;
+        top: 8px;
+        left: 8px;
+        padding: 3px 5px;
+        border-radius: 6px;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        top: 8px;
+        right: 8px;
+        min-height: 32px;
+        padding: 6px 11px;
+        font-size: 0.74rem;
+        border-width: 1px;
+        letter-spacing: 0.02em;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. MOBILE LANDSCAPE MODE (Short Height Screens)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    body:has(.video-frame),
+    body.video-page {
+        padding: 8px 12px;
+    }
+
+    .video-frame,
+    #videoFrame {
+        max-height: 90vh;
+        width: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+    }
+
+    .video-frame img,
+    #videoFrame img {
+        width: 36px;
+        max-height: 36px;
+        top: 8px;
+        left: 8px;
+        padding: 3px 6px;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        top: 8px;
+        right: 8px;
+        min-height: 32px;
+        padding: 5px 12px;
+        font-size: 0.74rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. TOUCH DEVICE ERGONOMICS (@media (hover: none))
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    .video-frame .back-btn:hover,
+    #videoFrame .back-btn:hover {
+        transform: none;
+        box-shadow: var(--vf-shadow-btn);
+    }
+
+    .video-frame .back-btn:active,
+    #videoFrame .back-btn:active {
+        transform: scale(0.96);
+        background: linear-gradient(135deg, var(--vf-navy-light) 0%, var(--vf-navy-deep) 100%);
+        border-color: var(--vf-gold-bright);
+        color: var(--vf-gold-bright);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. DARK MODE & AMBIENT GLOW
+   -------------------------------------------------------------------------- */
+body.dark-mode .video-frame,
+body.dark-mode #videoFrame {
+    border-color: rgba(242, 214, 117, 0.55);
+    box-shadow: 0 28px 72px -12px rgba(0, 0, 0, 0.95), 0 0 44px rgba(0, 112, 226, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   12. ACCESSIBILITY: REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .video-frame,
+    #videoFrame,
+    .video-frame img,
+    #videoFrame img,
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        transition: none !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   13. PRINT STYLESHEET
+   -------------------------------------------------------------------------- */
+@media print {
+    .video-frame,
+    #videoFrame {
+        border: 1px solid #000;
+        box-shadow: none;
+    }
+
+    .video-frame .back-btn,
+    #videoFrame .back-btn {
+        display: none !important;
+    }
+}

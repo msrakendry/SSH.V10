@@ -1,0 +1,941 @@
+/* ==========================================================================
+   SSH WEBSITE — ANNUAL REPORT & PROGRAMMES SECTION
+   Dedicated Comprehensive Responsive Stylesheet
+   File: style/report-responsive.css
+   Targets:
+     - Section Container: .wrap_R
+     - Main Grid: .grid_R
+     - Left Column: .left_R, .left_R h1, .left_R p, .left_R strong
+     - Right Column: .right_R, .right_R h2
+     - Row Layout: .row_R
+     - Button Group: .btns_R, .btn_R, .btn_R.wide_R
+     - Publication Cover: .cover_R, .cover_R svg
+
+   Breakpoints & Architecture:
+     0. Design Tokens & Component Foundation
+     1. Base Layout & Micro-Interactions
+     2. Ultra-Wide & 4K Displays (min-width: 1400px)
+     3. Standard Desktops & Laptops (1024px – 1399.98px)
+     4. Small Laptops & Landscape Tablets (861px – 1023.98px)
+     5. Portrait Tablets & Foldables (641px – 860.98px)
+     6. Large Phones & Mobile Landscape (481px – 640.98px)
+     7. Standard Mobile Devices (361px – 480.98px)
+     8. Ultra-Compact & Narrow Phones (max-width: 360px)
+     9. Mobile Landscape Orientation (@media (max-height: 520px) and (orientation: landscape))
+    10. Touch Devices & Ergonomic States (@media (hover: none))
+    11. Dark Mode Adaptations (body.dark-mode & prefers-color-scheme)
+    12. Accessibility: Reduced Motion & High Contrast
+    13. Print Stylesheet
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. DESIGN TOKENS & COMPONENT FOUNDATION
+   -------------------------------------------------------------------------- */
+.wrap_R {
+    /* Color Palette */
+    --r-navy-deep: #0e2a3d;
+    --r-navy-primary: #00335b;
+    --r-navy-hover: #071f2d;
+    --r-blue-brand: #0070e2;
+    --r-blue-accent: #2b5f7f;
+    --r-blue-soft: #eaf3f9;
+    --r-terracotta: #e0642a;
+    --r-gold-warm: #f0b35a;
+    --r-olive-green: #6f8a3c;
+    
+    /* Text & Surfaces */
+    --r-text-head: #0e2a3d;
+    --r-text-body: #334155;
+    --r-text-muted: #64748b;
+    --r-text-light: #ffffff;
+    /* --r-surface-card: linear-gradient(145deg, #f0f7fb 0%, #e2f0f8 100%); */
+    /* --r-surface-card-border: rgba(14, 42, 61, 0.12); */
+    --r-rule-line: rgba(14, 42, 61, 0.12);
+    
+    /* Elevation Shadows */
+    --r-card-shadow: 0 14px 36px -8px rgba(14, 42, 61, 0.10), 0 2px 10px -2px rgba(14, 42, 61, 0.05);
+    --r-card-shadow-hover: 0 20px 44px -8px rgba(14, 42, 61, 0.15), 0 4px 14px -2px rgba(14, 42, 61, 0.08);
+    --r-cover-shadow: -4px 0 8px rgba(0, 0, 0, 0.12) inset, 8px 16px 30px -4px rgba(14, 42, 61, 0.28), 0 2px 8px rgba(0, 0, 0, 0.08);
+    --r-btn-shadow-hover: 0 8px 20px -4px rgba(14, 42, 61, 0.24);
+    
+    /* Typography & Spacing */
+    --r-font-serif: Georgia, "Times New Roman", "Playfair Display", serif;
+    --r-font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --r-radius-sm: 6px;
+    --r-radius-md: 12px;
+    --r-radius-lg:4px;
+    --r-radius-book: 4px 10px 10px 4px;
+    
+    /* Fluid Transition Timings */
+    --r-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --r-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --r-transition: all 0.28s var(--r-ease-standard);
+
+    /* Section Frame */
+    width: 100%;
+    max-width: 1360px;
+    margin: clamp(28px, 4.5vw, 64px) auto;
+    padding: clamp(28px, 4vw, 56px) clamp(16px, 3.5vw, 44px) clamp(24px, 3.5vw, 48px);
+    box-sizing: border-box;
+    position: relative;
+    border-top: 1px solid var(--r-rule-line);
+}
+
+/* --------------------------------------------------------------------------
+   1. BASE LAYOUT & CORE COMPONENT STYLING
+   -------------------------------------------------------------------------- */
+
+/* Main 2-Column Grid */
+.grid_R {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+    gap: clamp(28px, 4.5vw, 64px);
+    align-items: stretch;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Left Narrative Column */
+.left_R {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(12px, 2vw, 24px) clamp(8px, 1.5vw, 20px) clamp(12px, 2vw, 24px) 0;
+    box-sizing: border-box;
+}
+
+.left_R h1 {
+    font-family: var(--r-font-serif);
+    font-size: clamp(2.1rem, 3.6vw, 3.1rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    /* color: var(--r-text-head); */
+    margin: 0 0 clamp(20px, 2.5vw, 36px);
+    position: relative;
+    text-wrap: balance;
+}
+
+/* Decorative subtle brand indicator bar */
+.left_R h1::after {
+    content: "";
+    display: block;
+    width: clamp(48px, 6vw, 72px);
+    height: 4px;
+    background: linear-gradient(90deg, var(--r-navy-primary), var(--r-blue-brand));
+    border-radius: 2px;
+    margin-top: clamp(12px, 1.5vw, 18px);
+}
+
+.left_R p {
+    display: none;
+    font-family: var(--r-font-sans);
+    font-size: clamp(1.02rem, 1.35vw, 1.22rem);
+    line-height: 1.75;
+    /* color: var(--r-text-body); */
+    margin: 0;
+    max-width: 42ch;
+    letter-spacing: 0.01em;
+}
+
+.left_R p strong {
+    color: var(--r-navy-deep);
+    font-weight: 700;
+    position: relative;
+}
+
+/* Right Highlight Report Card */
+.right_R {
+    /* background: var(--r-surface-card); */
+    border: 1px solid var(--r-surface-card-border);
+    border-radius: var(--r-radius-lg);
+    box-shadow: var(--r-card-shadow);
+    padding: clamp(24px, 3.2vw, 42px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    transition: var(--r-transition);
+    overflow: hidden;
+}
+
+/* Subtle background accent glow */
+.right_R::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(0, 112, 226, 0.12) 0%, rgba(0, 112, 226, 0) 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.right_R:hover {
+    box-shadow: var(--r-card-shadow-hover);
+    border-color: rgba(14, 42, 61, 0.2);
+}
+
+.right_R h2 {
+    font-family: var(--r-font-serif);
+    font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    /* color: var(--r-text-head); */
+    margin: 0 0 clamp(20px, 2.6vw, 32px);
+    text-wrap: balance;
+    position: relative;
+    z-index: 1;
+}
+
+/* Inner Report Row (Buttons + Book Cover) */
+.row_R {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(170px, 230px);
+    gap: clamp(20px, 2.8vw, 36px);
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* Button Column */
+.btns_R {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 1.5vw, 18px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Shared Button Styles */
+.btn_R {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 48px;
+    padding: clamp(11px, 1.3vh, 15px) clamp(14px, 1.6vw, 22px);
+    font-family: var(--r-font-sans);
+    font-size: clamp(0.85rem, 0.95vw, 0.94rem);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: var(--r-navy-deep);
+    background-color: #ffffff;
+    border: 2px solid var(--r-navy-deep);
+    border-radius: var(--r-radius-sm);
+    box-shadow: 0 2px 4px rgba(14, 42, 61, 0.06);
+    cursor: pointer;
+    transition: var(--r-transition);
+    position: relative;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn_R:hover {
+    background-color: var(--education);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--r-btn-shadow-hover);
+}
+
+.btn_R:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(14, 42, 61, 0.16);
+}
+
+.btn_R:focus-visible {
+    outline: 3px solid var(--r-blue-brand);
+    outline-offset: 3px;
+}
+
+/* Primary Highlight Action (.wide_R) */
+.btn_R.wide_R {
+    background: linear-gradient(135deg, var(--r-navy-primary) 0%, var(--r-navy-deep) 100%);
+    color: var(--r-text-light);
+    border-color: var(--r-navy-primary);
+    box-shadow: 0 4px 14px rgba(0, 51, 91, 0.22);
+}
+
+.btn_R.wide_R:hover {
+    background: linear-gradient(135deg, #02477c 0%, #081a26 100%);
+    border-color: #02477c;
+    box-shadow: 0 8px 24px -2px rgba(0, 51, 91, 0.38);
+    transform: translateY(-2px);
+}
+
+.btn_R.wide_R:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 51, 91, 0.2);
+}
+
+/* Publication Book Cover Presentation */
+.cover_R {
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 314 / 443;
+    background: #ffffff;
+    border-radius: var(--r-radius-book);
+    box-shadow: var(--r-cover-shadow);
+    position: relative;
+    flex-shrink: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: transform 0.4s var(--r-ease-bounce), box-shadow 0.4s var(--r-ease-standard);
+    box-sizing: border-box;
+}
+
+/* Subtle book spine binding highlight on left edge */
+.cover_R::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(255, 255, 255, 0.25) 75%, rgba(0, 0, 0, 0.04) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Subtle paper gloss on top-right */
+.cover_R::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+.cover_R:hover {
+    transform: translateY(-6px) rotate(-1deg) scale(1.02);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15) inset, 12px 24px 38px -4px rgba(14, 42, 61, 0.34), 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.cover_R svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+    background: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   2. ULTRA-WIDE & 4K DISPLAYS (min-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1400px) {
+    .wrap_R {
+        max-width: 1360px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .grid_R {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+        gap: 72px;
+    }
+
+    .left_R h1 {
+        font-size: 3.1rem;
+    }
+
+    .left_R p {
+        font-size: 1.25rem;
+        max-width: 44ch;
+    }
+
+    .right_R {
+        padding: 44px 48px;
+    }
+
+    .row_R {
+        grid-template-columns: minmax(0, 1.15fr) minmax(210px, 240px);
+        gap: 40px;
+    }
+
+    .cover_R {
+        max-width: 240px;
+    }
+
+    .btn_R {
+        min-height: 52px;
+        font-size: 0.95rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. STANDARD DESKTOPS & LAPTOPS (1024px – 1399.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1399.98px) {
+    .grid_R {
+        gap: clamp(32px, 4vw, 54px);
+    }
+
+    .row_R {
+        grid-template-columns: minmax(0, 1.1fr) minmax(170px, 210px);
+        gap: 28px;
+    }
+
+    .cover_R {
+        max-width: 210px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. SMALL LAPTOPS & LANDSCAPE TABLETS (861px – 1023.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 861px) and (max-width: 1023.98px) {
+    .wrap_R {
+        padding: 36px 24px;
+        margin: 32px auto;
+    }
+
+    .grid_R {
+        grid-template-columns: 1fr 1.15fr;
+        gap: 32px;
+    }
+
+    .left_R {
+        padding: 8px 0;
+    }
+
+    .left_R h1 {
+        font-size: 2.3rem;
+        margin-bottom: 22px;
+    }
+
+    .left_R p {
+        font-size: 1.05rem;
+    }
+
+    .right_R {
+        padding: 28px 24px;
+    }
+
+    .right_R h2 {
+        font-size: 1.45rem;
+        margin-bottom: 22px;
+    }
+
+    .row_R {
+        grid-template-columns: 1fr 180px;
+        gap: 20px;
+    }
+
+    .cover_R {
+        max-width: 180px;
+    }
+
+    .btn_R {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+        min-height: 46px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. PORTRAIT TABLETS & SMALL SCREENS (641px – 860.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 641px) and (max-width: 860.98px) {
+    .wrap_R {
+        padding: 32px 24px;
+        margin: 28px auto;
+    }
+
+    /* Stack into 1 clean column */
+    .grid_R {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .left_R {
+        padding: 0;
+        max-width: 640px;
+    }
+
+    .left_R h1 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    .left_R p {
+        font-size: 1.15rem;
+        max-width: 100%;
+    }
+
+    .right_R {
+        padding: 32px 30px;
+        border-radius: 18px;
+    }
+
+    .right_R h2 {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+
+    .row_R {
+        grid-template-columns: 1fr 210px;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .cover_R {
+        max-width: 210px;
+    }
+
+    .btn_R {
+        padding: 13px 18px;
+        font-size: 0.88rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   6. LARGE PHONES & MOBILE LANDSCAPE (481px – 640.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 640.98px) {
+    .wrap_R {
+        padding: 28px 20px;
+        margin: 24px auto;
+    }
+
+    .grid_R {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .left_R {
+        padding: 0;
+    }
+
+    .left_R h1 {
+        font-size: 2.1rem;
+        margin-bottom: 18px;
+    }
+
+    .left_R p {
+        font-size: 1.05rem;
+        line-height: 1.65;
+    }
+
+    .right_R {
+        padding: 26px 20px;
+        border-radius: 16px;
+    }
+
+    .right_R h2 {
+        font-size: 1.45rem;
+        margin-bottom: 20px;
+    }
+
+    .row_R {
+        grid-template-columns: 1fr 170px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .cover_R {
+        max-width: 170px;
+    }
+
+    .btns_R {
+        gap: 12px;
+    }
+
+    .btn_R {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
+        min-height: 46px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   7. STANDARD MOBILE DEVICES (361px – 480.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 361px) and (max-width: 480.98px) {
+    .wrap_R {
+        padding: 24px 16px;
+        margin: 22px auto;
+        border-top-width: 1px;
+    }
+
+    .grid_R {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .left_R {
+        padding: 0;
+    }
+
+    .left_R h1 {
+        font-size: 1.85rem;
+        margin-bottom: 16px;
+        line-height: 1.2;
+    }
+
+    .left_R h1::after {
+        width: 44px;
+        height: 3px;
+        margin-top: 10px;
+    }
+
+    .left_R p {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .right_R {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .right_R h2 {
+        font-size: 1.35rem;
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    /* Stack book cover centered, with full-width action buttons below */
+    .row_R {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .cover_R {
+        width: 62%;
+        max-width: 190px;
+        margin: 0 auto;
+    }
+
+    .btns_R {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn_R {
+        width: 100%;
+        min-height: 48px;
+        padding: 13px 16px;
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   8. ULTRA-COMPACT & NARROW PHONES (max-width: 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+    .wrap_R {
+        padding: 18px 12px;
+        margin: 18px auto;
+    }
+
+    .grid_R {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .left_R {
+        padding: 0;
+    }
+
+    .left_R h1 {
+        font-size: 1.65rem;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .left_R h1::after {
+        width: 36px;
+        height: 3px;
+        margin-top: 8px;
+    }
+
+    .left_R p {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .right_R {
+        padding: 18px 12px;
+        border-radius: 12px;
+    }
+
+    .right_R h2 {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .row_R {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .cover_R {
+        width: 68%;
+        max-width: 155px;
+        margin: 0 auto;
+    }
+
+    .btns_R {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn_R {
+        width: 100%;
+        min-height: 44px;
+        padding: 11px 10px;
+        font-size: 0.76rem;
+        letter-spacing: 0.02em;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   9. MOBILE LANDSCAPE ORIENTATION (Short Height Screens)
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+    .wrap_R {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        margin: 16px auto;
+    }
+
+    .grid_R {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: center;
+    }
+
+    .left_R h1 {
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+
+    .left_R p {
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+
+    .right_R {
+        padding: 18px;
+    }
+
+    .right_R h2 {
+        font-size: 1.2rem;
+        margin-bottom: 14px;
+    }
+
+    .row_R {
+        grid-template-columns: 1fr 130px;
+        gap: 14px;
+    }
+
+    .cover_R {
+        max-width: 130px;
+    }
+
+    .btns_R {
+        gap: 8px;
+    }
+
+    .btn_R {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 0.74rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   10. TOUCH DEVICES & ERGONOMIC FEEDBACK (@media (hover: none))
+   -------------------------------------------------------------------------- */
+@media (hover: none) {
+    /* Prevent sticky hover transforms on touch screens */
+    .cover_R:hover {
+        transform: none;
+        box-shadow: var(--r-cover-shadow);
+    }
+
+    .btn_R:hover {
+        transform: none;
+        box-shadow: 0 2px 4px rgba(14, 42, 61, 0.06);
+    }
+
+    .btn_R.wide_R:hover {
+        transform: none;
+        box-shadow: 0 4px 14px rgba(0, 51, 91, 0.22);
+    }
+
+    /* Provide tactile touch-active feedback */
+    .btn_R:active {
+        transform: scale(0.98);
+        background-color: var(--r-navy-deep);
+        color: var(--r-text-light);
+    }
+
+    .btn_R.wide_R:active {
+        transform: scale(0.98);
+        background: linear-gradient(135deg, #02477c 0%, #081a26 100%);
+    }
+
+    .cover_R:active {
+        transform: scale(0.98);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. DARK MODE ADAPTATIONS
+   Supports both body.dark-mode (SSH site standard) and prefers-color-scheme
+   -------------------------------------------------------------------------- */
+body.dark-mode .wrap_R {
+    --r-rule-line: rgba(255, 255, 255, 0.12);
+    --r-text-head: #f1faee;
+    --r-text-body: #cbd5e1;
+    --r-text-muted: #94a3b8;
+    /* --r-surface-card: linear-gradient(145deg, #16263b 0%, #0d1b2a 100%); */
+    --r-surface-card-border: rgba(255, 255, 255, 0.12);
+    --r-card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45), 0 2px 10px rgba(0, 0, 0, 0.25);
+    --r-card-shadow-hover: 0 22px 48px -10px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.35);
+    --r-cover-shadow: -4px 0 8px rgba(0, 0, 0, 0.2) inset, 8px 18px 34px -4px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .left_R h1 {
+    color: #f1faee;
+}
+
+body.dark-mode .left_R h1::after {
+    background: linear-gradient(90deg, #4cc9f0, #0070e2);
+}
+
+body.dark-mode .left_R p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .left_R p strong {
+    color: #ffffff;
+}
+
+body.dark-mode .right_R {
+    background: var(--r-surface-card);
+    border-color: var(--r-surface-card-border);
+    box-shadow: var(--r-card-shadow);
+}
+
+body.dark-mode .right_R h2 {
+    color: #f1faee;
+}
+
+body.dark-mode .btn_R {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.24);
+    color: #f1faee;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .btn_R:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #0e2a3d;
+    box-shadow: 0 8px 22px rgba(255, 255, 255, 0.18);
+}
+
+body.dark-mode .btn_R.wide_R {
+    background: linear-gradient(135deg, #0070e2 0%, #004d88 100%);
+    border-color: #0070e2;
+    color: #ffffff;
+}
+
+body.dark-mode .btn_R.wide_R:hover {
+    background: linear-gradient(135deg, #1a87f5 0%, #0060aa 100%);
+    border-color: #1a87f5;
+    color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 112, 226, 0.4);
+}
+
+/* System dark mode fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]):not(.light-mode) .wrap_R {
+        --r-rule-line: rgba(255, 255, 255, 0.12);
+        --r-text-head: #f1faee;
+        --r-text-body: #cbd5e1;
+        --r-text-muted: #94a3b8;
+        --r-surface-card: linear-gradient(145deg, #16263b 0%, #0d1b2a 100%);
+        --r-surface-card-border: rgba(255, 255, 255, 0.12);
+        --r-card-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   12. ACCESSIBILITY: REDUCED MOTION & HIGH CONTRAST
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .wrap_R,
+    .right_R,
+    .btn_R,
+    .btn_R.wide_R,
+    .cover_R {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .cover_R:hover,
+    .btn_R:hover {
+        transform: none !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   13. PRINT STYLESHEET
+   -------------------------------------------------------------------------- */
+@media print {
+    .wrap_R {
+        max-width: 100% !important;
+        margin: 20px 0 !important;
+        padding: 10px 0 !important;
+        border-top: 1px solid #000000 !important;
+        page-break-inside: avoid;
+    }
+
+    .grid_R {
+        display: block !important;
+    }
+
+    .right_R {
+        background: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        box-shadow: none !important;
+        margin-top: 20px !important;
+        padding: 16px !important;
+    }
+
+    .cover_R {
+        box-shadow: none !important;
+        border: 1px solid #999999 !important;
+    }
+
+    .btn_R {
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+}
